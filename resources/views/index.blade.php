@@ -86,16 +86,18 @@
 
         <section id="home" class="container flex justify-between items-center">
             <div>
-                <h1></h1>
-                <p></p>
                 <div>
-                    <button>
-                        <a href=""></a>
-                    </button>
+                    <h1></h1>
+                    <p></p>
+                    <div>
+                        <button>
+                            <a href=""></a>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <img src="" alt="">
+                <div>
+                    <img src="" alt="">
+                </div>
             </div>
         </section>
 
