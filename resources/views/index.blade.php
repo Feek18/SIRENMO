@@ -84,8 +84,8 @@
             </div>
         </div>
 
-        <section id="home" class="container flex justify-between items-center">
-            <div>
+        <section id="home" class="container mx-auto">
+            <div class="flex justify-between items-center">
                 <div>
                     <h1></h1>
                     <p></p>
