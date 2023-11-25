@@ -19,7 +19,11 @@ class CustomersFactory extends Factory
         return [
             'nik' => fake()->nik(),
             'nama' => fake()->name(),
-            'telepon' => fake()->
+            'telepon' => fake()->phoneNumber(),
+            'alamat' => fake()->address(),
+            'tgl_lahir' => fake()->date(),
+            'foto_sim' => 'fotosim.png',
+            'user_id' => rand(1, 4)
         ];
     }
 }

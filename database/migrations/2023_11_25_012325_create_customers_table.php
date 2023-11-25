@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('nik')->unique();
+            $table->string('nik')->unique();
             $table->string('nama');
-            $table->integer('telepon');
+            $table->string('telepon');
             $table->string('alamat');
             $table->date('tgl_lahir');
             $table->string('foto_sim');
