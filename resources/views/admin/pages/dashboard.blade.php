@@ -244,7 +244,7 @@
 
       <!-- cards row 4 -->
 
-      @include('../admin/layout/partials/footer_content')
+      @include('../admin/layout/partials/footer')
     </div>
     <!-- end cards -->
 @endsection

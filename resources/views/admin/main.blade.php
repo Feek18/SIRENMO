@@ -27,7 +27,6 @@
       @yield('content')
 
     </main>
-    @include('../admin/layout/partials/footer')
   </body>
   @include('../admin/layout/partials/script')
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DriversController;
+use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,9 +24,7 @@ Route::get('/dashboard', function () {
     return view('admin.pages.dashboard');
 })->middleware('auth');
 
-Route::get('/data-kategori', function () {
-    return view('admin.pages.data-kategori');
-});
+Route::resource('/data-kategori', KendaraanController::class);
 
 Route::get('/profile', function () {
     return view('admin.pages.profile');
