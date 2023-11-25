@@ -21,16 +21,17 @@ class LoginController extends Controller
     }
     public function store(Request $request)
     {
+        echo $request;
         $validatedData = $request->validate([
             'username' => ['required', 'min:3', 'max:255', 'unique:users'],
             'password' => 'required|min:5|max:255'
         ]);
 
-        $validatedData['password'] = Hash::make($validatedData['password']);
+        // $validatedData['password'] = Hash::make($validatedData['password']);
 
-        User::create($validatedData);
+        // User::create($validatedData);
 
-        return redirect('/login')->with('success', 'Registration successfull! Please login');
+        // return redirect('/login')->with('success', 'Registration successfull! Please login');
     }
 
     public function authenticate(Request $request)
