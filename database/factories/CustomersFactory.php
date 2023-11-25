@@ -17,7 +17,9 @@ class CustomersFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nik' => fake()->nik(),
+            'nama' => fake()->name(),
+            'telepon' => fake()->
         ];
     }
 }
