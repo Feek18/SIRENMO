@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('admin.pages.dashboard');
-});
+})->middleware('auth');
 
 Route::get('/data-kategori', function () {
     return view('admin.pages.data-kategori');
@@ -31,5 +31,8 @@ Route::get('/profile', function () {
 });
 
 // routes/get login
-Route::get('/login', [LoginController::class, 'indexlogin'])->name('login.index');
-Route::get('/register', [LoginController::class, 'indexRegister']);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::get('/register', [LoginController::class, 'register']);
+Route::post('/register', [LoginController::class, 'store']);
+Route::get('/logout', [LoginController::class, 'logout']);
