@@ -45,7 +45,7 @@
                 </div>
                 <div class="flex flex-wrap px-3 -mx-3 sm:px-6 xl:px-12">
                   <div class="w-6/12 max-w-full px-1 ml-auto flex-0">
-                    <a class="inline-block w-full px-6 py-3 mb-4 font-bold text-center text-gray-150 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75" href="javascript:;">
+                    <a class="inline-block w-full px-6 py-3 mb-4 font-bold text-center text-gray-150 uppercase align-middle transition-all bg-transparent border border-gray-200 border-solid rounded-lg shadow-none cursor-pointer hover:scale-102 leading-pro text-xs ease-soft-in tracking-tight-soft bg-150 bg-x-25 hover:bg-transparent hover:opacity-75" href="/register">
                       <i class="fas fa-user"></i><br><small>Customers</small>
                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                           <g transform="translate(3.000000, 3.000000)" fill-rule="nonzero">
@@ -71,7 +71,7 @@
                     </a>
                   </div>
                   <div class="relative w-full max-w-full px-3 mt-2 text-center shrink-0">
-                    <p class="z-20 inline px-4 mb-2 font-semibold leading-normal bg-white text-sm text-slate-400">Customers please use the form below</p>
+                    <p class="z-20 inline px-4 mb-2 font-semibold leading-normal bg-white text-sm text-slate-400">Drivers please use the form below</p>
                   </div>
                 </div>
                 <div class="flex-auto p-6">
@@ -87,7 +87,7 @@
                       <input id="terms" class="w-4.92 h-4.92 ease-soft -ml-6.92 rounded-1.4 checked:bg-gradient-to-tl checked:from-gray-900 checked:to-slate-800 after:text-xxs after:font-awesome after:duration-250 after:ease-soft-in-out duration-250 relative float-left mt-1 cursor-pointer appearance-none border border-solid border-slate-200 bg-white bg-contain bg-center bg-no-repeat align-top transition-all after:absolute after:flex after:h-full after:w-full after:items-center after:justify-center after:text-white after:opacity-0 after:transition-all after:content-['\f00c'] checked:border-0 checked:border-transparent checked:bg-transparent checked:after:opacity-100" type="checkbox" value="" checked />
                       <label class="mb-2 ml-1 font-normal cursor-pointer select-none text-sm text-slate-700" for="terms"> I agree the <a href="javascript:;" class="font-bold text-slate-700">Terms and Conditions</a> </label>
                     </div>
-                    <input type="hidden" name="role" value="customers">
+                    <input type="hidden" name="role" value="drivers">
                     <div class="text-center">
                       <button type="submit" class="inline-block w-full px-6 py-3 mt-6 mb-2 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-gray-900 to-slate-800 hover:border-slate-700 hover:bg-slate-700 hover:text-white">Sign up</button>
                     </div>

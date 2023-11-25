@@ -20,9 +20,7 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'username' => fake()->unique()->userName(),
-            'password' => static::$password ??= Hash::make('password'),
-            'role' => 'admin'
+            //
         ];
     }
 

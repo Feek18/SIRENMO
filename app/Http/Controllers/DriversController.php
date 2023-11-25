@@ -13,9 +13,15 @@ class DriversController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        //
+        return view('drivers.main');
+    }
+
+    public function register()
+    {
+        return view('drivers.pages.register');
     }
 
     /**

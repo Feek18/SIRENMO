@@ -21,17 +21,17 @@ class LoginController extends Controller
     }
     public function store(Request $request)
     {
-        echo $request;
         $validatedData = $request->validate([
             'username' => ['required', 'min:3', 'max:255', 'unique:users'],
-            'password' => 'required|min:5|max:255'
+            'password' => 'required|min:5|max:255',
+            'role' => 'required'
         ]);
 
-        // $validatedData['password'] = Hash::make($validatedData['password']);
+        $validatedData['password'] = Hash::make($validatedData['password']);
 
-        // User::create($validatedData);
+        User::create($validatedData);
 
-        // return redirect('/login')->with('success', 'Registration successfull! Please login');
+        return redirect('/login')->with('success', 'Registration successfull! Please login');
     }
 
     public function authenticate(Request $request)
@@ -43,7 +43,22 @@ class LoginController extends Controller
 
         if (Auth::attempt($validate)) {
             $request->session()->regenerate();
-            return redirect()->intended('dashboard');
+            if (Auth::user()->role == 'admin') {
+                # code...
+                return redirect()->intended('dashboard');
+            }
+            if (Auth::user()->role == 'customers') {
+                # code...
+                return redirect()->intended('profile');
+            }
+            if (Auth::user()->role == 'drivers') {
+                # code...
+                return redirect()->intended('driver-main');
+            }
+            if (Auth::user()->role == 'owners') {
+                # code...
+                return redirect()->intended('profile');
+            }
         }
 
         return back()->with('loginError', 'Login Failed!');

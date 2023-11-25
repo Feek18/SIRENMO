@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DriversController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,3 +37,5 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/register', [LoginController::class, 'register'])->middleware('guest');
 Route::post('/register', [LoginController::class, 'store']);
 Route::get('/logout', [LoginController::class, 'logout']);
+Route::get('/driver', [DriversController::class, 'register']);
+Route::get('/driver-main', [DriversController::class, 'index']);
