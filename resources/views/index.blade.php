@@ -51,7 +51,7 @@
                 </ul>
                 <div class="lg:flex hidden">
                     <button class="bg-primary text-white text-2xl px-10 py-2 font-bold text-xl rounded-full">
-                        <a href="{{ route('login.index') }}">Login</a>
+                        <a href="{{ route('login') }}">Login</a>
                     </button>
                 </div>
                 <button class="lg:hidden block btntoogle">
@@ -78,7 +78,7 @@
                 </ul>
                 <div class="lg:flex mt-3">
                     <button class="bg-primary text-white text-2xl px-10 py-2 font-bold text-xl rounded-full">
-                        <a href="{{ route('login.index') }}">Login</a>
+                        <a href="{{ route('login') }}">Login</a>
                     </button>
                 </div>
             </div>
@@ -87,8 +87,8 @@
         <section id="home" class="container mx-auto">
             <div class="flex justify-between items-center">
                 <div>
-                    <h1></h1>
-                    <p></p>
+                    <h1>LUXURY LIFESTYLE RENTALS</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur. Nulla etiam sed varius proin morbi ut ultrices. Sit dictum pellentesque venenatis libero.</p>
                     <div>
                         <button>
                             <a href=""></a>
