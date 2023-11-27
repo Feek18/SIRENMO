@@ -24,62 +24,64 @@
         </style>
         @vite('resources/css/app.css')
     </head>
-    <body class="bg-secondary">
-        <div class="container mx-auto">
-            <nav class="flex justify-between items-center">
-                <div>
-                    <a href="">
-                        <img class="w-32" src="img/logo.png" alt="">
-                    </a>
-                </div>
-                <ul class="text-white text-sm font-normal lg:flex gap-7 hidden">
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Special Deals</a>
-                    </li>
-                    <li>
-                        <a href="#">About Us</a>
-                    </li>
-                    <li>
-                        <a href="#">Testimonials</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-                <div class="lg:flex hidden">
-                    <button class="bg-primary text-white text-2xl px-10 py-2 font-bold text-xl rounded-full">
-                        <a href="{{ route('login') }}">Login</a>
+    <body>
+        <div class="container">
+            <div class=" mx-auto bg-secondary">
+                <nav class="flex justify-between items-center">
+                    <div>
+                        <a href="">
+                            <img class="w-32" src="img/logo.png" alt="">
+                        </a>
+                    </div>
+                    <ul class="text-white text-sm font-normal lg:flex gap-7 hidden">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Special Deals</a>
+                        </li>
+                        <li>
+                            <a href="#">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Testimonials</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="lg:flex hidden">
+                        <button class="bg-primary text-white text-2xl px-10 py-2 font-bold text-xl">
+                            <a href="{{ route('login') }}">Login</a>
+                        </button>
+                    </div>
+                    <button class="lg:hidden block btntoogle">
+                        <img src="img/hamburger-menu.png" alt="">
                     </button>
-                </div>
-                <button class="lg:hidden block btntoogle">
-                    <img src="img/hamburger-menu.png" alt="">
-                </button>
-            </nav>
-            <div class="mobilemenu hidden">
-                <ul class="text-white text-sm font-normal gap-7">
-                    <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
-                        <a href="#">Home</a>
-                    </li>
-                    <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
-                        <a href="#">Special Deals</a>
-                    </li>
-                    <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
-                        <a href="#">About Us</a>
-                    </li>
-                    <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
-                        <a href="#">Testimonials</a>
-                    </li>
-                    <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-                <div class="lg:flex mt-3">
-                    <button class="bg-primary text-white text-2xl px-10 py-2 font-bold text-xl rounded-full">
-                        <a href="{{ route('login') }}">Login</a>
-                    </button>
+                </nav>
+                <div class="mobilemenu hidden">
+                    <ul class="text-white text-sm font-normal gap-7">
+                        <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
+                            <a href="#">Special Deals</a>
+                        </li>
+                        <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
+                            <a href="#">About Us</a>
+                        </li>
+                        <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
+                            <a href="#">Testimonials</a>
+                        </li>
+                        <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="lg:flex mt-3">
+                        <button class="bg-primary text-white text-2xl px-10 py-2 font-bold text-xl">
+                            <a href="{{ route('login') }}">Login</a>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
