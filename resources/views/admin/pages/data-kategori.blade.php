@@ -75,12 +75,10 @@
                     <span class="text-xs font-semibold leading-tight text-slate-400">{{ $k->tahun }}</span>
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <button type="button" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      Edit
-                    </button>
+                    <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400" data-bs-toggle="modal" data-bs-target="#exampleModal"> Edit </a>
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400"> Hapus </a>
+                    <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400" data-bs-toggle="modal" data-bs-target="#exampleModal"> Hapus </a>
                   </td>
                 </tr>
                 @endforeach
