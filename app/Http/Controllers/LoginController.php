@@ -49,7 +49,7 @@ class LoginController extends Controller
             }
             if (Auth::user()->role == 'customers') {
                 # code...
-                return redirect()->intended('profile');
+                return redirect()->intended('dashboard');
             }
             if (Auth::user()->role == 'drivers') {
                 # code...
