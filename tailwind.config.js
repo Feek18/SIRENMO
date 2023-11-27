@@ -13,17 +13,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        'primary': '#DA8C00',
-        'secondary': '#1B1B1B',
+        'primary': '#FF9826',
+        'secondary': '#212529',
         'login-color': '#B8B8B8',
       },
-      screens : {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl' : '1536px'
-      }
+      backgroundImage: { 'my-img': "url('img/imghome.png')"},
     },
   },
   plugins: [
