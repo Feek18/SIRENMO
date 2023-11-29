@@ -394,9 +394,15 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-secondary">
-    <div class="container mx-auto">
-        <nav class="bg-white shadow flex justify-between items-center p-3 px-14 md:items-center md:justify-between">
+<body>
+    <!-- Top Navbar -->
+    <div class="bg-primary w-full p-2">
+        <div class="container mx-auto flex justify-between"></div>
+    </div>
+    <!-- End Top Navbar -->
+
+    <div class="container">
+        <nav class="bg-white shadow flex justify-between items-center p-3 md:items-center md:justify-between">
             <div>
                 <span class="text-2xl font-[Poppins] cursor-pointer font-bold">
                     <a href="">
@@ -431,21 +437,22 @@
                 <img class="h-6" src="img/hamburger-menu.png" alt="">
             </button>
         </nav>
-        <div class="mobilemenu hidden">
-            <ul class="text-white text-sm font-normal gap-7">
-                <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
+
+        <div class="mobile hidden mx-auto ">
+            <ul class="text-secondary text-sm font-normal gap-7">
+                <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">Home</a>
                 </li>
-                <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
+                <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">Special Deals</a>
                 </li>
-                <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
+                <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">About Us</a>
                 </li>
-                <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
+                <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">Testimonials</a>
                 </li>
-                <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
+                <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">Contact</a>
                 </li>
             </ul>
@@ -459,7 +466,7 @@
 
     <main>
         <section id="home" class="container mx-auto">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center max-w-sm mx-auto">
                 <div>
                     <h1></h1>
                     <p></p>
@@ -475,6 +482,8 @@
             </div>
         </section>
     </main>
+
+    
 
 
 
@@ -516,13 +525,14 @@
 
 
     <script>
-        const btntoogle = document.querySelector('.btntoogle')
-        t mobilemenu = document.querySelector('.mobilemenu')
+    const btntoogle = document.querySelector('.btntoogle');
+    const mobile = document.querySelector('.mobile');
 
-            e.addEventListener('click', function name() {
-                    lassList.toggle('hidden');
-        })
-    </script>
+    btntoogle.addEventListener('click', function() {
+        mobile.classList.toggle('hidden');
+    });
+</script>
+
 </body>
 
 </html>
