@@ -471,7 +471,7 @@
         </div>
     </div>
 
-    <div style="img/bgimg.png" class="h-1/2 w-full p-2">
+    <div style="img/bgimg.png" class="h-screen w-full p-2">
         <div class="container mx-auto items-center">
             <div class="">
                 <h1 class="text-secondary text-4xl md:text-6xl font-bold">Create Your Travel Experience With <span>Fast
