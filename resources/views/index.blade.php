@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>GoRentCars</title>
+    <title>Fast Car</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -398,22 +398,23 @@
 
 <body>
     <!-- Top Navbar -->
-    <div class="bg-primary w-full p-1.5">
+    <div class="bg-primary w-full p-1">
         <div class="container mx-auto flex justify-center md:justify-between lg:justify-between text-white">
             <p class="font-medium text-xs hidden md:flex">Powered by Void</p>
-            <p class="font-medium text-xs">Get Promos for New Users!</p>
-            <p class="font-medium text-xs hidden md:flex"><img class="w-3 mr-2" src="img/phone.svg" alt="">0822-3788-6327</p>
+            <p class="font-medium text-xs">Get Promos for New Years!</p>
+            <p class="font-medium text-xs hidden md:flex"><img class="w-3 mr-2" src="img/phone.svg"
+                    alt="">0822-3788-6327</p>
         </div>
     </div>
     <!-- End Top Navbar -->
 
     <div class="container">
-        <nav class="bg-white shadow flex justify-between items-center p-3 md:items-center md:justify-between">
+        <nav class="bg-white flex justify-between items-center p-2 md:items-center md:justify-between">
             <div>
                 <span class="text-2xl font-[Poppins] cursor-pointer font-bold">
-                    <a href="">
-                        <img class="h-8 inline" src="img/logo.png" alt="">
-                        GoRentCars
+                    <a class="font-bold text-xl pt-4" href="">
+                        <img class="h-10 inline" src="img/logo.png" alt="">
+                        FAST CAR
                     </a>
                 </span>
             </div>
@@ -470,13 +471,24 @@
         </div>
     </div>
 
-    <div style="background-image: url('img/imghome.png')" class="h-1/2 w-full p-2">
-
+    <div style="img/bgimg.png" class="h-1/2 w-full p-2">
+        <div class="container mx-auto items-center">
+            <div class="">
+                <h1 class="text-secondary text-4xl md:text-6xl font-bold">Create Your Travel Experience With <span>Fast
+                        Car</span></h1>
+                <p class="text-secondary text-base font-normal pt-3">Lorem ipsum dolor sit amet consectetur. Nulla etiam
+                    sed
+                    varius proin morbi ut ultrices. Sit dictum pellentesque venenatis libero.</p>
+                <button type="button"
+                    class="mt-5 bg-primary text-white font-medium text-sm px-5 py-2.5 me-2 mb-2 ">
+                    Get Started
+                </button>
+            </div>
+        </div>
     </div>
 
 
 
-    
 
 
 
@@ -518,13 +530,13 @@
 
 
     <script>
-    const btntoogle = document.querySelector('.btntoogle');
-    const mobile = document.querySelector('.mobile');
+        const btntoogle = document.querySelector('.btntoogle');
+        const mobile = document.querySelector('.mobile');
 
-    btntoogle.addEventListener('click', function() {
-        mobile.classList.toggle('hidden');
-    });
-</script>
+        btntoogle.addEventListener('click', function () {
+            mobile.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 

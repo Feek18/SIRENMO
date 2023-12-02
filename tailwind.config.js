@@ -16,8 +16,7 @@ module.exports = {
         'primary': '#FF9826',
         'secondary': '#212529',
         'login-color': '#B8B8B8',
-      },
-      backgroundImage: { 'my-img': "url('img/imghome.png')"},
+      }
     },
   },
   plugins: [
