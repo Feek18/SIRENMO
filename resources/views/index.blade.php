@@ -8,7 +8,9 @@
     <title>GoRentCars</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <style>
@@ -396,8 +398,12 @@
 
 <body>
     <!-- Top Navbar -->
-    <div class="bg-primary w-full p-2">
-        <div class="container mx-auto flex justify-between"></div>
+    <div class="bg-primary w-full p-1.5">
+        <div class="container mx-auto flex justify-center md:justify-between lg:justify-between text-white">
+            <p class="font-medium text-xs hidden md:flex">Powered by Void</p>
+            <p class="font-medium text-xs">Get Promos for New Users!</p>
+            <p class="font-medium text-xs hidden md:flex"><img class="w-3 mr-2" src="img/phone.svg" alt="">0822-3788-6327</p>
+        </div>
     </div>
     <!-- End Top Navbar -->
 
@@ -438,7 +444,7 @@
             </button>
         </nav>
 
-        <div class="mobile hidden mx-auto ">
+        <div class="mobile hidden mx-auto lg:hidden md:hidden">
             <ul class="text-secondary text-sm font-normal gap-7">
                 <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">Home</a>
@@ -464,24 +470,11 @@
         </div>
     </div>
 
-    <main>
-        <section id="home" class="container mx-auto">
-            <div class="flex justify-between items-center max-w-sm mx-auto">
-                <div>
-                    <h1></h1>
-                    <p></p>
-                    <div>
-                        <button>
-                            <a href=""></a>
-                        </button>
-                    </div>
-                </div>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </div>
-        </section>
-    </main>
+    <div style="background-image: url('img/imghome.png')" class="h-1/2 w-full p-2">
+
+    </div>
+
+
 
     
 
