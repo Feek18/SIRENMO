@@ -5,10 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>GoRentCars</title>
+    <title>Fast Car</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <style>
@@ -380,6 +382,12 @@
                 --tw-text-opacity: 1;
                 color: rgb(107 114 128 / var(--tw-text-opacity))
             }
+
+            .bg-img {
+                background-image: url('{{ asset('img/bgimg.png') }}');
+                background-size: cover;
+                background-cover: no-repeat;
+            }
         }
     </style>
 
@@ -394,14 +402,25 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-secondary">
-    <div class="container mx-auto">
-        <nav class="bg-white shadow flex justify-between items-center p-3 px-14 md:items-center md:justify-between">
+<body>
+    <!-- Top Navbar -->
+    <div class="bg-primary w-full p-1">
+        <div class="container mx-auto flex justify-center md:justify-between lg:justify-between text-white">
+            <p class="font-medium text-xs hidden md:flex">Powered by Void</p>
+            <p class="font-medium text-xs">Get Promos for New Years!</p>
+            <p class="font-medium text-xs hidden md:flex"><img class="w-3 mr-2" src="img/phone.svg"
+                    alt="">0822-3788-6327</p>
+        </div>
+    </div>
+    <!-- End Top Navbar -->
+
+    <div class="container">
+        <nav class="bg-white flex justify-between items-center p-2 md:items-center md:justify-between">
             <div>
                 <span class="text-2xl font-[Poppins] cursor-pointer font-bold">
-                    <a href="">
-                        <img class="h-8 inline" src="img/logo.png" alt="">
-                        GoRentCars
+                    <a class="font-bold text-xl pt-4" href="">
+                        <img class="h-10 inline" src="img/logo.png" alt="">
+                        FAST CAR
                     </a>
                 </span>
             </div>
@@ -431,21 +450,22 @@
                 <img class="h-6" src="img/hamburger-menu.png" alt="">
             </button>
         </nav>
-        <div class="mobilemenu hidden">
-            <ul class="text-white text-sm font-normal gap-7">
-                <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
+
+        <div class="mobile hidden mx-auto lg:hidden md:hidden">
+            <ul class="text-secondary text-sm font-normal gap-7">
+                <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">Home</a>
                 </li>
-                <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
+                <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">Special Deals</a>
                 </li>
-                <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
+                <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">About Us</a>
                 </li>
-                <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
+                <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">Testimonials</a>
                 </li>
-                <li class="px-3 py-3 hover:bg-primary cursor-pointer ease-in duration-200">
+                <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">Contact</a>
                 </li>
             </ul>
@@ -457,24 +477,24 @@
         </div>
     </div>
 
-    <main>
-        <section id="home" class="container mx-auto">
-            <div class="flex justify-between items-center">
-                <div>
-                    <h1></h1>
-                    <p></p>
-                    <div>
-                        <button>
-                            <a href=""></a>
-                        </button>
-                    </div>
-                </div>
-                <div>
-                    <img src="" alt="">
-                </div>
+    <div style="" class="h-screen w-full p-2 bg-img">
+        <div class="container mx-auto flex h-screen items-center justify-start">
+            <div class="">
+                <h1 class="text-white text-4xl md:text-6xl font-bold">Create Your Travel Experience With <span>Fast
+                        Car</span></h1>
+                <p class="text-white text-base font-normal pt-3">Lorem ipsum dolor sit amet consectetur. Nulla etiam
+                    sed
+                    varius proin morbi ut ultrices. Sit dictum pellentesque venenatis libero.</p>
+                <button type="button"
+                    class="mt-5 bg-primary text-white font-medium text-sm px-5 py-2.5 me-2 mb-2 ">
+                    Get Started
+                </button>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
+
+
+
 
 
 
@@ -516,13 +536,14 @@
 
 
     <script>
-        const btntoogle = document.querySelector('.btntoogle')
-        t mobilemenu = document.querySelector('.mobilemenu')
+        const btntoogle = document.querySelector('.btntoogle');
+        const mobile = document.querySelector('.mobile');
 
-            e.addEventListener('click', function name() {
-                    lassList.toggle('hidden');
-        })
+        btntoogle.addEventListener('click', function () {
+            mobile.classList.toggle('hidden');
+        });
     </script>
+
 </body>
 
 </html>
