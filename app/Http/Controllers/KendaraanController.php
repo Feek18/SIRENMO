@@ -15,7 +15,7 @@ class KendaraanController extends Controller
      */
     public function index()
     {
-        return view('admin.pages.data-kategori', [
+        return view('admin.pages.data-kendaraan', [
             'kendaraan' => Kendaraan::all()
         ]);
     }
@@ -50,7 +50,7 @@ class KendaraanController extends Controller
     public function show(Kendaraan $kendaraan)
     {
         //
-        return view('admin.pages.data-kategori', [
+        return view('admin.pages.data-kendaraan', [
             'kendaraan' => Kendaraan::all()
         ]);
     }

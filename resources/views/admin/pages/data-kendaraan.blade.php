@@ -91,6 +91,12 @@
   </div>
 </div>
 
+<div fixed-plugin>
+  <a fixed-plugin-button class="bottom-7.5 right-7.5 text-xl z-990 shadow-soft-lg rounded-circle fixed cursor-pointer bg-white px-4 py-2 text-slate-700" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <i class="py-2 pointer-events-none fa fa-plus"></i>
+  </a>
+</div>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -100,7 +106,14 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            ...
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Email address</label>
+              <input type="email" class="form-control rounded border-slate-200" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="block text-white bg-cyan-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-bs-dismiss="modal">Close</button>
