@@ -382,6 +382,12 @@
                 --tw-text-opacity: 1;
                 color: rgb(107 114 128 / var(--tw-text-opacity))
             }
+
+            .bg-img {
+                background-image: url('{{ asset('img/bgimg.png') }}');
+                background-size: cover;
+                background-cover: no-repeat;
+            }
         }
     </style>
 
@@ -471,12 +477,12 @@
         </div>
     </div>
 
-    <div style="img/bgimg.png" class="h-screen w-full p-2">
-        <div class="container mx-auto items-center">
+    <div style="" class="h-screen w-full p-2 bg-img">
+        <div class="container mx-auto flex h-screen items-center justify-start">
             <div class="">
-                <h1 class="text-secondary text-4xl md:text-6xl font-bold">Create Your Travel Experience With <span>Fast
+                <h1 class="text-white text-4xl md:text-6xl font-bold">Create Your Travel Experience With <span>Fast
                         Car</span></h1>
-                <p class="text-secondary text-base font-normal pt-3">Lorem ipsum dolor sit amet consectetur. Nulla etiam
+                <p class="text-white text-base font-normal pt-3">Lorem ipsum dolor sit amet consectetur. Nulla etiam
                     sed
                     varius proin morbi ut ultrices. Sit dictum pellentesque venenatis libero.</p>
                 <button type="button"
