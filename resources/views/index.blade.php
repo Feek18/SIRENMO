@@ -536,8 +536,8 @@
                         class="text-yellow-700 text-[28px] lg:text-3xl font-semibold leading-loose tracking-widest">Offer</span>
                 </h1>
                 <button
-                    class="px-4 py-2 lg:p-4 bg-secondary border border-yellow-600 justify-center items-center inline-flex mt-2">
-                    <a class="text-white font-medium text-[11px] lg:text-[13px] text-sm font-medium tracking-widest"
+                    class="px-4 py-2 lg:p-4 bg-secondary border border-yellow-600 hover:bg-color justify-center items-center inline-flex mt-2">
+                    <a class="text-white font-medium text-[11px] lg:text-[13px] text-sm font-medium tracking-widest hover:text-white"
                         href="">See More</a>
                 </button>
             </div>
