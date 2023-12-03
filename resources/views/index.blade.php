@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Flowbite -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+
     <!-- Styles -->
     <style>
         /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -384,7 +387,7 @@
             }
 
             .bg-img {
-                background-image: url('{{ asset('img/bgimg.png') }}');
+                background-image: url('{{ asset(' img/img.png') }}');
                 background-size: cover;
                 background-cover: no-repeat;
             }
@@ -404,7 +407,7 @@
 
 <body>
     <!-- Top Navbar -->
-    <div class="bg-primary w-full p-1">
+    <div class="bg-color w-full p-1">
         <div class="container mx-auto flex justify-center md:justify-between lg:justify-between text-white">
             <p class="font-medium text-xs hidden md:flex">Powered by Void</p>
             <p class="font-medium text-xs">Get Promos for New Years!</p>
@@ -414,8 +417,8 @@
     </div>
     <!-- End Top Navbar -->
 
-    <div class="container">
-        <nav class="bg-white flex justify-between items-center p-2 md:items-center md:justify-between">
+    <div class="">
+        <nav class="bg-white shadow flex justify-between items-center p-2 md:items-center md:justify-between">
             <div>
                 <span class="text-2xl font-[Poppins] cursor-pointer font-bold">
                     <a class="font-bold text-xl pt-4" href="">
@@ -426,23 +429,23 @@
             </div>
             <ul class="text-secondary text-sm lg:flex gap-7 hidden">
                 <li>
-                    <a class="hover:text-primary duration-500 font-medium" href="#">Home</a>
+                    <a class="hover:text-color duration-500 font-medium" href="#">Home</a>
                 </li>
                 <li>
-                    <a class="hover:text-primary duration-500 font-medium" href="#">Special Deals</a>
+                    <a class="hover:text-color duration-500 font-medium" href="#">Special Deals</a>
                 </li>
                 <li>
-                    <a class="hover:text-primary duration-500 font-medium" href="#">About Us</a>
+                    <a class="hover:text-color duration-500 font-medium" href="#">About Us</a>
                 </li>
                 <li>
-                    <a class="hover:text-primary duration-500 font-medium" href="#">Testimonials</a>
+                    <a class="hover:text-color duration-500 font-medium" href="#">Testimonials</a>
                 </li>
                 <li>
-                    <a class="hover:text-primary duration-500 font-medium" href="#">Contact</a>
+                    <a class="hover:text-color duration-500 font-medium" href="#">Contact</a>
                 </li>
             </ul>
             <div class="lg:flex hidden">
-                <button class="bg-primary text-white text-2xl px-10 py-2 font-bold text-xl rounded">
+                <button class="bg-color text-white text-[16px] lg:text-[17px] px-7 py-2 font-bold rounded">
                     <a href="{{ route('login') }}">Login</a>
                 </button>
             </div>
@@ -453,82 +456,126 @@
 
         <div class="mobile hidden mx-auto lg:hidden md:hidden">
             <ul class="text-secondary text-sm font-normal gap-7">
-                <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
+                <li class="px-3 py-3 hover:bg-color hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">Home</a>
                 </li>
-                <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
+                <li class="px-3 py-3 hover:bg-color hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">Special Deals</a>
                 </li>
-                <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
+                <li class="px-3 py-3 hover:bg-color hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">About Us</a>
                 </li>
-                <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
+                <li class="px-3 py-3 hover:bg-color hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">Testimonials</a>
                 </li>
-                <li class="px-3 py-3 hover:bg-primary hover:text-white cursor-pointer ease-in duration-200">
+                <li class="px-3 py-3 hover:bg-color hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">Contact</a>
                 </li>
             </ul>
             <div class="lg:flex mt-3">
-                <button class="bg-primary text-white text-2xl px-10 py-2 font-bold text-xl rounded">
+                <button class="bg-color text-white text-[16px] lg:text-[17px] px-7 py-2 font-bold rounded">
                     <a href="{{ route('login') }}">Login</a>
                 </button>
             </div>
         </div>
     </div>
 
-    <div style="" class="h-screen w-full p-2 bg-img">
-        <div class="container mx-auto flex h-screen items-center justify-start">
+    <!-- Hero Section -->
+    <section id="home" class="py-5">
+        <div class="container mx-auto flex flex-wrap items-center justify-center mt-10 md:px-12 md:flex-row">
+            <div class="mb-14 lg:mb-0 lg:mb-1/2">
+                <h1
+                    class="max-w-xl text-4xl leading-none text-secondary font-bold text-center leading-normal lg:text-5xl lg:tracking-normal lg:text-left lg:leading-normal mb-5">
+                    Enjoy Your Travel Experience With <span class="text-color">Easy And Fast</span></h1>
+                <p class="max-w-xl text-center text-secondary leading-normal lg:leading-7 lg:text-left lg:max-w-md">We're offer a wide range of
+                    rentals to suit you need. Whether, you're planning a weekend getaway or a business trip</p>
+            </div>
             <div class="">
-                <h1 class="text-white text-4xl md:text-6xl font-bold">Create Your Travel Experience With <span>Fast
-                        Car</span></h1>
-                <p class="text-white text-base font-normal pt-3">Lorem ipsum dolor sit amet consectetur. Nulla etiam
-                    sed
-                    varius proin morbi ut ultrices. Sit dictum pellentesque venenatis libero.</p>
-                <button type="button"
-                    class="mt-5 bg-primary text-white font-medium text-sm px-5 py-2.5 me-2 mb-2 ">
-                    Get Started
-                </button>
+                <img class="h-1/2 rounded-2xl" src="img/img.png" alt="">
             </div>
         </div>
+        <div class="container px-[30px] py-6 max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-between mt-8 gap-4 lg:gap-x-3 relative lg:-top-16 lg:shadow bg-white lg:bg-transparent backdrop-blur rounded-lg">
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pick up Location</label>
+                <input type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+            </div>
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pick up Date</label>
+                <input type="date" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+            </div>
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Return Date</label>
+                <input type="date" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+            </div>
+            <button type="button" class="text-white bg-color font-medium rounded-lg text-sm px-14 py-2 focus:outline-none">
+                <a href="">Search</a>
+            </button>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Dropdown menu -->
+    <div id="dropdownDelay"
+        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
+            <li>
+                <a href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+            </li>
+            <li>
+                <a href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+            </li>
+            <li>
+                <a href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+                    out</a>
+            </li>
+        </ul>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -543,6 +590,9 @@
             mobile.classList.toggle('hidden');
         });
     </script>
+
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 
 </body>
 

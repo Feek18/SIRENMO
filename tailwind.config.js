@@ -13,7 +13,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        'primary': '#FF9826',
+        'primary': '#FFCE76',
+        'btncolor': '#16697A',
+        'color': '#FFA62B',
         'secondary': '#212529',
         'login-color': '#B8B8B8',
       }
