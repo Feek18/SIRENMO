@@ -485,31 +485,137 @@
         <div class="container mx-auto flex flex-wrap items-center justify-center mt-10 md:px-12 md:flex-row">
             <div class="mb-14 lg:mb-0 lg:mb-1/2">
                 <h1
-                    class="max-w-xl text-4xl leading-none text-secondary font-bold text-center leading-normal lg:text-5xl lg:tracking-normal lg:text-left lg:leading-normal mb-5">
+                    class="max-w-xl text-4xl leading-none text-secondary font-bold text-center leading-normal lg:text-6xl lg:tracking-normal lg:text-left lg:leading-normal mb-5">
                     Enjoy Your Travel Experience With <span class="text-color">Easy And Fast</span></h1>
-                <p class="max-w-xl text-center text-secondary leading-normal lg:leading-7 lg:text-left lg:max-w-md">We're offer a wide range of
+                <p class="max-w-xl text-center text-secondary leading-normal lg:leading-7 lg:text-left lg:max-w-md">
+                    We're offer a wide range of
                     rentals to suit you need. Whether, you're planning a weekend getaway or a business trip</p>
             </div>
             <div class="">
                 <img class="h-1/2 rounded-2xl" src="img/img.png" alt="">
             </div>
         </div>
-        <div class="container px-[30px] py-6 max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-between mt-8 gap-4 lg:gap-x-3 relative lg:-top-16 lg:shadow bg-white lg:bg-transparent backdrop-blur rounded-lg">
+        <div
+            class="container px-[30px] py-6 max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-between mt-8 gap-4 lg:gap-x-3 relative lg:-top-16 lg:shadow bg-white lg:bg-transparent backdrop-blur rounded-lg">
             <div>
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pick up Location</label>
-                <input type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pick up
+                    Location</label>
+                <input type="text" id="text"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required>
             </div>
             <div>
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pick up Date</label>
-                <input type="date" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pick up
+                    Date</label>
+                <input type="date" id="email"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required>
             </div>
             <div>
-                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Return Date</label>
-                <input type="date" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Return
+                    Date</label>
+                <input type="date" id="email"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required>
             </div>
-            <button type="button" class="text-white bg-color font-medium rounded-lg text-sm px-14 py-2 focus:outline-none">
+            <button type="button"
+                class="text-white bg-color font-medium rounded-lg text-sm px-8 py-4 focus:outline-none">
                 <a href="">Search</a>
             </button>
+        </div>
+    </section>
+
+    <!-- Hero Product Section -->
+    <section class="bg-secondary">
+        <div class="container mx-auto">
+            <div class="text-center lg:flex lg:justify-between mt-3 pt-6">
+                <h1
+                    class="text-white text-[28px] lg:text-3xl font-medium lg:font-semibold leading-loose tracking-widest mt-4">
+                    Specials
+                    <span
+                        class="text-yellow-700 text-[28px] lg:text-3xl font-semibold leading-loose tracking-widest">Offer</span>
+                </h1>
+                <button
+                    class="px-4 py-2 lg:p-4 bg-secondary border border-yellow-600 hover:bg-color justify-center items-center inline-flex mt-2">
+                    <a class="text-white font-medium text-[11px] lg:text-[13px] text-sm font-medium tracking-widest hover:text-white"
+                        href="">See More</a>
+                </button>
+            </div>
+            <div class="w-full lg:flex lg:mx-auto lg:justify-between lg:gap-12">
+                <div
+                    class="lg:max-w-xs bg-white border shadow-md border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 items-center justify-center text-center mt-8 hover:scale-105 shadow mb-6">
+                    <a href="#">
+                        <img class="rounded-t-lg justify-center mx-auto pt-8" src="img/pict1.png" alt="" />
+                    </a>
+                    <div class="p-5">
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">New Avanza</h5>
+                        </a>
+                        <p class="mt-2 font-normal text-xs text-gray-700 dark:text-gray-400">Honda | 4 Seat</p>
+                        <p class="mt-2 font-normal text-xs line-through text-red-700 dark:text-gray-400">Rp. 450.000</p>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Rp. 300.000</p>
+                        <a href="#"
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-color rounded-lg hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="lg:max-w-xs bg-white border shadow-md border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 items-center justify-center text-center mt-8 hover:scale-105 shadow mb-6">
+                    <a href="#">
+                        <img class="rounded-t-lg justify-center mx-auto pt-8" src="img/pict2.png" alt="" />
+                    </a>
+                    <div class="p-5">
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rush</h5>
+                        </a>
+                        <p class="mt-2 font-normal text-xs text-gray-700 dark:text-gray-400">Honda | 4 Seat</p>
+                        <p class="mt-2 font-normal text-xs line-through text-red-700 dark:text-gray-400">Rp. 500.000</p>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Rp. 450.000</p>
+                        <a href="#"
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-color rounded-lg hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="lg:max-w-xs bg-white border shadow-md border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 items-center justify-center text-center mt-8 hover:scale-105 shadow mb-6">
+                    <a href="#">
+                        <img class="rounded-t-lg justify-center mx-auto pt-8" src="img/pict3.png" alt="" />
+                    </a>
+                    <div class="p-5">
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Veloz</h5>
+                        </a>
+                        <p class="mt-2 font-normal text-xs text-gray-700 dark:text-gray-400">Honda | 4 Seat</p>
+                        <p class="mt-2 font-normal text-xs line-through text-red-700 dark:text-gray-400">Rp. 450.000</p>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Rp. 350.000</p>
+                        <a href="#"
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-color rounded-lg hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="lg:max-w-xs bg-white border shadow-md border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 items-center justify-center text-center mt-8 hover:scale-105 shadow mb-6">
+                    <a href="#">
+                        <img class="rounded-t-lg justify-center mx-auto pt-8" src="img/pict4.png" alt="" />
+                    </a>
+                    <div class="p-5">
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Honda HR-V</h5>
+                        </a>
+                        <p class="mt-2 font-normal text-xs text-gray-700 dark:text-gray-400">Honda | 4 Seat</p>
+                        <p class="mt-2 font-normal text-xs line-through text-red-700 dark:text-gray-400">Rp. 450.000</p>
+                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Rp. 300.000</p>
+                        <a href="#"
+                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-color rounded-lg hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -587,8 +693,7 @@
         const mobile = document.querySelector('.mobile');
 
         btntoogle.addEventListener('click', function () {
-            mobile.classList.toggle('hidden');
-        });
+    mlato('hidde      });
     </script>
 
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
