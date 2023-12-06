@@ -75,10 +75,14 @@
                     <span class="text-xs font-semibold leading-tight text-slate-400">{{ $k->tahun }}</span>
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400" data-bs-toggle="modal" data-bs-target="#exampleModal"> Edit </a>
+                    <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400 ubahModal" data-bs-toggle="modal" data-bs-target="#modalData"> Edit </a>
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400" data-bs-toggle="modal" data-bs-target="#exampleModal"> Hapus </a>
+                    <form action="/data-kendaraan/{{ $k->id }}" method="POST">
+                      @method('delete')
+                      @csrf
+                      <button class="text-xs font-semibold leading-tight text-slate-400" onclick="return confirm('Apakah anda yakin?')"> Hapus </button>
+                    </form>
                   </td>
                 </tr>
                 @endforeach
@@ -92,35 +96,105 @@
 </div>
 
 <div fixed-plugin>
-  <a fixed-plugin-button class="bottom-7.5 right-7.5 text-xl z-990 shadow-soft-lg rounded-circle fixed cursor-pointer bg-white px-4 py-2 text-slate-700" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <a fixed-plugin-button class="bottom-7.5 right-7.5 text-xl z-990 shadow-soft-lg rounded-circle fixed cursor-pointer bg-white px-4 py-2 text-slate-700 tambahModal" data-bs-toggle="modal" data-bs-target="#modalData">
     <i class="py-2 pointer-events-none fa fa-plus"></i>
   </a>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="modal fade" id="modalData" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 judulModal" id="judulModal">Tambah Data</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/data-kendaraan" method="post" enctype="multipart/form-data">
+          @csrf
+          <input type="hidden" name="id">
+          <div class="mb-3">
+              <label for="nama" class="form-label">Nama</label>
+              <input type="text" class="form-control rounded border-slate-200 rounded border-slate-200" id="nama" name="nama" required>
           </div>
-          <div class="modal-body">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Email address</label>
-              <input type="email" class="form-control rounded border-slate-200" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
+          <div class="row">
+              <div class="col">
+                  <div class="mb-3">
+                      <label for="nomor_plat" class="form-label">No. Plat</label>
+                      <input type="text" class="form-control rounded border-slate-200" id="nomor_plat" name="nomor_plat" required>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="mb-3">
+                      <label for="tahun" class="form-label">Tahun</label>
+                      <input type="text" class="form-control rounded border-slate-200" id="tahun" name="tahun" required>
+                  </div>
+              </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="block text-white bg-cyan-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save changes</button>
+          <div class="row">
+              <div class="col">
+                  <div class="mb-3">
+                      <label for="harga" class="form-label">Harga</label>
+                      <input type="text" class="form-control rounded border-slate-200" id="harga" name="harga" required>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="mb-3">
+                      <label for="paket" class="form-label">Paket</label>
+                      <input type="text" class="form-control rounded border-slate-200" id="paket" name="paket" required>
+                  </div>
+              </div>
           </div>
-        </div>
+          <div class="row">
+              <div class="col">
+                  <div class="mb-3">
+                      <label for="transmisi" class="form-label">Transmisi</label>
+                      <select class="form-select" id="transmisi" name="transmisi" required>
+                          <option value="manual">Manual</option>
+                          <option value="automatic">Automatic</option>
+                          <option value="manual/automatic">Manual/Automatic</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="mb-3">
+                    <label class="form-label" for="foto_kendaraan">Upload file</label>
+                    <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="foto_kendaraan" type="file" name="foto_kendaraan">
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                  <div class="mb-3">
+                      <label for="kategori" class="form-label">Kode. Kategori</label>
+                      <select class="form-select" id="kategori" name="kategori" required>
+                          @foreach ($kategori as $kode)
+                            <option value="{{ $kode->kode }}">{{ $kode->kode }}</option>
+                          @endforeach
+                      </select>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="mb-3">
+                      <label for="status" class="form-label">Status</label>
+                      <select class="form-select" id="status" name="status" required>
+                          <option value="tersedia">Tersedia</option>
+                          <option value="tidak_tersedia">Tidak Tersedia</option>
+                      </select>
+                  </div>
+              </div>
+          </div>
+          <div class="form-floating">
+            <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Deskripsi.."></textarea>
+          </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="block text-white bg-cyan-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 tombol-aksi">Save changes</button>
+        </form>
       </div>
     </div>
+  </div>
+</div>
 
 @endsection

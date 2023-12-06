@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Kendaraan;
 use App\Http\Requests\StoreKendaraanRequest;
 use App\Http\Requests\UpdateKendaraanRequest;
+use App\Models\Kategori;
+use Illuminate\Http\Request;
 
 class KendaraanController extends Controller
 {
@@ -16,7 +18,8 @@ class KendaraanController extends Controller
     public function index()
     {
         return view('admin.pages.data-kendaraan', [
-            'kendaraan' => Kendaraan::all()
+            'kendaraan' => Kendaraan::all(),
+            'kategori' => Kategori::all()
         ]);
     }
 
@@ -39,6 +42,7 @@ class KendaraanController extends Controller
     public function store(StoreKendaraanRequest $request)
     {
         //
+        ddd($request);
     }
 
     /**
@@ -51,7 +55,7 @@ class KendaraanController extends Controller
     {
         //
         return view('admin.pages.data-kendaraan', [
-            'kendaraan' => Kendaraan::all()
+            'kendaraan' => $kendaraan
         ]);
     }
 
@@ -87,5 +91,7 @@ class KendaraanController extends Controller
     public function destroy(Kendaraan $kendaraan)
     {
         //
+        $kendaraan->delete();
+        return redirect('/data-kendaraan');
     }
 }

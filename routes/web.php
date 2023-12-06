@@ -24,7 +24,7 @@ Route::get('/dashboard', function () {
     return view('admin.pages.dashboard');
 })->middleware('auth');
 
-Route::resource('/data-kendaraan', KendaraanController::class);
+Route::resource('/data-kendaraan', KendaraanController::class)->middleware('auth');
 
 Route::get('/profile', function () {
     return view('admin.pages.profile');

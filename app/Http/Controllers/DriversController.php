@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Drivers;
 use App\Http\Requests\StoreDriversRequest;
 use App\Http\Requests\UpdateDriversRequest;
+use Illuminate\Http\Request;
 
 class DriversController extends Controller
 {
@@ -23,6 +24,11 @@ class DriversController extends Controller
     {
         return view('drivers.pages.register');
     }
+
+    // public function daftar(Request $request)
+    // {
+    //     ddd($request);
+    // }
 
     /**
      * Show the form for creating a new resource.
