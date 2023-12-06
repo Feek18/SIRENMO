@@ -78,11 +78,11 @@
                     <a href="javascript:;" class="text-xs font-semibold leading-tight text-slate-400 ubahModal" data-bs-toggle="modal" data-bs-target="#modalData"> Edit </a>
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <form action="/data-kendaraan/{{ $k->id }}" method="POST">
-                      @method('delete')
+                    <form action="/data-kendaraan/{{ $k->id }}" method="post">
                       @csrf
-                      <button class="text-xs font-semibold leading-tight text-slate-400" onclick="return confirm('Apakah anda yakin?')"> Hapus </button>
-                    </form>
+                      @method('delete')
+                      <button class="text-xs font-semibold leading-tight text-slate-400" type="submit">Hapus</button>
+                    </form>                  
                   </td>
                 </tr>
                 @endforeach
@@ -134,13 +134,13 @@
           <div class="row">
               <div class="col">
                   <div class="mb-3">
-                      <label for="harga" class="form-label">Harga</label>
+                      <label for="harga_perjam" class="form-label">Harga</label>
                       <input type="text" class="form-control rounded border-slate-200" id="harga" name="harga" required>
                   </div>
               </div>
               <div class="col">
                   <div class="mb-3">
-                      <label for="paket" class="form-label">Paket</label>
+                      <label for="harga_paket" class="form-label">Paket</label>
                       <input type="text" class="form-control rounded border-slate-200" id="paket" name="paket" required>
                   </div>
               </div>
@@ -167,9 +167,9 @@
               <div class="col">
                   <div class="mb-3">
                       <label for="kategori" class="form-label">Kode. Kategori</label>
-                      <select class="form-select" id="kategori" name="kategori" required>
+                      <select class="form-select" id="kategori" name="kategori_id" required>
                           @foreach ($kategori as $kode)
-                            <option value="{{ $kode->kode }}">{{ $kode->kode }}</option>
+                            <option value="{{ $kode->id }}">{{ $kode->kode }}</option>
                           @endforeach
                       </select>
                   </div>
@@ -185,7 +185,7 @@
               </div>
           </div>
           <div class="form-floating">
-            <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Deskripsi.."></textarea>
+            <textarea name="deskripsi" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Deskripsi.."></textarea>
           </div>
       </div>
       <div class="modal-footer">

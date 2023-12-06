@@ -42,7 +42,23 @@ class KendaraanController extends Controller
     public function store(StoreKendaraanRequest $request)
     {
         //
-        ddd($request);
+        $validatedData = $request->validate([
+            'nama' => ['required'],
+            'nomor_plat' => 'required',
+            'tahun' => 'required',
+            'harga_perjam' => 'required',
+            'harga_paket' => 'required',
+            'transmisi' => 'required',
+            'kategori_id' => 'required',
+            'status' => 'required',
+            'deskripsi' => 'required',
+        ]);
+
+        if (Kendaraan::create($validatedData)) {
+            return redirect('/login')->with('success', 'Registration successfull! Please login');
+        } else {
+            return 'gagal';
+        }
     }
 
     /**
@@ -88,10 +104,9 @@ class KendaraanController extends Controller
      * @param  \App\Models\Kendaraan  $kendaraan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kendaraan $kendaraan)
+    public function destroy(Kendaraan $kendaraan, $id)
     {
-        //
-        $kendaraan->delete();
+        $kendaraan->destroy($id);
         return redirect('/data-kendaraan');
     }
 }

@@ -13,4 +13,6 @@ class Kendaraan extends Model
     {
         return $this->belongsTo(Kategori::class);
     }
+
+    protected $guarded = ['id'];
 }
