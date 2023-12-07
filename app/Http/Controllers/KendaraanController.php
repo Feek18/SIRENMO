@@ -7,6 +7,7 @@ use App\Http\Requests\StoreKendaraanRequest;
 use App\Http\Requests\UpdateKendaraanRequest;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class KendaraanController extends Controller
 {
@@ -43,22 +44,25 @@ class KendaraanController extends Controller
     {
         //
         $validatedData = $request->validate([
-            'nama' => ['required'],
             'nomor_plat' => 'required',
+            'nama' => 'required',
             'tahun' => 'required',
+            'status' => 'required',
             'harga_perjam' => 'required',
             'harga_paket' => 'required',
-            'transmisi' => 'required',
-            'kategori_id' => 'required',
-            'status' => 'required',
             'deskripsi' => 'required',
+            'transmisi' => 'required',
+            'foto_kendaraan' => 'image|file',
+            'kategori_id' => 'required'
         ]);
 
-        if (Kendaraan::create($validatedData)) {
-            return redirect('/login')->with('success', 'Registration successfull! Please login');
-        } else {
-            return 'gagal';
+        if ($request->file('foto_kendaraan')) {
+            # code...
+            $validatedData['foto_kendaraan'] = $request->file('foto_kendaraan')->store('foto-sistem');
         }
+
+        Kendaraan::create($validatedData);
+        return redirect('/data-kendaraan');
     }
 
     /**
@@ -81,9 +85,16 @@ class KendaraanController extends Controller
      * @param  \App\Models\Kendaraan  $kendaraan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kendaraan $kendaraan)
+    public function edit(Kendaraan $kendaraan, $id)
     {
-        //
+        // 
+        $kendaraan = Kendaraan::find($id);
+        $kategori = Kategori::find($kendaraan->kategori_id);
+        return response()->json([
+            'status' => 200,
+            'kendaraan' => $kendaraan,
+            'kategori' => $kategori
+        ]);
     }
 
     /**
@@ -96,6 +107,31 @@ class KendaraanController extends Controller
     public function update(UpdateKendaraanRequest $request, Kendaraan $kendaraan)
     {
         //
+        $validatedData = $request->validate([
+            'nomor_plat' => 'required',
+            'nama' => 'required',
+            'tahun' => 'required',
+            'status' => 'required',
+            'harga_perjam' => 'required',
+            'harga_paket' => 'required',
+            'deskripsi' => 'required',
+            'transmisi' => 'required',
+            'foto_kendaraan' => 'image|file',
+            'kategori_id' => 'required'
+        ]);
+
+        if ($request->file('foto_kendaraan')) {
+            # code...
+            if ($request->oldImage) {
+                # code...
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['foto_kendaraan'] = $request->file('foto_kendaraan')->store('foto-sistem');
+        }
+
+        Kendaraan::where('id', $request->id)
+            ->update($validatedData);
+        return redirect('/data-kendaraan');
     }
 
     /**
@@ -106,6 +142,10 @@ class KendaraanController extends Controller
      */
     public function destroy(Kendaraan $kendaraan, $id)
     {
+        if ($kendaraan->foto_kendaraan) {
+            # code...
+            Storage::delete($kendaraan->foto_kendaraan);
+        }
         $kendaraan->destroy($id);
         return redirect('/data-kendaraan');
     }

@@ -14,5 +14,5 @@ class Kendaraan extends Model
         return $this->belongsTo(Kategori::class);
     }
 
-    protected $guarded = ['id'];
+    protected $fillable = ['nomor_plat', 'nama', 'tahun', 'status', 'harga_perjam', 'harga_paket', 'deskripsi', 'transmisi', 'foto_kendaraan', 'kategori_id'];
 }
