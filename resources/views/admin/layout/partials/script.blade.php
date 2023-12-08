@@ -23,6 +23,8 @@
         }
     }
 </script>
+
+{{-- Kendaraan --}}
 <script>
     $(document).ready(function() {
         $(document).on('click', '.editBtn', function() {
@@ -114,4 +116,87 @@
             }
         });
     });
+</script>
+
+{{-- Pengguna  --}}
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.ubahPengguna', function() {
+            let pengguna_id = $(this).val()
+
+            $('#modalPenggunaUbah').modal('show')
+
+            $.ajax({
+                type: "GET",
+                url: "/data-pengguna/" + pengguna_id + "/edit",
+                success: function (response) {
+                    $('#username-pengguna-ubah').val(response.pengguna.username);
+                    $('#password-pengguna-ubah').val(response.pengguna.password);
+                    $('#role-pengguna-ubah').val(response.pengguna.role);
+                    $('#formUbah').attr('action', 'http://127.0.0.1:8000/data-pengguna/' + pengguna_id);
+                    $('#id-pengguna-ubah').val(response.pengguna.id);
+                }
+            });
+        })
+    })
+</script>
+<script>
+    const Pengguna = $('.pengguna').data('pengguna');
+
+    if (Pengguna) {
+        Swal.fire(
+            'Data Pengguna',
+            'Berhasil ' + Pengguna,
+            'success'
+        )
+    }
+
+    $(document).on('click', '.tombol-hapus-pengguna', function(e) {
+        e.preventDefault();
+        let pengguna_id = $(this).val();
+        
+        // Get the current action attribute
+        let currentAction = $('.hapusPengguna').attr('action');
+        
+        // Update the action attribute with the new URL
+        const href = currentAction + pengguna_id;
+        
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            text: "Anda akan menghapus sebuah data Pengguna!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus Data!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Update the action attribute of the form
+                $('.hapusPengguna').attr('action', href);
+                
+                // Submit the form
+                $('.hapusPengguna').submit();
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.viewUser', function() {
+            let pengguna_id = $(this).val()
+
+            $('#viewUsers').modal('show')
+
+            $.ajax({
+                type: "GET",
+                url: "/data-pengguna/" + pengguna_id + "/edit",
+                success: function (response) {
+                    $('#username-pengguna-lihat').val(response.pengguna.username);
+                    $('#password-pengguna-lihat').val(response.pengguna.password);
+                    $('#role-pengguna-lihat').val(response.pengguna.role);
+                    $('#id-pengguna-lihat').val(response.pengguna.id);
+                }
+            });
+        })
+    })
 </script>

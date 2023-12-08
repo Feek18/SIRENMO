@@ -27,7 +27,7 @@ class LoginController extends Controller
             'role' => 'required'
         ]);
 
-        $validatedData['password'] = Hash::make($validatedData['password']);
+        $validatedData['password'] = bcrypt($validatedData['password']);
 
         User::create($validatedData);
 

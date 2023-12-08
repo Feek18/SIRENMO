@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\DriversController;
 use App\Http\Controllers\KendaraanController;
-use App\Http\Controllers\LoginController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 
 Route::resource('/data-kendaraan', KendaraanController::class)->middleware('auth');
+Route::resource('/data-pengguna', UsersController::class)->middleware('auth');
 
 Route::get('/profile', function () {
     return view('admin.pages.profile');
