@@ -63,14 +63,21 @@
                   <td
                     class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                     <span
-                      class="bg-gradient-to-tl from-slate-600 to-slate-300 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Customers</span>
+                      class="bg-gradient-to-tl from-blue-700 to-sky-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Customers</span>
                   </td>
                   @endif
                   @if ($p->role == 'drivers')
                   <td
                     class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                     <span
-                      class="bg-gradient-to-tl from-red-600 to-rose-300 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Drivers</span>
+                      class="bg-gradient-to-tl from-red-800 to-red-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Drivers</span>
+                  </td>
+                  @endif
+                  @if ($p->role == 'owners')
+                  <td
+                    class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                    <span
+                      class="bg-gradient-to-tl from-amber-500 to-yellow-300 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Owner</span>
                   </td>
                   @endif
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
@@ -129,7 +136,7 @@
                     <option value="admin">Admin</option>
                     <option value="customers">Customers</option>
                     <option value="drivers">Drivers</option>
-                    <option value="owner">Owner</option>
+                    <option value="owners">Owner</option>
                 </select>
             </div>
       </div>

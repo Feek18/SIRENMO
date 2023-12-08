@@ -30,7 +30,6 @@ class LoginController extends Controller
         $validatedData['password'] = bcrypt($validatedData['password']);
 
         User::create($validatedData);
-
         return redirect('/login')->with('success', 'Registration successfull! Please login');
     }
 

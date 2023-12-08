@@ -47,7 +47,7 @@ class UsersController extends Controller
             'role' => 'required'
         ]);
 
-        $validatedData['password'] = encrypt($validatedData['password']);
+        $validatedData['password'] = bcrypt($validatedData['password']);
 
         User::create($validatedData);
         return redirect('/data-pengguna')->with('flash', 'Ditambahkan!');
@@ -74,7 +74,6 @@ class UsersController extends Controller
     {
         //
         $pengguna = $user::find($id);
-        $pengguna->password = decrypt($pengguna->password);
         return response()->json([
             'status' => 200,
             'pengguna' => $pengguna
@@ -97,7 +96,7 @@ class UsersController extends Controller
             'role' => 'required'
         ]);
 
-        $validatedData['password'] = encrypt($validatedData['password']);
+        $validatedData['password'] = bcrypt($validatedData['password']);
 
         User::where('id', $request->id)
             ->update($validatedData);
