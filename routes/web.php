@@ -25,7 +25,6 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 
 Route::resource('/data-kendaraan', KendaraanController::class)->middleware('auth');
-Route::put('/data-kendaraan', [KendaraanController::class, 'update']);
 
 Route::get('/profile', function () {
     return view('admin.pages.profile');

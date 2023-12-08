@@ -1,6 +1,7 @@
 @extends('admin.main')
 
 @section('content')
+<div class="flash-data" data-flashdata="{{ session('flash') }}"></div>
 <div class="w-full px-6 py-6 mx-auto">
   <div class="flex flex-wrap -mx-3">
     <div class="flex-none w-full max-w-full px-3">
@@ -27,7 +28,13 @@
                     class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                     Tahun</th>
                   <th
-                    class="px-6 py-3 font-semibold capitalize align-middle bg-transparent border-b border-gray-200 border-solid shadow-none tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                    class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                  </th>
+                  <th
+                    class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                  </th>
+                  <th
+                    class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                   </th>
                 </tr>
               </thead>
@@ -84,10 +91,13 @@
                     <button type="button" class="text-xs font-semibold leading-tight text-slate-400 editBtn" value="{{ $k->id }}"> Edit </button>
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <form action="/data-kendaraan/{{ $k->id }}" method="post">
+                    <button type="button" class="text-xs font-semibold leading-tight text-slate-400 viewBtn" value="{{ $k->id }}"> Lihat </button>
+                  </td>
+                  <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                    <form action="/data-kendaraan/" method="post" class="formHapus">
                       @csrf
                       @method('delete')
-                      <button class="text-xs font-semibold leading-tight text-slate-400" type="submit">Hapus</button>
+                      <button class="text-xs font-semibold leading-tight text-slate-400 tombol-hapus" type="submit" value="{{ $k->id }}">Hapus</button>
                     </form>                  
                   </td>
                 </tr>
@@ -302,6 +312,69 @@
           <button type="button" class="block text-white bg-cyan-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-bs-dismiss="modal">Close</button>
           <button type="submit" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save changes</button>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card View -->
+<div class="modal fade" id="cardView" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 judulModal" id="judulModal">Detail Data</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg">
+            <img id="foto_kendaraan-view" alt="" class="img-priview img-fluid mb-3 col-lg-12">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">Nama</div>
+          <div class="col-sm-1">:</div>
+          <div class="col-sm-6">
+            <input for="nama-view" id="nama-view"></input>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">Nomor Plat</div>
+          <div class="col-sm-1">:</div>
+          <div class="col-sm-6">
+            <input for="nama-view" id="nomorplat-view"></input>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">Harga</div>
+          <div class="col-sm-1">:</div>
+          <div class="col-sm-6">
+            <input for="nama-view" id="harga-view"></input>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">Paket</div>
+          <div class="col-sm-1">:</div>
+          <div class="col-sm-6">
+            <input for="nama-view" id="paket-view"></input>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">Status</div>
+          <div class="col-sm-1">:</div>
+          <div class="col-sm-6">
+            <input for="nama-view" id="status-view"></input>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-4">Tahun</div>
+          <div class="col-sm-1">:</div>
+          <div class="col-sm-6">
+            <input for="nama-view" id="tahun-view"></input>
+          </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="block text-white bg-cyan-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

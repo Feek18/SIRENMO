@@ -62,7 +62,7 @@ class KendaraanController extends Controller
         }
 
         Kendaraan::create($validatedData);
-        return redirect('/data-kendaraan');
+        return redirect('/data-kendaraan')->with('flash', 'Ditambahkan!');
     }
 
     /**
@@ -131,7 +131,7 @@ class KendaraanController extends Controller
 
         Kendaraan::where('id', $request->id)
             ->update($validatedData);
-        return redirect('/data-kendaraan');
+        return redirect('/data-kendaraan')->with('flash', 'Diubah!');
     }
 
     /**
@@ -142,11 +142,15 @@ class KendaraanController extends Controller
      */
     public function destroy(Kendaraan $kendaraan, $id)
     {
+        // Menghapus foto kendaraan dari penyimpanan jika ada
         if ($kendaraan->foto_kendaraan) {
-            # code...
             Storage::delete($kendaraan->foto_kendaraan);
         }
-        $kendaraan->destroy($id);
-        return redirect('/data-kendaraan');
+
+        // Menghapus entri kendaraan dari database
+        $kendaraan->findOrFail($id)->delete();
+
+        // Redirect ke halaman data-kendaraan setelah penghapusan
+        return redirect('/data-kendaraan')->with('flash', 'Dihapus!');;
     }
 }
