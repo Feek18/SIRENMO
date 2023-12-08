@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\DriversController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KendaraanController;
 
 /*
@@ -27,6 +28,7 @@ Route::get('/dashboard', function () {
 
 Route::resource('/data-kendaraan', KendaraanController::class)->middleware('auth');
 Route::resource('/data-pengguna', UsersController::class)->middleware('auth');
+Route::resource('/data-kategori', KategoriController::class)->middleware('auth');
 
 Route::get('/profile', function () {
     return view('admin.pages.profile');

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('merk');
             $table->integer('jumlah');
             $table->string('jenis');
+            $table->string('logo');
             $table->timestamps();
         });
     }

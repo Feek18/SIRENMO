@@ -200,3 +200,106 @@
         })
     })
 </script>
+
+{{-- Kategori --}}
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.editKategori', function() {
+            let kategori_id = $(this).val()
+
+            $('#ubahKategoriModal').modal('show')
+
+            $.ajax({
+                type: "GET",
+                url: "/data-kategori/" + kategori_id + "/edit",
+                success: function (response) {
+                    $('#id-ubah').val(response.kategori.id);
+                    $('#logo-ubah').attr('src', 'http://127.0.0.1:8000/storage/' + response.kategori.logo);
+                    $('#kode-ubah').val(response.kategori.kode);
+                    $('#merk-ubah').val(response.kategori.merk);
+                    $('#jumlah-ubah').val(response.kategori.jumlah);
+                    $('#jenis-ubah').val(response.kategori.jenis);
+                    $('#oldLogo').val(response.kategori.logo);
+                    $('#formKategori').attr('action', 'http://127.0.0.1:8000/data-kategori/' + kategori_id);
+                }
+            });
+        })
+    })
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.viewKategori', function() {
+            let kategori_id = $(this).val()
+
+            $('#viewKategori').modal('show')
+
+            $.ajax({
+                type: "GET",
+                url: "/data-kategori/" + kategori_id + "/edit",
+                success: function (response) {
+                    $('#logo-view').attr('src', 'http://127.0.0.1:8000/storage/' + response.kategori.logo);
+                    $('#kode-view').val(response.kategori.kode);
+                    $('#merk-view').val(response.kategori.merk);
+                    $('#jumlah-view').val(response.kategori.jumlah);
+                    $('#jenis-view').val(response.kategori.jenis);
+                }
+            });
+        })
+    })
+</script>
+<script>
+    const flashKategori = $('.kategori').data('flash');
+
+    if (flashKategori) {
+        Swal.fire(
+            'Data Kategori',
+            'Berhasil ' + flashKategori,
+            'success'
+        )
+    }
+
+    $(document).on('click', '.tombol-hapus-kategori', function(e) {
+        e.preventDefault();
+        let kategori_id = $(this).val();
+        
+        // Get the current action attribute
+        let currentAction = $('.hapusKategori').attr('action');
+        
+        // Update the action attribute with the new URL
+        const href = currentAction + kategori_id;
+        
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            text: "Anda akan menghapus sebuah data Kategori!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus Data!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Update the action attribute of the form
+                $('.hapusKategori').attr('action', href);
+                
+                // Submit the form
+                $('.hapusKategori').submit();
+            }
+        });
+    });
+</script>
+<script>
+    function priviewLogo() {
+        const image = document.querySelector('#logo');
+        const imagePriview = document.querySelector('.priview-logo');
+
+        const oFReader = new FileReader();
+        
+        oFReader.onload = function(oFREvent) {
+            imagePriview.src = oFREvent.target.result;
+        }
+
+        if (image.files.length > 0) {
+            oFReader.readAsDataURL(image.files[0]);
+        }
+    }
+</script>

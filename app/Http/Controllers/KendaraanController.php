@@ -151,6 +151,6 @@ class KendaraanController extends Controller
         $kendaraan->findOrFail($id)->delete();
 
         // Redirect ke halaman data-kendaraan setelah penghapusan
-        return redirect('/data-kendaraan')->with('flash', 'Dihapus!');;
+        return redirect('/data-kendaraan')->with('flash', 'Dihapus!');
     }
 }

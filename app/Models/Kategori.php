@@ -13,4 +13,6 @@ class Kategori extends Model
     {
         return $this->hasMany(Kendaraan::class);
     }
+
+    protected $fillable = ['kode', 'merk', 'jumlah', 'jenis', 'logo'];
 }
