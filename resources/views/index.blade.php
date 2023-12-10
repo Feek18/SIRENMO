@@ -549,7 +549,8 @@
                     </a>
                     <div class="p-5">
                         <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">New Avanza</h5>
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">New Avanza
+                            </h5>
                         </a>
                         <p class="mt-2 font-normal text-xs text-gray-700 dark:text-gray-400">Honda | 4 Seat</p>
                         <p class="mt-2 font-normal text-xs line-through text-red-700 dark:text-gray-400">Rp. 450.000</p>
@@ -603,7 +604,8 @@
                     </a>
                     <div class="p-5">
                         <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Honda HR-V</h5>
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Honda HR-V
+                            </h5>
                         </a>
                         <p class="mt-2 font-normal text-xs text-gray-700 dark:text-gray-400">Honda | 4 Seat</p>
                         <p class="mt-2 font-normal text-xs line-through text-red-700 dark:text-gray-400">Rp. 450.000</p>
@@ -689,12 +691,14 @@
 
 
     <script>
-        const btntoogle = document.querySelector('.btntoogle');
+        const btntoggle = document.querySelector('.btntoggle');
         const mobile = document.querySelector('.mobile');
 
-        btntoogle.addEventListener('click', function () {
-    mlato('hidde      });
+        btntoggle.addEventListener('click', function () {
+            mobile.classList.toggle('hidden');
+        });
     </script>
+
 
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
