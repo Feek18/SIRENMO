@@ -691,13 +691,14 @@
 
 
     <script>
-        const btntoggle = document.querySelector('.btntoggle');
+        const btntoogle = document.querySelector('.btntoogle');
         const mobile = document.querySelector('.mobile');
 
-        btntoggle.addEventListener('click', function () {
+        btntoogle.addEventListener('click', function () {
             mobile.classList.toggle('hidden');
         });
     </script>
+
 
 
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
