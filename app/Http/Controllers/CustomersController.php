@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Customers;
 use App\Http\Requests\StoreCustomersRequest;
 use App\Http\Requests\UpdateCustomersRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 class CustomersController extends Controller
 {
@@ -16,6 +18,10 @@ class CustomersController extends Controller
     public function index()
     {
         //
+        return view('admin.pages.data-customers', [
+            'customers' => Customers::all(),
+            'users' => User::all()
+        ]);
     }
 
     /**
@@ -37,6 +43,23 @@ class CustomersController extends Controller
     public function store(StoreCustomersRequest $request)
     {
         //
+        $validatedData = $request->validate([
+            'nik' => 'required',
+            'nama' => 'required',
+            'telepon' => 'required',
+            'alamat' => 'required',
+            'tgl_lahir' => 'required',
+            'user_id' => 'required',
+            'foto_sim' => 'image|file'
+        ]);
+
+        if ($request->file('foto_sim')) {
+            # code...
+            $validatedData['foto_sim'] = $request->file('foto_sim')->store('foto-sistem');
+        }
+
+        Customers::create($validatedData);
+        return redirect('/data-customers')->with('flash', 'Ditambahkan!');
     }
 
     /**
@@ -56,9 +79,16 @@ class CustomersController extends Controller
      * @param  \App\Models\Customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customers $customers)
+    public function edit(Customers $customers, $id)
     {
         //
+        $customers = Customers::find($id);
+        $users = User::find($customers->user_id);
+        return response()->json([
+            'status' => 200,
+            'customers' => $customers,
+            'users' => $users
+        ]);
     }
 
     /**
@@ -71,6 +101,28 @@ class CustomersController extends Controller
     public function update(UpdateCustomersRequest $request, Customers $customers)
     {
         //
+        $validatedData = $request->validate([
+            'nik' => 'required',
+            'nama' => 'required',
+            'telepon' => 'required',
+            'alamat' => 'required',
+            'tgl_lahir' => 'required',
+            'user_id' => 'required',
+            'foto_sim' => 'image|file'
+        ]);
+
+        if ($request->file('foto_sim')) {
+            # code...
+            if ($request->oldSIM) {
+                # code...
+                Storage::delete($request->oldSIM);
+            }
+            $validatedData['foto_sim'] = $request->file('foto_sim')->store('foto-sistem');
+        }
+
+        Customers::where('id', $request->id)
+            ->update($validatedData);
+        return redirect('/data-customers')->with('flash', 'Diubah!');
     }
 
     /**
@@ -79,8 +131,17 @@ class CustomersController extends Controller
      * @param  \App\Models\Customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customers $customers)
+    public function destroy(Customers $customers, $id)
     {
         //
+        if ($customers->foto_sim) {
+            Storage::delete($customers->foto_sim);
+        }
+
+        // Menghapus entri kendaraan dari database
+        $customers->findOrFail($id)->delete();
+
+        // Redirect ke halaman data-kendaraan setelah penghapusan
+        return redirect('/data-customers')->with('flash', 'Dihapus!');
     }
 }
