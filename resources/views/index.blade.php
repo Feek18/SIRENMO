@@ -397,6 +397,8 @@
     <!-- Logo bar -->
     <link rel="icon" type="image/png" href="img/logo.png">
 
+    <link rel="stylesheet" href="../css/app.css">
+
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -405,9 +407,9 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
+<body class="overflow-y-scroll">
     <!-- Top Navbar -->
-    <div class="bg-color w-full p-1">
+    <div class="bg-secondary w-full p-0.5">
         <div class="container mx-auto flex justify-center md:justify-between lg:justify-between text-white">
             <p class="font-medium text-xs hidden md:flex">Powered by Void</p>
             <p class="font-medium text-xs">Get Promos for New Years!</p>
@@ -429,13 +431,13 @@
             </div>
             <ul class="text-secondary text-sm lg:flex gap-7 hidden">
                 <li>
-                    <a class="hover:text-color duration-500 font-medium" href="#">Home</a>
+                    <a class="hover:text-color duration-500 font-medium" href="#home">Home</a>
                 </li>
                 <li>
-                    <a class="hover:text-color duration-500 font-medium" href="#">Special Deals</a>
+                    <a class="hover:text-color duration-500 font-medium" href="#specialdeals">Special Deals</a>
                 </li>
                 <li>
-                    <a class="hover:text-color duration-500 font-medium" href="#">About Us</a>
+                    <a class="hover:text-color duration-500 font-medium" href="#about">About Us</a>
                 </li>
                 <li>
                     <a class="hover:text-color duration-500 font-medium" href="#">Testimonials</a>
@@ -457,13 +459,13 @@
         <div class="mobile hidden mx-auto lg:hidden md:hidden">
             <ul class="text-secondary text-sm font-normal gap-7">
                 <li class="px-3 py-3 hover:bg-color hover:text-white cursor-pointer ease-in duration-200">
-                    <a href="#">Home</a>
+                    <a href="#home">Home</a>
                 </li>
                 <li class="px-3 py-3 hover:bg-color hover:text-white cursor-pointer ease-in duration-200">
-                    <a href="#">Special Deals</a>
+                    <a href="#specialdeals">Special Deals</a>
                 </li>
                 <li class="px-3 py-3 hover:bg-color hover:text-white cursor-pointer ease-in duration-200">
-                    <a href="#">About Us</a>
+                    <a href="#about">About Us</a>
                 </li>
                 <li class="px-3 py-3 hover:bg-color hover:text-white cursor-pointer ease-in duration-200">
                     <a href="#">Testimonials</a>
@@ -525,99 +527,148 @@
         </div>
     </section>
 
-    <!-- Hero Product Section -->
-    <section class="bg-secondary">
-        <div class="container mx-auto">
-            <div class="text-center lg:flex lg:justify-between mt-3 pt-6">
-                <h1
-                    class="text-white text-[28px] lg:text-3xl font-medium lg:font-semibold leading-loose tracking-widest mt-4">
-                    Specials
-                    <span
-                        class="text-yellow-700 text-[28px] lg:text-3xl font-semibold leading-loose tracking-widest">Offer</span>
-                </h1>
-                <button
-                    class="px-4 py-2 lg:p-4 bg-secondary border border-yellow-600 hover:bg-color justify-center items-center inline-flex mt-2">
-                    <a class="text-white font-medium text-[11px] lg:text-[13px] text-sm font-medium tracking-widest hover:text-white"
-                        href="">See More</a>
+    <!-- Product Section -->
+    <section class="" id="specialdeals">
+        <div class="container lg:h-screen mx-auto mt-12">
+                <div class="text-center lg:flex lg:justify-between mt-4 pt-8">
+                    <h1
+                        class="text-secondary text-[28px] lg:text-4xl font-medium lg:font-semibold leading-loose tracking-widest mt-4">
+                        Specials
+                        <span
+                            class="text-color text-[28px] lg:text-4xl font-semibold leading-loose tracking-widest">Offer</span>
+                    </h1>
+                    <button
+                        class="px-4 py-2 lg:p-4 bg-secondary border hover:bg-color justify-center items-center inline-flex mt-2">
+                        <a class="text-white font-medium text-[11px] lg:text-[13px] text-sm font-medium tracking-widest hover:text-white"
+                            href="">See More</a>
+                    </button>
+                </div>
+                <div class="lg:flex lg:items-center lg:justify-center lg:gap-12 mt-14">
+                    <div class="card">
+                        <img class="lg:w-full h-full object-cover mt-6 px-4 py-2" src="img/pict1.png" alt="All New Avanza">
+                        <div class="p-5 flex flex-col gap-3">
+                            <div class="flex items-center gap-2">
+                                <span class="badge">stock ready</span>
+                                <span class="badge">most recommend</span>
+                            </div>
+                            <h2 class="tittle">All New Avanza</h2>
+                            <p class="text-xl font-bold">Rp 350.000</p>
+                            <div class="flex items-center gap-2 mt-1">
+                                <p class="text-sm line-through opacity-50">Rp 450.000</p>
+                                <p class="percent">save 15% </p>
+                            </div>
+                            <div class="mt-4 flex gap-2">
+                                <button class="btn-product">
+                                    <a href="">Book Now</a>
+                                </button>
+                                <p class="stock">8 Stock</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict2.png" alt="All New Avanza">
+                        <div class="p-5 flex flex-col gap-3">
+                            <div class="flex items-center gap-2">
+                                <span class="badge">stock ready</span>
+                                <span class="badge">most recommend</span>
+                            </div>
+                            <h2 class="tittle">Rush</h2>
+                            <p class="text-xl font-bold">Rp 400.000</p>
+                            <div class="flex items-center gap-2 mt-1">
+                                <p class="text-sm line-through opacity-50">Rp 550.000</p>
+                                <p class="percent">save 20% </p>
+                            </div>
+                            <div class="mt-4 flex gap-2">
+                                <button class="btn-product">
+                                    <a href="">Book Now</a>
+                                </button>
+                                <p class="stock">4 Stock</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict3.png" alt="All New Avanza">
+                        <div class="p-5 flex flex-col gap-3">
+                            <div class="flex items-center gap-2">
+                                <span class="badge">stock ready</span>
+                                <span class="badge">most recommend</span>
+                            </div>
+                            <h2 class="tittle">Veloz</h2>
+                            <p class="text-xl font-bold">Rp 350.000</p>
+                            <div class="flex items-center gap-2 mt-1">
+                                <p class="text-sm line-through opacity-50">Rp 450.000</p>
+                                <p class="percent">save 15% </p>
+                            </div>
+                            <div class="mt-4 flex gap-2">
+                                <button class="btn-product">
+                                    <a href="">Book Now</a>
+                                </button>
+                                <p class="stock">9 Stock</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict4.png" alt="All New Avanza">
+                        <div class="p-5 flex flex-col gap-3">
+                            <div class="flex items-center gap-2">
+                                <span class="badge">stock ready</span>
+                                <span class="badge">most recommend</span>
+                            </div>
+                            <h2 class="tittle">Honda HR-V</h2>
+                            <p class="text-xl font-bold">Rp 450.000</p>
+                            <div class="flex items-center gap-2 mt-1">
+                                <p class="text-sm line-through opacity-50">Rp 500.000</p>
+                                <p class="percent">save 25% </p>
+                            </div>
+                            <div class="mt-4 flex gap-2">
+                                <button class="btn-product">
+                                    <a href="">Book Now</a>
+                                </button>
+                                <p class="stock">4 Stock</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about bg-secondary">
+        <div class="mx-auto flex items-center justify-center mt-10 py-24">
+            <div>
+                <img class="rounded-sm w-auto left-0 top-0" src="img/about1.png" alt="">
+            </div>
+            <div class="mb-14 lg:mb-0 lg:mb-1/2">
+                <h1 class="headline mb-6">ORDINARY BOY'S CAR</h1>
+                <p class="desc mb-10 w-96">Lorem ipsum dolor sit amet consectetur. Nulla etiam sed varius proin morbi ut ultrices.</p>
+                <button class="text-color text-sm font-medium tracking-wider ml-4">
+                    <a href="">Learn More</a>
                 </button>
             </div>
-            <div class="w-full lg:flex lg:mx-auto lg:justify-between lg:gap-12">
-                <div
-                    class="lg:max-w-xs bg-white border shadow-md border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 items-center justify-center text-center mt-8 hover:scale-105 shadow mb-6">
-                    <a href="#">
-                        <img class="rounded-t-lg justify-center mx-auto pt-8" src="img/pict1.png" alt="" />
-                    </a>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">New Avanza
-                            </h5>
-                        </a>
-                        <p class="mt-2 font-normal text-xs text-gray-700 dark:text-gray-400">Honda | 4 Seat</p>
-                        <p class="mt-2 font-normal text-xs line-through text-red-700 dark:text-gray-400">Rp. 450.000</p>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Rp. 300.000</p>
-                        <a href="#"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-color rounded-lg hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Book Now
-                        </a>
+        </div>
+        <div class="container mx-auto flex items-center justify-center">
+            <div class="w-auto pt-1">
+                <h1 class="headline2 mb-4">BEST RENTS TRIP ADVENTURE</h1>
+                <p class="w-[600px] text-white text-[13px] font-normal font-['Poppins'] leading-[29.38px] tracking-[2.60px] mb-14">Lorem ipsum dolor sit amet consectetur. Penatibus enim tempor tincidunt aenean vitae dignissim. Egestas tempor velit tristique nulla cras. Augue lorem accumsan urna eu id.</p>
+                <div class="flex gap-6">
+                    <div class="gap-6 ml-2">
+                        <img class="ml-20 mb-5" src="img/settings.png" alt="">
+                        <p class="desc-about">Healthy Machine Standardization</p>
                     </div>
-                </div>
-                <div
-                    class="lg:max-w-xs bg-white border shadow-md border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 items-center justify-center text-center mt-8 hover:scale-105 shadow mb-6">
-                    <a href="#">
-                        <img class="rounded-t-lg justify-center mx-auto pt-8" src="img/pict2.png" alt="" />
-                    </a>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rush</h5>
-                        </a>
-                        <p class="mt-2 font-normal text-xs text-gray-700 dark:text-gray-400">Honda | 4 Seat</p>
-                        <p class="mt-2 font-normal text-xs line-through text-red-700 dark:text-gray-400">Rp. 500.000</p>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Rp. 450.000</p>
-                        <a href="#"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-color rounded-lg hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Book Now
-                        </a>
+                    <div class="gap-6 ml-2">
+                        <img class="ml-20 mb-5" src="img/thumbs-up.png" alt="">
+                        <p class="desc-about">Very Cheap Rental Prices</p>
                     </div>
-                </div>
-                <div
-                    class="lg:max-w-xs bg-white border shadow-md border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 items-center justify-center text-center mt-8 hover:scale-105 shadow mb-6">
-                    <a href="#">
-                        <img class="rounded-t-lg justify-center mx-auto pt-8" src="img/pict3.png" alt="" />
-                    </a>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Veloz</h5>
-                        </a>
-                        <p class="mt-2 font-normal text-xs text-gray-700 dark:text-gray-400">Honda | 4 Seat</p>
-                        <p class="mt-2 font-normal text-xs line-through text-red-700 dark:text-gray-400">Rp. 450.000</p>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Rp. 350.000</p>
-                        <a href="#"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-color rounded-lg hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Book Now
-                        </a>
-                    </div>
-                </div>
-                <div
-                    class="lg:max-w-xs bg-white border shadow-md border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700 items-center justify-center text-center mt-8 hover:scale-105 shadow mb-6">
-                    <a href="#">
-                        <img class="rounded-t-lg justify-center mx-auto pt-8" src="img/pict4.png" alt="" />
-                    </a>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Honda HR-V
-                            </h5>
-                        </a>
-                        <p class="mt-2 font-normal text-xs text-gray-700 dark:text-gray-400">Honda | 4 Seat</p>
-                        <p class="mt-2 font-normal text-xs line-through text-red-700 dark:text-gray-400">Rp. 450.000</p>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Rp. 300.000</p>
-                        <a href="#"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-color rounded-lg hover:scale-105 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Book Now
-                        </a>
+                    <div class="gap-6 ml-2">
+                        <img class="ml-20 mb-5" src="img/truck.png" alt="">
+                        <p class="desc-about">Uncomplicated Ordering</p>
                     </div>
                 </div>
             </div>
-
+            <div class="ml-4">
+                <img class="rounded-sm w-auto left-0 top-0" src="img/about2.png" alt="">
+            </div>
         </div>
     </section>
 

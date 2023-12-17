@@ -1,3 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+@layer components {
+    .card {
+        @apply
+        bg-white text-gray-700
+        w-72 min-h-[10rem]
+        shadow-lg rounded-md overflow-hidden cursor-pointer hover:scale-105 duration-75
+    }
+
+    .badge {
+        @apply
+        px-3 py-1 rounded-full text-xs bg-gray-100
+    }
+
+    .tittle {
+        @apply
+        font-semibold text-2xl overflow-ellipsis overflow-hidden whitespace-nowrap
+    }
+
+    .percent {
+        @apply
+        bg-green-500 px-1.5 py-0.5 rounded-md text-xs text-white
+    }
+
+    .btn-product {
+        @apply
+        bg-color px-6 py-2 rounded-md text-white font-medium tracking-wider transition
+    }
+
+    .stock {
+        @apply
+        px-3 py-3 text-sm font-medium
+    }
+
+    .headline {
+        @apply
+        w-96 text-white text-4xl font-bold leading-10 tracking-widest ml-4
+    }
+
+    .desc {
+        @apply
+        w-96 text-white text-xs font-normal tracking-widest ml-4
+    }
+
+    .headline2 {
+        @apply
+        text-white text-[32px] font-bold font-['Poppins'] leading-[36.96px] tracking-[8.32px]
+    }
+
+    .desc-about {
+        @apply
+        text-white text-xs font-medium ml-4 w-[151px] text-center leading-[29.38px] tracking-[2.60px]
+    }
+}
