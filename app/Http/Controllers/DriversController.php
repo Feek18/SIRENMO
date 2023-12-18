@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Drivers;
+use App\Models\User;
 use App\Http\Requests\StoreDriversRequest;
 use App\Http\Requests\UpdateDriversRequest;
 use Illuminate\Http\Request;
+use SebastianBergmann\CodeCoverage\Driver\Driver;
+use Illuminate\Support\Facades\Storage;
 
 class DriversController extends Controller
 {
@@ -17,7 +20,10 @@ class DriversController extends Controller
 
     public function index()
     {
-        return view('drivers.main');
+        return view('admin.pages.data-drivers', [
+            'drivers' => Drivers::all(),
+            'users' => User::where('role', '=', 'drivers')->get(),
+        ]);
     }
 
     public function register()
@@ -49,6 +55,23 @@ class DriversController extends Controller
     public function store(StoreDriversRequest $request)
     {
         //
+        $validatedData = $request->validate([
+            'nik' => 'required',
+            'nama' => 'required',
+            'telepon' => 'required',
+            'alamat' => 'required',
+            'tgl_lahir' => 'required',
+            'user_id' => 'required',
+            'foto_sim' => 'image|file'
+        ]);
+
+        if ($request->file('foto_sim')) {
+            # code...
+            $validatedData['foto_sim'] = $request->file('foto_sim')->store('foto-sistem');
+        }
+
+        Drivers::create($validatedData);
+        return redirect('/data-drivers')->with('flash', 'Ditambahkan!');
     }
 
     /**
@@ -91,8 +114,17 @@ class DriversController extends Controller
      * @param  \App\Models\Drivers  $drivers
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Drivers $drivers)
+    public function destroy(Drivers $drivers, $id)
     {
         //
+        if ($drivers->foto_sim) {
+            Storage::delete($drivers->foto_sim);
+        }
+
+        // Menghapus entri kendaraan dari database
+        $drivers->findOrFail($id)->delete();
+
+        // Redirect ke halaman data-kendaraan setelah penghapusan
+        return redirect('/data-drivers')->with('flash', 'Dihapus!');
     }
 }

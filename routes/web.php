@@ -32,6 +32,7 @@ Route::resource('/data-kendaraan', KendaraanController::class)->middleware('auth
 Route::resource('/data-pengguna', UsersController::class)->middleware('auth');
 Route::resource('/data-kategori', KategoriController::class)->middleware('auth');
 Route::resource('/data-customers', CustomersController::class)->middleware('auth');
+Route::resource('/data-drivers', DriversController::class)->middleware('auth');
 
 Route::get('/profile', function () {
     return view('admin.pages.profile');
