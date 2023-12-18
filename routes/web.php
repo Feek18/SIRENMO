@@ -7,6 +7,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\DriversController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KendaraanController;
+use App\Http\Controllers\PesananDriversController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,10 @@ Route::post('/register', [LoginController::class, 'store']);
 Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/driver', [DriversController::class, 'register']);
 Route::get('/driver-main', [DriversController::class, 'index']);
+
+// driver
+Route::get('/dashboard', function () {
+    return view('drivers.pages.dashboard');
+})->middleware('auth');
+
+Route::resource('/pesanan', PesananDriversController::class)->middleware('auth');
