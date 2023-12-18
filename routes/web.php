@@ -24,7 +24,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/dashboard-admin', function () {
     return view('admin.pages.dashboard');
 })->middleware('auth');
 

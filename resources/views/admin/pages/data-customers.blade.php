@@ -102,7 +102,7 @@
 </div>
 
 <!-- Modal -->
-{{-- <div class="modal fade" id="modalData" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+<div class="modal fade" id="modalData" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
@@ -176,7 +176,7 @@
       </div>
     </div>
   </div>
-</div> --}}
+</div>
 
 <!-- Modal Ubah -->
 <div class="modal fade" id="editCust" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
@@ -258,7 +258,7 @@
 </div>
 
 <!-- Card View -->
-{{-- <div class="modal fade" id="viewCustomers" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+<div class="modal fade" id="viewCustomers" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -319,6 +319,6 @@
       </div>
     </div>
   </div>
-</div> --}}
+</div>
 
 @endsection
