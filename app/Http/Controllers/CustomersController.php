@@ -20,7 +20,7 @@ class CustomersController extends Controller
         //
         return view('admin.pages.data-customers', [
             'customers' => Customers::all(),
-            'users' => User::all()
+            'users' => User::where('role', '!=', 'drivers')->get()
         ]);
     }
 
