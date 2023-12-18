@@ -8,6 +8,7 @@ use App\Http\Controllers\DriversController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\PesananDriversController;
+use App\Models\Drivers;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,8 +48,18 @@ Route::get('/driver', [DriversController::class, 'register']);
 Route::get('/driver-main', [DriversController::class, 'index']);
 
 // driver
-Route::get('/dashboard', function () {
-    return view('drivers.pages.dashboard');
+Route::get('/dashboard-driver', function () {
+    if (Drivers::where('user_id', Auth::user()->id)->first()) {
+        return view('drivers.pages.dashboard', [
+            'driver' => Drivers::all(),
+            'userId' => Drivers::where('user_id', Auth::user()->id)->first()
+        ]);
+    } else {
+        return view('drivers.pages.profile_driver', [
+            'driver' => Drivers::all(),
+            'userId' => Drivers::where('user_id', Auth::user()->id)->first()
+        ]);
+    }
 })->middleware('auth');
 
 Route::resource('/pesanan', PesananDriversController::class)->middleware('auth');
