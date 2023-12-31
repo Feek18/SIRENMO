@@ -179,7 +179,7 @@
 </div>
 
 <!-- Modal Ubah -->
-{{-- <div class="modal fade" id="editCust" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+<div class="modal fade" id="editDriver" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
@@ -187,7 +187,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="formEditCust" method="post" enctype="multipart/form-data">
+        <form id="formEditDriver" method="post" enctype="multipart/form-data">
           @csrf
           @method('put')
           <input type="hidden" name="id" id="id-ubah">
@@ -240,10 +240,10 @@
             <div class="row"><hr>
               <div class="col-lg-10 mt-4">
                 <label class="form-label" for="foto_sim">Foto SIM</label>
-                <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="foto_sim" type="file" name="foto_sim" onchange="priviewSIM()">
+                <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="foto_sim" type="file" name="foto_sim" onchange="priviewSIMDriver()">
               </div>
               <div class="col-lg-2 mt-4">
-                <img id="foto_sim-ubah" src="" alt="" class="priview-sim img-fluid col-sm-10">
+                <img id="foto_sim-ubah" src="" alt="" class="priview-sim-driver img-fluid col-sm-10">
               </div>
             </div>
           </div>
@@ -255,10 +255,10 @@
       </div>
     </div>
   </div>
-</div> --}}
+</div>
 
 <!-- Card View -->
-{{-- <div class="modal fade" id="viewCustomers" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+<div class="modal fade" id="viewDriver" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -319,6 +319,6 @@
       </div>
     </div>
   </div>
-</div> --}}
+</div>
 
 @endsection

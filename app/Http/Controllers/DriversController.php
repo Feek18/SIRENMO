@@ -91,9 +91,16 @@ class DriversController extends Controller
      * @param  \App\Models\Drivers  $drivers
      * @return \Illuminate\Http\Response
      */
-    public function edit(Drivers $drivers)
+    public function edit(Drivers $drivers, $id)
     {
         //
+        $drivers = Drivers::find($id);
+        $users = User::find($drivers->user_id);
+        return response()->json([
+            'status' => 200,
+            'drivers' => $drivers,
+            'users' => $users
+        ]);
     }
 
     /**
@@ -106,6 +113,28 @@ class DriversController extends Controller
     public function update(UpdateDriversRequest $request, Drivers $drivers)
     {
         //
+        $validatedData = $request->validate([
+            'nik' => 'required',
+            'nama' => 'required',
+            'telepon' => 'required',
+            'alamat' => 'required',
+            'tgl_lahir' => 'required',
+            'user_id' => 'required',
+            'foto_sim' => 'image|file'
+        ]);
+
+        if ($request->file('foto_sim')) {
+            # code...
+            if ($request->oldSIMDriver) {
+                # code...
+                Storage::delete($request->oldSIMDriver);
+            }
+            $validatedData['foto_sim'] = $request->file('foto_sim')->store('foto-sistem');
+        }
+
+        Drivers::where('id', $request->id)
+            ->update($validatedData);
+        return redirect('/data-drivers')->with('flash', 'Diubah!');
     }
 
     /**

@@ -411,28 +411,28 @@
     }
 </script>
 
-{{-- Customers --}}
+{{-- Drivers --}}
 <script>
     $(document).ready(function() {
-        $(document).on('click', '.editCust', function() {
-            let cust_id = $(this).val()
+        $(document).on('click', '.editDriver', function() {
+            let driver_id = $(this).val()
 
-            $('#editCust').modal('show')
+            $('#editDriver').modal('show')
 
             $.ajax({
                 type: "GET",
-                url: "/data-customers/" + cust_id + "/edit",
+                url: "/data-drivers/" + driver_id + "/edit",
                 success: function (response) {
-                    $('#id-ubah').val(response.customers.id);
-                    $('#nik-ubah').val(response.customers.nik);
-                    $('#nama-ubah').val(response.customers.nama);
-                    $('#telepon-ubah').val(response.customers.telepon);
-                    $('#alamat-ubah').val(response.customers.alamat);
-                    $('#tgl_lahir-ubah').val(response.customers.tgl_lahir);
-                    $('#user_id-ubah').val(response.customers.user_id);
-                    $('#foto_sim-ubah').attr('src', 'http://127.0.0.1:8000/storage/' + response.customers.foto_sim);
-                    $('#formEditCust').attr('action', 'http://127.0.0.1:8000/data-customers/' + cust_id);
-                    $('#oldSIM').val(response.customers.foto_sim);
+                    $('#id-ubah').val(response.drivers.id);
+                    $('#nik-ubah').val(response.drivers.nik);
+                    $('#nama-ubah').val(response.drivers.nama);
+                    $('#telepon-ubah').val(response.drivers.telepon);
+                    $('#alamat-ubah').val(response.drivers.alamat);
+                    $('#tgl_lahir-ubah').val(response.drivers.tgl_lahir);
+                    $('#user_id-ubah').val(response.drivers.user_id);
+                    $('#foto_sim-ubah').attr('src', 'http://127.0.0.1:8000/storage/' + response.drivers.foto_sim);
+                    $('#formEditDriver').attr('action', 'http://127.0.0.1:8000/data-drivers/' + cust_id);
+                    $('#oldSIMDriver').val(response.drivers.foto_sim);
                 }
             });
         })
@@ -440,22 +440,22 @@
 </script>
 <script>
     $(document).ready(function() {
-        $(document).on('click', '.viewCustomers', function() {
-            let cust_id = $(this).val()
+        $(document).on('click', '.viewDriver', function() {
+            let driver_id = $(this).val()
 
-            $('#viewCustomers').modal('show')
+            $('#viewDriver').modal('show')
 
             $.ajax({
                 type: "GET",
-                url: "/data-customers/" + cust_id + "/edit",
+                url: "/data-drivers/" + driver_id + "/edit",
                 success: function (response) {
-                    $('#foto_sim-view').attr('src', 'http://127.0.0.1:8000/storage/' + response.customers.foto_sim);
-                    $('#nik-view').val(response.customers.nik);
-                    $('#nama-view').val(response.customers.nama);
-                    $('#telepon-view').val(response.customers.telepon);
-                    $('#alamat-view').val(response.customers.alamat);
-                    $('#tgl_lahir-view').val(response.customers.tgl_lahir);
-                    $('#user_id-view').val(response.customers.user_id);
+                    $('#foto_sim-view').attr('src', 'http://127.0.0.1:8000/storage/' + response.drivers.foto_sim);
+                    $('#nik-view').val(response.drivers.nik);
+                    $('#nama-view').val(response.drivers.nama);
+                    $('#telepon-view').val(response.drivers.telepon);
+                    $('#alamat-view').val(response.drivers.alamat);
+                    $('#tgl_lahir-view').val(response.drivers.tgl_lahir);
+                    $('#user_id-view').val(response.drivers.user_id);
                 }
             });
         })

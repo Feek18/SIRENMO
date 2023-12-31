@@ -12,7 +12,7 @@
               <div class="flex flex-row -mx-3">
                 <div class="flex-none w-2/3 max-w-full px-3">
                   <div>
-                    <p class="mb-0 font-sans text-sm font-semibold leading-normal">Today's Money</p>
+                    <p class="mb-0 font-sans text-sm font-semibold leading-normal"></p>
                     <h5 class="mb-0 font-bold">
                       $53,000
                       <span class="text-sm leading-normal font-weight-bolder text-lime-500">+55%</span>
@@ -30,6 +30,9 @@
         </div>
 
         <!-- card2 -->
+        @foreach ($data as $d)
+            <p>{{ $d }}</p>
+        @endforeach
         <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
           <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
             <div class="flex-auto p-4">
