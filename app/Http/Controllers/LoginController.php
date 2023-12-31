@@ -52,7 +52,7 @@ class LoginController extends Controller
             }
             if (Auth::user()->role == 'drivers') {
                 # code...
-                return redirect()->intended('driver-main');
+                return redirect()->intended('dashboard-driver');
             }
             if (Auth::user()->role == 'owners') {
                 # code...
