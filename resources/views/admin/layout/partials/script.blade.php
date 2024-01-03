@@ -8,6 +8,10 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/sweetalert2.all.min.js"></script>
+<!-- Contoh: Memuat jQuery dan Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <!-- main script file  -->
 <script src="./assets/js/soft-ui-dashboard-tailwind.js?v=1.0.5" async></script>
 <script>
@@ -431,7 +435,7 @@
                     $('#tgl_lahir-ubah').val(response.drivers.tgl_lahir);
                     $('#user_id-ubah').val(response.drivers.user_id);
                     $('#foto_sim-ubah').attr('src', 'http://127.0.0.1:8000/storage/' + response.drivers.foto_sim);
-                    $('#formEditDriver').attr('action', 'http://127.0.0.1:8000/data-drivers/' + cust_id);
+                    $('#formEditDriver').attr('action', 'http://127.0.0.1:8000/data-drivers/' + driver_id);
                     $('#oldSIMDriver').val(response.drivers.foto_sim);
                 }
             });
@@ -516,4 +520,177 @@
             oFReader.readAsDataURL(image.files[0]);
         }
     }
+</script>
+
+{{-- Pesanan --}}
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.editPesanan', function() {
+            let pesanan_id = $(this).val()
+
+            $('#ubahPesananModal').modal('show')
+
+            $.ajax({
+                type: "GET",
+                url: "/data-pesanan/" + pesanan_id + "/edit",
+                success: function (response) {
+                    $('#id-ubah').val(response.pesanan.id);
+                    $('#kode-ubah').val(response.pesanan.kode);
+                    $('#tgl-ambil-ubah').val(response.pesanan.tgl_ambil);
+                    $('#tgl-kembali-ubah').val(response.pesanan.tgl_kembali);
+                    $('#customers-ubah').val(response.pesanan.customer_id);
+                    $('#drivers-ubah').val(response.pesanan.driver_id);
+                    $('#kendaraan-ubah').val(response.pesanan.kendaraan_id);
+                    $('#formPesananUbah').attr('action', 'http://127.0.0.1:8000/data-pesanan/' + pesanan_id);
+                }
+            });
+        })
+    })
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.viewPesanan', function() {
+            let pesanan_id = $(this).val()
+
+            $('#viewPesanan').modal('show')
+
+            $.ajax({
+                type: "GET",
+                url: "/data-pesanan/" + pesanan_id + "/edit",
+                success: function (response) {
+                    $('#logo-view').attr('src', 'http://127.0.0.1:8000/storage/' + response.kendaraan.foto_kendaraan);
+                    $('#kode-view').val(response.pesanan.kode);
+                    $('#tgl-ambil-view').val(response.pesanan.tgl_ambil);
+                    $('#tgl-kembali-view').val(response.pesanan.tgl_kembali);
+                    $('#cust-view').val(response.customers.nama);
+                    $('#driver-view').val(response.drivers.nama);
+                    $('#kendaraan-view').val(response.kendaraan.nama);
+                    $('#no-plat-view').val(response.kendaraan.nomor_plat);
+                }
+            });
+        })
+    })
+</script>
+<script>
+    const flashPesanan = $('.pesanan').data('flash');
+
+    if (flashPesanan) {
+        Swal.fire(
+            'Data Pesanan',
+            'Berhasil ' + flashPesanan,
+            'success'
+        )
+    }
+
+    $(document).on('click', '.tombol-hapus-pesanan', function(e) {
+        e.preventDefault();
+        let pesanan_id = $(this).val();
+        
+        // Get the current action attribute
+        let currentAction = $('.hapusPesanan').attr('action');
+        
+        // Update the action attribute with the new URL
+        const href = currentAction + pesanan_id;
+        
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            text: "Anda akan menghapus sebuah data Pesanan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus Data!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Update the action attribute of the form
+                $('.hapusPesanan').attr('action', href);
+                
+                // Submit the form
+                $('.hapusPesanan').submit();
+            }
+        });
+    });
+</script>
+
+{{-- Pengguna  --}}
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.ubahPengguna', function() {
+            let pengguna_id = $(this).val()
+
+            $('#modalPenggunaUbah').modal('show')
+
+            $.ajax({
+                type: "GET",
+                url: "/data-pengguna/" + pengguna_id + "/edit",
+                success: function (response) {
+                    $('#username-pengguna-ubah').val(response.pengguna.username);
+                    $('#password-pengguna-ubah').val(response.pengguna.password);
+                    $('#role-pengguna-ubah').val(response.pengguna.role);
+                    $('#formUbah').attr('action', 'http://127.0.0.1:8000/data-pengguna/' + pengguna_id);
+                    $('#id-pengguna-ubah').val(response.pengguna.id);
+                }
+            });
+        })
+    })
+</script>
+<script>
+    const Pengguna = $('.pengguna').data('pengguna');
+
+    if (Pengguna) {
+        Swal.fire(
+            'Data Pengguna',
+            'Berhasil ' + Pengguna,
+            'success'
+        )
+    }
+
+    $(document).on('click', '.tombol-hapus-pengguna', function(e) {
+        e.preventDefault();
+        let pengguna_id = $(this).val();
+        
+        // Get the current action attribute
+        let currentAction = $('.hapusPengguna').attr('action');
+        
+        // Update the action attribute with the new URL
+        const href = currentAction + pengguna_id;
+        
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            text: "Anda akan menghapus sebuah data Pengguna!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus Data!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Update the action attribute of the form
+                $('.hapusPengguna').attr('action', href);
+                
+                // Submit the form
+                $('.hapusPengguna').submit();
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.viewUser', function() {
+            let pengguna_id = $(this).val()
+
+            $('#viewUsers').modal('show')
+
+            $.ajax({
+                type: "GET",
+                url: "/data-pengguna/" + pengguna_id + "/edit",
+                success: function (response) {
+                    $('#username-pengguna-lihat').val(response.pengguna.username);
+                    $('#password-pengguna-lihat').val(response.pengguna.password);
+                    $('#role-pengguna-lihat').val(response.pengguna.role);
+                    $('#id-pengguna-lihat').val(response.pengguna.id);
+                }
+            });
+        })
+    })
 </script>

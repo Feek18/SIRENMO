@@ -7,7 +7,9 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\DriversController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KendaraanController;
+use App\Http\Controllers\PesananController;
 use App\Http\Controllers\PesananDriversController;
+use App\Http\Controllers\TransaksiController;
 use App\Models\Drivers;
 
 /*
@@ -34,6 +36,8 @@ Route::resource('/data-pengguna', UsersController::class)->middleware('auth');
 Route::resource('/data-kategori', KategoriController::class)->middleware('auth');
 Route::resource('/data-customers', CustomersController::class)->middleware('auth');
 Route::resource('/data-drivers', DriversController::class)->middleware('auth');
+Route::resource('/data-pesanan', PesananController::class)->middleware('auth');
+Route::resource('/data-transaksi', TransaksiController::class)->middleware('auth');
 
 Route::get('/profile', function () {
     return view('admin.pages.profile');

@@ -134,6 +134,6 @@ class KategoriController extends Controller
         $kategori->findOrFail($id)->delete();
 
         // Redirect ke halaman data-kategori setelah penghapusan
-        return redirect('/data-kategori')->with('flash', 'Dihapus!');;
+        return redirect('/data-kategori')->with('flash', 'Dihapus!');
     }
 }
