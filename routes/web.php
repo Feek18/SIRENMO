@@ -11,6 +11,10 @@ use App\Http\Controllers\PesananController;
 use App\Http\Controllers\PesananDriversController;
 use App\Http\Controllers\TransaksiController;
 use App\Models\Drivers;
+use App\Models\Kendaraan;
+use App\Models\Pesanan;
+use App\Models\Transaksi;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +32,12 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard-admin', function () {
-    return view('admin.pages.dashboard');
+    return view('admin.pages.dashboard', [
+        'pendapatan' => Transaksi::sum('jumlah_pembayaran'),
+        'user' => User::count('id'),
+        'pesanan' => Pesanan::count('id'),
+        'kendaraan' => Kendaraan::count('id')
+    ]);
 })->middleware('auth');
 
 Route::resource('/data-kendaraan', KendaraanController::class)->middleware('auth');
@@ -40,7 +49,9 @@ Route::resource('/data-pesanan', PesananController::class)->middleware('auth');
 Route::resource('/data-transaksi', TransaksiController::class)->middleware('auth');
 
 Route::get('/profile', function () {
-    return view('admin.pages.profile');
+    return view('admin.pages.profile', [
+        'users' => Cus
+    ]);
 });
 
 // routes/get login

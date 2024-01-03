@@ -12,9 +12,9 @@
               <div class="flex flex-row -mx-3">
                 <div class="flex-none w-2/3 max-w-full px-3">
                   <div>
-                    <p class="mb-0 font-sans text-sm font-semibold leading-normal"></p>
+                    <p class="mb-0 font-sans text-sm font-semibold leading-normal">Pendapatan</p>
                     <h5 class="mb-0 font-bold">
-                      $53,000
+                      {{ number_format($pendapatan, 0, ',', '.') }}
                       <span class="text-sm leading-normal font-weight-bolder text-lime-500">+55%</span>
                     </h5>
                   </div>
@@ -36,9 +36,9 @@
               <div class="flex flex-row -mx-3">
                 <div class="flex-none w-2/3 max-w-full px-3">
                   <div>
-                    <p class="mb-0 font-sans text-sm font-semibold leading-normal">Today's Users</p>
+                    <p class="mb-0 font-sans text-sm font-semibold leading-normal">Kendaraan</p>
                     <h5 class="mb-0 font-bold">
-                      2,300
+                      {{ $kendaraan }}
                       <span class="text-sm leading-normal font-weight-bolder text-lime-500">+3%</span>
                     </h5>
                   </div>
@@ -60,9 +60,9 @@
               <div class="flex flex-row -mx-3">
                 <div class="flex-none w-2/3 max-w-full px-3">
                   <div>
-                    <p class="mb-0 font-sans text-sm font-semibold leading-normal">New Clients</p>
+                    <p class="mb-0 font-sans text-sm font-semibold leading-normal">Pengguna</p>
                     <h5 class="mb-0 font-bold">
-                      +3,462
+                      {{ $user }}
                       <span class="text-sm leading-normal text-red-600 font-weight-bolder">-2%</span>
                     </h5>
                   </div>
@@ -84,9 +84,9 @@
               <div class="flex flex-row -mx-3">
                 <div class="flex-none w-2/3 max-w-full px-3">
                   <div>
-                    <p class="mb-0 font-sans text-sm font-semibold leading-normal">Sales</p>
+                    <p class="mb-0 font-sans text-sm font-semibold leading-normal">Pesanan</p>
                     <h5 class="mb-0 font-bold">
-                      $103,430
+                      {{ $pesanan }}
                       <span class="text-sm leading-normal font-weight-bolder text-lime-500">+5%</span>
                     </h5>
                   </div>
@@ -113,8 +113,8 @@
                   <canvas id="chart-bars" height="170"></canvas>
                 </div>
               </div>
-              <h6 class="mt-6 mb-0 ml-2">Active Users</h6>
-              <p class="ml-2 text-sm leading-normal">(<span class="font-bold">+23%</span>) than last week</p>
+              <h6 class="mt-6 mb-0 ml-2">Pendapatan</h6>
+              <p class="ml-2 text-sm leading-normal">(<span class="font-bold">+23%</span>) minggu terakhir</p>
               <div class="w-full px-6 mx-auto max-w-screen-2xl rounded-xl">
                 <div class="flex flex-wrap mt-0 -mx-3">
                   <div class="flex-none w-1/4 max-w-full py-4 pl-0 pr-3 mt-0">
@@ -134,7 +134,7 @@
                           </g>
                         </svg>
                       </div>
-                      <p class="mt-1 mb-0 text-xs font-semibold leading-tight">Users</p>
+                      <p class="mt-1 mb-0 text-xs font-semibold leading-tight">Pengguna</p>
                     </div>
                     <h4 class="font-bold">36K</h4>
                     <div class="text-xs h-0.75 flex w-3/4 overflow-visible rounded-lg bg-gray-200">
@@ -163,7 +163,7 @@
                           </g>
                         </svg>
                       </div>
-                      <p class="mt-1 mb-0 text-xs font-semibold leading-tight">Clicks</p>
+                      <p class="mt-1 mb-0 text-xs font-semibold leading-tight">Kendaraan</p>
                     </div>
                     <h4 class="font-bold">2m</h4>
                     <div class="text-xs h-0.75 flex w-3/4 overflow-visible rounded-lg bg-gray-200">
@@ -187,7 +187,7 @@
                           </g>
                         </svg>
                       </div>
-                      <p class="mt-1 mb-0 text-xs font-semibold leading-tight">Sales</p>
+                      <p class="mt-1 mb-0 text-xs font-semibold leading-tight">Transaksi</p>
                     </div>
                     <h4 class="font-bold">435$</h4>
                     <div class="text-xs h-0.75 flex w-3/4 overflow-visible rounded-lg bg-gray-200">
@@ -212,7 +212,7 @@
                           </g>
                         </svg>
                       </div>
-                      <p class="mt-1 mb-0 text-xs font-semibold leading-tight">Items</p>
+                      <p class="mt-1 mb-0 text-xs font-semibold leading-tight">Perbaikan</p>
                     </div>
                     <h4 class="font-bold">43</h4>
                     <div class="text-xs h-0.75 flex w-3/4 overflow-visible rounded-lg bg-gray-200">
@@ -227,10 +227,10 @@
         <div class="w-full max-w-full px-3 mt-0 lg:w-7/12 lg:flex-none">
           <div class="border-black/12.5 shadow-soft-xl relative z-20 flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border">
             <div class="border-black/12.5 mb-0 rounded-t-2xl border-b-0 border-solid bg-white p-6 pb-0">
-              <h6>Sales overview</h6>
+              <h6>Pendapatan</h6>
               <p class="text-sm leading-normal">
                 <i class="fa fa-arrow-up text-lime-500"></i>
-                <span class="font-semibold">4% more</span> in 2021
+                <span class="font-semibold">4% lebih banyak</span> dari 2021
               </p>
             </div>
             <div class="flex-auto p-4">
