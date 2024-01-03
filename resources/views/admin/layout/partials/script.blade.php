@@ -522,62 +522,124 @@
     }
 </script>
 
-{{-- Pesanan --}}
+{{-- Transaksi  --}}
 <script>
     $(document).ready(function() {
-        $(document).on('click', '.editPesanan', function() {
+        $(document).on('click', '.ubahTransaksi', function() {
+            let transaksi_id = $(this).val()
+
+            $('#modalTransaksiUbah').modal('show')
+
+            $.ajax({
+                type: "GET",
+                url: "/data-transaksi/" + transaksi_id + "/edit",
+                success: function (response) {
+                    $('#kode-ubah').val(response.transaksi.kode);
+                    $('#jumlah_pembayaran-ubah').val(response.transaksi.jumlah_pembayaran);
+                    $('#status-ubah').val(response.transaksi.status);
+                    $('#tanggal-ubah').val(response.transaksi.tanggal);
+                    $('#kode-pesanan-ubah').val(response.pesanan.kode);
+                    $('#nama-pemesan-ubah').val(response.customers.nama);
+                    $('#formUbahTransaksi').attr('action', 'http://127.0.0.1:8000/data-transaksi/' + transaksi_id);
+                    $('#id-ubah').val(response.transaksi.id);
+                }
+            });
+        })
+    })
+</script>
+<script>
+    const Transaksi = $('.transaksi').data('transaksi');
+
+    if (Transaksi) {
+        Swal.fire(
+            'Data Transaksi',
+            'Berhasil ' + Transaksi,
+            'success'
+        )
+    }
+
+    $(document).on('click', '.tombol-hapus-transaksi', function(e) {
+        e.preventDefault();
+        let transaksi_id = $(this).val();
+        
+        // Get the current action attribute
+        let currentAction = $('.hapusTransaksi').attr('action');
+        
+        // Update the action attribute with the new URL
+        const href = currentAction + transaksi_id;
+        
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            text: "Anda akan menghapus sebuah data Transaksi!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus Data!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Update the action attribute of the form
+                $('.hapusTransaksi').attr('action', href);
+                
+                // Submit the form
+                $('.hapusTransaksi').submit();
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.viewTransaksi', function() {
+            let transaksi_id = $(this).val()
+
+            $('#viewTransaksis').modal('show')
+
+            $.ajax({
+                type: "GET",
+                url: "/data-transaksi/" + transaksi_id + "/edit",
+                success: function (response) {
+                    $('#kode-lihat').val(response.transaksi.kode);
+                    $('#jumlah-lihat').val(response.transaksi.jumlah_pembayaran);
+                    $('#status-lihat').val(response.transaksi.status);
+                    $('#tgl-lihat').val(response.transaksi.tanggal);
+                    $('#kode-pesanan-lihat').val(response.pesanan.kode);
+                    $('#nama-pemesan-lihat').val(response.customers.nama);
+                }
+            });
+        })
+    })
+</script>
+
+{{-- Pesanan  --}}
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.ubahPesanan', function() {
             let pesanan_id = $(this).val()
 
-            $('#ubahPesananModal').modal('show')
+            $('#modalPesananUbah').modal('show')
 
             $.ajax({
                 type: "GET",
                 url: "/data-pesanan/" + pesanan_id + "/edit",
                 success: function (response) {
-                    $('#id-ubah').val(response.pesanan.id);
-                    $('#kode-ubah').val(response.pesanan.kode);
-                    $('#tgl-ambil-ubah').val(response.pesanan.tgl_ambil);
-                    $('#tgl-kembali-ubah').val(response.pesanan.tgl_kembali);
-                    $('#customers-ubah').val(response.pesanan.customer_id);
-                    $('#drivers-ubah').val(response.pesanan.driver_id);
+                    $('#kode-pesanan-ubah').val(response.pesanan.kode);
+                    $('#tgl_ambil-ubah').val(response.pesanan.tgl_ambil);
+                    $('#tgl_kembali-ubah').val(response.pesanan.tgl_kembali);
+                    $('#pemesan-ubah').val(response.pesanan.customer_id);
+                    $('#pengemudi-ubah').val(response.pesanan.driver_id);
                     $('#kendaraan-ubah').val(response.pesanan.kendaraan_id);
-                    $('#formPesananUbah').attr('action', 'http://127.0.0.1:8000/data-pesanan/' + pesanan_id);
                 }
             });
         })
     })
 </script>
 <script>
-    $(document).ready(function() {
-        $(document).on('click', '.viewPesanan', function() {
-            let pesanan_id = $(this).val()
+    const Pesanan = $('.pesanan').data('pesanan');
 
-            $('#viewPesanan').modal('show')
-
-            $.ajax({
-                type: "GET",
-                url: "/data-pesanan/" + pesanan_id + "/edit",
-                success: function (response) {
-                    $('#logo-view').attr('src', 'http://127.0.0.1:8000/storage/' + response.kendaraan.foto_kendaraan);
-                    $('#kode-view').val(response.pesanan.kode);
-                    $('#tgl-ambil-view').val(response.pesanan.tgl_ambil);
-                    $('#tgl-kembali-view').val(response.pesanan.tgl_kembali);
-                    $('#cust-view').val(response.customers.nama);
-                    $('#driver-view').val(response.drivers.nama);
-                    $('#kendaraan-view').val(response.kendaraan.nama);
-                    $('#no-plat-view').val(response.kendaraan.nomor_plat);
-                }
-            });
-        })
-    })
-</script>
-<script>
-    const flashPesanan = $('.pesanan').data('flash');
-
-    if (flashPesanan) {
+    if (Pesanan) {
         Swal.fire(
             'Data Pesanan',
-            'Berhasil ' + flashPesanan,
+            'Berhasil ' + Pesanan,
             'success'
         )
     }
@@ -611,84 +673,25 @@
         });
     });
 </script>
-
-{{-- Pengguna  --}}
 <script>
     $(document).ready(function() {
-        $(document).on('click', '.ubahPengguna', function() {
-            let pengguna_id = $(this).val()
+        $(document).on('click', '.viewPesanan', function() {
+            let pesanan_id = $(this).val()
 
-            $('#modalPenggunaUbah').modal('show')
+            $('#viewPesanans').modal('show')
 
             $.ajax({
                 type: "GET",
-                url: "/data-pengguna/" + pengguna_id + "/edit",
+                url: "/data-pesanan/" + pesanan_id + "/edit",
                 success: function (response) {
-                    $('#username-pengguna-ubah').val(response.pengguna.username);
-                    $('#password-pengguna-ubah').val(response.pengguna.password);
-                    $('#role-pengguna-ubah').val(response.pengguna.role);
-                    $('#formUbah').attr('action', 'http://127.0.0.1:8000/data-pengguna/' + pengguna_id);
-                    $('#id-pengguna-ubah').val(response.pengguna.id);
-                }
-            });
-        })
-    })
-</script>
-<script>
-    const Pengguna = $('.pengguna').data('pengguna');
-
-    if (Pengguna) {
-        Swal.fire(
-            'Data Pengguna',
-            'Berhasil ' + Pengguna,
-            'success'
-        )
-    }
-
-    $(document).on('click', '.tombol-hapus-pengguna', function(e) {
-        e.preventDefault();
-        let pengguna_id = $(this).val();
-        
-        // Get the current action attribute
-        let currentAction = $('.hapusPengguna').attr('action');
-        
-        // Update the action attribute with the new URL
-        const href = currentAction + pengguna_id;
-        
-        Swal.fire({
-            title: 'Apakah anda yakin?',
-            text: "Anda akan menghapus sebuah data Pengguna!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Hapus Data!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Update the action attribute of the form
-                $('.hapusPengguna').attr('action', href);
-                
-                // Submit the form
-                $('.hapusPengguna').submit();
-            }
-        });
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        $(document).on('click', '.viewUser', function() {
-            let pengguna_id = $(this).val()
-
-            $('#viewUsers').modal('show')
-
-            $.ajax({
-                type: "GET",
-                url: "/data-pengguna/" + pengguna_id + "/edit",
-                success: function (response) {
-                    $('#username-pengguna-lihat').val(response.pengguna.username);
-                    $('#password-pengguna-lihat').val(response.pengguna.password);
-                    $('#role-pengguna-lihat').val(response.pengguna.role);
-                    $('#id-pengguna-lihat').val(response.pengguna.id);
+                    $('#foto-kendaraan-lihat').attr('src', 'http://127.0.0.1:8000/storage/' + response.kendaraan.foto_kendaraan);
+                    $('#kode-pesanan-lihat').val(response.pesanan.kode);
+                    $('#tgl-ambil-lihat').val(response.pesanan.tgl_ambil);
+                    $('#tgl-kembali-lihat').val(response.pesanan.tgl_kembali);
+                    $('#pemesan-lihat').val(response.customers.nama);
+                    $('#pengemudi-lihat').val(response.drivers.nama);
+                    $('#kendaraan-lihat').val(response.kendaraan.nama);
+                    $('#nomor-plat-lihat').val(response.kendaraan.nomor_plat);
                 }
             });
         })

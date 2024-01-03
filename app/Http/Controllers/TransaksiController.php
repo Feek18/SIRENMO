@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Transaksi;
 use App\Http\Requests\StoreTransaksiRequest;
 use App\Http\Requests\UpdateTransaksiRequest;
+use App\Models\Customers;
+use App\Models\Pesanan;
+use App\Models\User;
 
 class TransaksiController extends Controller
 {
@@ -16,6 +19,10 @@ class TransaksiController extends Controller
     public function index()
     {
         //
+        return view('admin.pages.data-transaksi', [
+            'transaksi' => Transaksi::all(),
+            'pesanan' => Pesanan::all()
+        ]);
     }
 
     /**
@@ -56,9 +63,18 @@ class TransaksiController extends Controller
      * @param  \App\Models\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Transaksi $transaksi)
+    public function edit(Transaksi $transaksi, $id, Pesanan $pesanan, Customers $customers)
     {
         //
+        $dataTransaksi = $transaksi::find($id);
+        $dataPesanan = $pesanan::find($dataTransaksi->pesanan_id);
+        $dataCustomers = $customers::find($dataPesanan->customer_id);
+        return response()->json([
+            'status' => 200,
+            'transaksi' => $transaksi::find($id),
+            'pesanan' => $dataPesanan,
+            'customers' => $dataCustomers
+        ]);
     }
 
     /**
@@ -71,6 +87,16 @@ class TransaksiController extends Controller
     public function update(UpdateTransaksiRequest $request, Transaksi $transaksi)
     {
         //
+        $validatedData = $request->validate([
+            'kode' => ['required', 'min:3', 'max:255'],
+            'jumlah_pembayaran' => 'required|min:5|max:255',
+            'status' => 'required',
+            'tanggal' => 'required'
+        ]);
+
+        Transaksi::where('id', $request->id)
+            ->update($validatedData);
+        return redirect('/data-transaksi')->with('flash', 'Diubah!');
     }
 
     /**
@@ -79,8 +105,12 @@ class TransaksiController extends Controller
      * @param  \App\Models\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Transaksi $transaksi)
+    public function destroy(Transaksi $transaksi, $id)
     {
         //
+        $transaksi->findOrFail($id)->delete();
+
+        // Redirect ke halaman data-kendaraan setelah penghapusan
+        return redirect('/data-transaksi')->with('flash', 'Dihapus!');;
     }
 }

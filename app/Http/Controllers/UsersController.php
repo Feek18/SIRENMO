@@ -115,6 +115,6 @@ class UsersController extends Controller
         $user->findOrFail($id)->delete();
 
         // Redirect ke halaman data-kendaraan setelah penghapusan
-        return redirect('/data-pengguna')->with('flash', 'Dihapus!');;
+        return redirect('/data-pengguna')->with('flash', 'Dihapus!');
     }
 }

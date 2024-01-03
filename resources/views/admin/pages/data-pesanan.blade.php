@@ -1,7 +1,7 @@
 @extends('admin.main')
 
 @section('content')
-<div class="pesanan" data-flash="{{ session('flash') }}"></div>
+<div class="pesanan" data-pesanan="{{ session('flash') }}"></div>
 <div class="w-full px-6 py-6 mx-auto">
   <div class="flex flex-wrap -mx-3">
     <div class="flex-none w-full max-w-full px-3">
@@ -75,7 +75,7 @@
                   </td>
                   
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <button type="button" class="text-xs font-semibold leading-tight text-slate-400 editPesanan" value="{{ $pesanan->id }}"> Edit </button>
+                    <button type="button" class="text-xs font-semibold leading-tight text-slate-400 ubahPesanan" value="{{ $pesanan->id }}"> Edit </button>
                   </td>
                   <td class="px-3 py-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                     <button type="button" class="text-xs font-semibold leading-tight text-slate-400 viewPesanan" value="{{ $pesanan->id }}"> Lihat </button>
@@ -104,9 +104,9 @@
   </a>
 </div>
 
-{{-- <!-- Modal Tambah Pesanan -->
-<div class="modal fade" id="tambahPesanan" tabindex="-1" aria-labelledby="judulModalTambah" aria-hidden="true">
-  <div class="modal-dialog">
+<!-- Modal -->
+<div class="modal fade" id="tambahPesanan" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5 judulModal" id="judulModal">Tambah Data Pesanan</h1>
@@ -116,70 +116,70 @@
         <form action="/data-pesanan" method="post" enctype="multipart/form-data">
           @csrf
           <input type="hidden" name="id" id="id-pesanan">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="mb-3">
-                  <label for="kode" class="form-label">Kode</label>
-                  <input type="text" class="form-control rounded border-slate-200 rounded border-slate-200" id="kode-pesanan" name="kode" required>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="mb-3">
-                  <label for="kendaraan_id" class="form-label">Kendaraan</label>
-                  <select class="form-select" id="kendaraan_id" name="kendaraan_id" required>
-                    <option value="#">-- Pilih Kendaraan --</option>
-                    @foreach ($kendaraan as $k)
-                        @if ($k->status == 'tersedia')
-                            <option value="{{ $k->id }}">{{ $k->nama }}</option>
-                        @endif
-                    @endforeach
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="mb-3">
-                <label for="tgl_ambil" class="form-label">Tgl. Ambil</label>
-                <input type="date" class="form-control rounded border-slate-200 rounded border-slate-200" id="tgl_ambil" name="tgl_ambil" required>
-            </div>
-            </div>
-            <div class="col-lg-6">
+            <div class="row">
+              <div class="col">
                 <div class="mb-3">
-                  <label for="tgl_kembali" class="form-label">Tgl. Kembali</label>
-                  <input type="date" class="form-control rounded border-slate-200 rounded border-slate-200" id="tgl_kembali" name="tgl_kembali" required>
+                    <label for="kode" class="form-label">Kode</label>
+                    <input type="text" class="form-control rounded border-slate-200 rounded border-slate-200" id="kode-pesanan" name="kode" required>
+                </div>
               </div>
-          </div>
-          <div class="mb-3">
-            <label for="customer_id" class="form-label">Nama Pemesan</label>
-            <select class="form-select" id="customer_id" name="customer_id" required>
-                <option value="#">-- Pilih Pemesan --</option>
-                @foreach ($customers as $cust)
-                    <option value="{{ $cust->id }}">{{ $cust->nama }}</option>
-                @endforeach
-            </select>
-        </div>
-          <div class="mb-3">
-            <label for="driver_id" class="form-label">Nama Driver</label>
-            <select class="form-select" id="driver_id" name="driver_id" required>
-                <option value="#">-- Pilih Pengemudi --</option>
-                @foreach ($drivers as $drive)
-                    <option value="{{ $drive->id }}">{{ $drive->nama }}</option>
-                @endforeach
-            </select>
-        </div>
+              <div class="col">
+                <div class="mb-3">
+                    <label for="tgl_ambil" class="form-label">Tanggal Ambil</label>
+                    <input type="date" class="form-control rounded border-slate-200" id="tgl_ambil" name="tgl_ambil" required>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                    <label for="tgl_kembali" class="form-label">Tanggal Kembali</label>
+                    <input type="date" class="form-control rounded border-slate-200" id="tgl_kembali" name="tgl_kembali" required>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                    <label for="pemesan" class="form-label">Pemesan</label>
+                    <select class="form-select" id="pemesan" name="customer_id" required>
+                      @foreach ($customers as $cust)
+                        <option value="{{ $cust->id }}">{{ $cust->nama }}</option>
+                      @endforeach
+                    </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                    <label for="driver" class="form-label">Pengemudi</label>
+                    <select class="form-select" id="driver" name="driver_id" required>
+                      @foreach ($drivers as $drive)
+                        <option value="{{ $drive->id }}">{{ $drive->nama }}</option>
+                      @endforeach
+                    </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                    <label for="kendaraan" class="form-label">Kendaraan</label>
+                    <select class="form-select" id="kendaraan" name="kendaraan_id" required>
+                      @foreach ($kendaraan as $k)
+                        <option value="{{ $k->id }}">{{ $k->nama }}</option>
+                      @endforeach
+                    </select>
+                </div>
+              </div>
+            </div>
       </div>
       <div class="modal-footer">
           <button type="button" class="block text-white bg-cyan-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 btnModal">Save changes</button>
+          <button type="submit" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 tombol-aksi">Save changes</button>
         </form>
       </div>
     </div>
   </div>
-</div> --}}
+</div>
 
-{{-- <!-- Modal Edit Pesanan -->
-<div class="modal fade" id="ubahPesananModal" tabindex="-1" aria-labelledby="judulModalEdit" aria-hidden="true">
+<!-- Modal -->
+<div class="modal fade" id="modalPesananUbah" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -187,75 +187,74 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="formPesananUbah" method="post" enctype="multipart/form-data">
+        <form id="formUbahPesanan" method="post" enctype="multipart/form-data">
           @csrf
           @method('put')
-          <input type="hidden" name="id" id="id-ubah">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="mb-3">
-                  <label for="kode" class="form-label">Kode</label>
-                  <input type="text" class="form-control rounded border-slate-200 rounded border-slate-200" id="kode-ubah" name="kode" required>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="mb-3">
-                  <label for="kendaraan_id" class="form-label">Kendaraan</label>
-                  <select class="form-select" id="kendaraan-ubah" name="kendaraan_id" required>
-                    <option value="#">-- Pilih Kendaraan --</option>
-                    @foreach ($kendaraan as $k)
-                        @if ($k->status == 'tersedia')
-                            <option value="{{ $k->id }}">{{ $k->nama }}</option>
-                        @endif
-                    @endforeach
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="mb-3">
-                <label for="tgl_ambil" class="form-label">Tgl. Ambil</label>
-                <input type="date" class="form-control rounded border-slate-200 rounded border-slate-200" id="tgl-ambil-ubah" name="tgl_ambil" required>
-            </div>
-            </div>
-            <div class="col-lg-6">
+          <input type="hidden" name="id" id="id-pesanan">
+            <div class="row">
+              <div class="col">
                 <div class="mb-3">
-                  <label for="tgl_kembali" class="form-label">Tgl. Kembali</label>
-                  <input type="date" class="form-control rounded border-slate-200 rounded border-slate-200" id="tgl-kembali-ubah" name="tgl_kembali" required>
+                    <label for="kode" class="form-label">Kode</label>
+                    <input type="text" class="form-control rounded border-slate-200 rounded border-slate-200" id="kode-pesanan-ubah" name="kode" required>
+                </div>
               </div>
-          </div>
-          <div class="mb-3">
-            <label for="customer_id" class="form-label">Nama Pemesan</label>
-            <select class="form-select" id="customers-ubah" name="customer_id" required>
-                <option value="#">-- Pilih Pemesan --</option>
-                @foreach ($customers as $cust)
-                    <option value="{{ $cust->id }}">{{ $cust->nama }}</option>
-                @endforeach
-            </select>
-        </div>
-          <div class="mb-3">
-            <label for="driver_id" class="form-label">Nama Driver</label>
-            <select class="form-select" id="drivers-ubah" name="driver_id" required>
-                <option value="#">-- Pilih Pengemudi --</option>
-                @foreach ($drivers as $drive)
-                    <option value="{{ $drive->id }}">{{ $drive->nama }}</option>
-                @endforeach
-            </select>
-        </div>
+              <div class="col">
+                <div class="mb-3">
+                    <label for="tgl_ambil" class="form-label">Tanggal Ambil</label>
+                    <input type="date" class="form-control rounded border-slate-200" id="tgl_ambil-ubah" name="tgl_ambil" required>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                    <label for="tgl_kembali" class="form-label">Tanggal Kembali</label>
+                    <input type="date" class="form-control rounded border-slate-200" id="tgl_kembali-ubah" name="tgl_kembali" required>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                    <label for="pemesan" class="form-label">Pemesan</label>
+                    <select class="form-select" id="pemesan-ubah" name="customer_id" required>
+                      @foreach ($customers as $cust)
+                        <option value="{{ $cust->id }}">{{ $cust->nama }}</option>
+                      @endforeach
+                    </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                    <label for="driver" class="form-label">Pengemudi</label>
+                    <select class="form-select" id="driver-ubah" name="driver_id" required>
+                      @foreach ($drivers as $drive)
+                        <option value="{{ $drive->id }}">{{ $drive->nama }}</option>
+                      @endforeach
+                    </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                    <label for="kendaraan" class="form-label">Kendaraan</label>
+                    <select class="form-select" id="kendaraan-ubah" name="kendaraan_id" required>
+                      @foreach ($kendaraan as $k)
+                        <option value="{{ $k->id }}">{{ $k->nama }}</option>
+                      @endforeach
+                    </select>
+                </div>
+              </div>
+            </div>
       </div>
       <div class="modal-footer">
           <button type="button" class="block text-white bg-cyan-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save changes</button>
+          <button type="submit" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 tombol-aksi">Save changes</button>
         </form>
       </div>
     </div>
   </div>
-</div> --}}
-
+</div>
 
 <!-- Card View -->
-<div class="modal fade" id="viewPesanan" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+<div class="modal fade" id="viewPesanans" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -263,59 +262,59 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="row pb-3">
-          <div class="col-sm d-flex align-items-center justify-content-center">
-            <img id="logo-view" alt="" class="priview-logo img-fluid mb-3 col-sm-8">
+        <div class="row">
+          <div class="col-lg d-flex align-items-center justify-content-center">
+            <img id="foto-kendaraan-lihat" alt="" class="img-priview img-fluid mb-3 col-lg-7">
           </div>
-          <hr>
+          <hr><br>
         </div>
         <div class="row">
-          <div class="col-sm-4">Kode Pesanan</div>
+          <div class="col-sm-4">Kode</div>
           <div class="col-sm-1">:</div>
           <div class="col-sm-6">
-            <input for="kode-view" id="kode-view"></input>
+            <input for="kode-pesanan-lihat" id="kode-pesanan-lihat"></input>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-4">Tanggal Ambil</div>
           <div class="col-sm-1">:</div>
           <div class="col-sm-6">
-            <input for="tgl-ambil-view" id="tgl-ambil-view"></input>
+            <input for="tgl-ambil-lihat" id="tgl-ambil-lihat"></input>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-4">Tanggal Kembali</div>
           <div class="col-sm-1">:</div>
           <div class="col-sm-6">
-            <input for="tgl-kembali-view" id="tgl-kembali-view"></input>
+            <input for="tgl-kembali-lihat" id="tgl-kembali-lihat"></input>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-4">Nama Pemesan</div>
+          <div class="col-sm-4">Pemesan</div>
           <div class="col-sm-1">:</div>
           <div class="col-sm-6">
-            <input for="cust-view" id="cust-view"></input>
+            <input for="pemesan-lihat" id="pemesan-lihat"></input>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-4">Nama Pengemudi</div>
+          <div class="col-sm-4">Pengemudi</div>
           <div class="col-sm-1">:</div>
           <div class="col-sm-6">
-            <input for="driver-view" id="driver-view"></input>
+            <input for="pengemudi-lihat" id="pengemudi-lihat"></input>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-4">Nama Kendaraan</div>
+          <div class="col-sm-4">Kendaraan</div>
           <div class="col-sm-1">:</div>
           <div class="col-sm-6">
-            <input for="kendaraan-view" id="kendaraan-view"></input>
+            <input for="kendaraan-lihat" id="kendaraan-lihat"></input>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-4">No Plat</div>
+          <div class="col-sm-4">Nomor Plat</div>
           <div class="col-sm-1">:</div>
           <div class="col-sm-6">
-            <input for="no-plat-view" id="no-plat-view"></input>
+            <input for="nomor-plat-lihat" id="nomor-plat-lihat"></input>
           </div>
         </div>
       </div>

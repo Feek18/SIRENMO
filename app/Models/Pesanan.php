@@ -26,4 +26,9 @@ class Pesanan extends Model
     {
         return $this->belongsTo(Kendaraan::class, 'kendaraan_id');
     }
+
+    public function transaksi()
+    {
+        return $this->hasOne(Transaksi::class);
+    }
 }
