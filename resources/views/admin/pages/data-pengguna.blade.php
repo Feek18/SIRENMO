@@ -179,7 +179,7 @@
                     <option value="admin">Admin</option>
                     <option value="customers">Customers</option>
                     <option value="drivers">Drivers</option>
-                    <option value="owner">Owner</option>
+                    <option value="owners">Owner</option>
                 </select>
             </div>
       </div>

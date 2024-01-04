@@ -25,7 +25,9 @@
   @include('../admin/layout/partials/sidebar')
 
   <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
-    @include('../admin/layout/partials/navbar')
+    @if (request()->path() != 'profile')
+      @include('../admin/layout/partials/navbar')
+    @endif
 
     @yield('content')
   </main>

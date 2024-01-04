@@ -11,6 +11,11 @@
 <!-- Contoh: Memuat jQuery dan Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 <!-- main script file  -->
 <script src="./assets/js/soft-ui-dashboard-tailwind.js?v=1.0.5" async></script>
@@ -122,6 +127,18 @@
     });
 </script>
 
+<script>
+    const Anda = $('.profile').data('profile');
+
+    if (Anda) {
+        Swal.fire(
+            'Data Anda',
+            'Berhasil ' + Anda,
+            'success'
+        )
+    }
+</script>
+
 {{-- Pengguna  --}}
 <script>
     $(document).ready(function() {
@@ -138,6 +155,7 @@
                     $('#password-pengguna-ubah').val(response.pengguna.password);
                     $('#role-pengguna-ubah').val(response.pengguna.role);
                     $('#formUbah').attr('action', 'http://127.0.0.1:8000/data-pengguna/' + pengguna_id);
+                    $('#formProfile').attr('action', 'http://127.0.0.1:8000/data-profile/' + pengguna_id);
                     $('#id-pengguna-ubah').val(response.pengguna.id);
                 }
             });

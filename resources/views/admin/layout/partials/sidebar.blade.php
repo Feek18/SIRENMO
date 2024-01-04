@@ -116,7 +116,7 @@
         </a>
       </li>
 
-      <li class="w-full mt-4">
+      {{-- <li class="w-full mt-4">
         <h6 class="pl-6 ml-2 text-xs font-bold leading-tight uppercase opacity-60">Account pages</h6>
       </li>
 
@@ -144,7 +144,7 @@
           </div>
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Logout</span>
         </a>
-      </li>
+      </li> --}}
     </ul>
   </div>
 </aside>

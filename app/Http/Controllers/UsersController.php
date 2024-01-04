@@ -107,11 +107,37 @@ class UsersController extends Controller
             'role' => 'required'
         ]);
 
-        $validatedData['password'] = Hash::make($validatedData['password']);
+        if (Hash::needsRehash($validatedData['password'])) {
+            # code...
+            $validatedData['password'] = Hash::make($validatedData['password']);
+        }
 
         User::where('id', $request->id)
             ->update($validatedData);
-        return redirect('/data-pengguna')->with('flash', 'Diubah!');
+        if ($request->path() == 'profile') {
+            return redirect('/profile')->with('flash', 'Diubah!');
+        } else {
+            return redirect('/data-pengguna')->with('flash', 'Diubah!');
+        }
+    }
+
+    public function profile(Request $request, User $user)
+    {
+        //
+        $validatedData = $request->validate([
+            'username' => ['required', 'min:3', 'max:255'],
+            'password' => 'required|min:5|max:255',
+            'role' => 'required'
+        ]);
+
+        if (Hash::needsRehash($validatedData['password'])) {
+            # code...
+            $validatedData['password'] = Hash::make($validatedData['password']);
+        }
+
+        User::where('id', $request->id)
+            ->update($validatedData);
+        return redirect('/profile')->with('flash', 'Diubah!');
     }
 
     /**
