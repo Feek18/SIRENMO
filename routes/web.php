@@ -10,11 +10,13 @@ use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\PesananDriversController;
 use App\Http\Controllers\TransaksiController;
+use App\Models\Customers;
 use App\Models\Drivers;
 use App\Models\Kendaraan;
 use App\Models\Pesanan;
 use App\Models\Transaksi;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,7 +52,7 @@ Route::resource('/data-transaksi', TransaksiController::class)->middleware('auth
 
 Route::get('/profile', function () {
     return view('admin.pages.profile', [
-        'users' => Cus
+        'users' => Customers::find(Auth::user()->id)
     ]);
 });
 

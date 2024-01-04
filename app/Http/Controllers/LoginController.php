@@ -27,7 +27,7 @@ class LoginController extends Controller
             'role' => 'required'
         ]);
 
-        $validatedData['password'] = bcrypt($validatedData['password']);
+        $validatedData['password'] = Hash::make($validatedData['password']);
 
         User::create($validatedData);
         return redirect('/login')->with('success', 'Registration successfull! Please login');
@@ -43,25 +43,22 @@ class LoginController extends Controller
         if (Auth::attempt($validate)) {
             $request->session()->regenerate();
             if (Auth::user()->role == 'admin') {
-                # code...
                 return redirect()->intended('dashboard-admin');
             }
             if (Auth::user()->role == 'customers') {
-                # code...
                 return redirect()->intended('dashboard');
             }
             if (Auth::user()->role == 'drivers') {
-                # code...
                 return redirect()->intended('dashboard-driver');
             }
             if (Auth::user()->role == 'owners') {
-                # code...
                 return redirect()->intended('profile');
             }
         }
 
         return back()->with('loginError', 'Login Failed!');
     }
+
 
     public function logout()
     {

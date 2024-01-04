@@ -6,6 +6,9 @@ use Illuminate\Contracts\Encryption\DecryptException;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
 
 class UsersController extends Controller
 {
@@ -17,9 +20,15 @@ class UsersController extends Controller
     public function index()
     {
         //
-        return view('admin.pages.data-pengguna', [
-            'pengguna' => User::all()
-        ]);
+        $searchTerm = request('search');
+
+        $pengguna = DB::table('users')
+            ->when($searchTerm, function ($query) use ($searchTerm) {
+                return $query->where('username', 'LIKE', '%' . $searchTerm . '%');
+            })
+            ->paginate(7);
+
+        return view('admin.pages.data-pengguna', compact('pengguna'));
     }
 
     /**
@@ -47,7 +56,7 @@ class UsersController extends Controller
             'role' => 'required'
         ]);
 
-        $validatedData['password'] = bcrypt($validatedData['password']);
+        $validatedData['password'] = Hash::make($validatedData['password']);
 
         User::create($validatedData);
         return redirect('/data-pengguna')->with('flash', 'Ditambahkan!');
@@ -96,7 +105,7 @@ class UsersController extends Controller
             'role' => 'required'
         ]);
 
-        $validatedData['password'] = bcrypt($validatedData['password']);
+        $validatedData['password'] = Hash::make($validatedData['password']);
 
         User::where('id', $request->id)
             ->update($validatedData);

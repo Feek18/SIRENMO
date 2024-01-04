@@ -14,8 +14,7 @@
                   <div>
                     <p class="mb-0 font-sans text-sm font-semibold leading-normal">Pendapatan</p>
                     <h5 class="mb-0 font-bold">
-                      {{ number_format($pendapatan, 0, ',', '.') }}
-                      <span class="text-sm leading-normal font-weight-bolder text-lime-500">+55%</span>
+                      <span class="text-sm leading-normal font-weight-bolder text-lime-500">+{{ number_format($pendapatan, 0, ',', '.') }}</span>
                     </h5>
                   </div>
                 </div>
