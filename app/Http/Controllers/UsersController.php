@@ -24,7 +24,9 @@ class UsersController extends Controller
 
         $pengguna = DB::table('users')
             ->when($searchTerm, function ($query) use ($searchTerm) {
-                return $query->where('username', 'LIKE', '%' . $searchTerm . '%');
+                return $query->where('username', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('id', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('role', 'LIKE', '%' . $searchTerm . '%');
             })
             ->paginate(7);
 
