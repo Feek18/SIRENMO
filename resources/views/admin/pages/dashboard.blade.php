@@ -38,7 +38,7 @@
                     <p class="mb-0 font-sans text-sm font-semibold leading-normal">Kendaraan</p>
                     <h5 class="mb-0 font-bold">
                       {{ $kendaraan }}
-                      <span class="text-sm leading-normal font-weight-bolder text-lime-500">+3%</span>
+                      <span class="text-sm leading-normal font-weight-bolder text-lime-500">+3</span>
                     </h5>
                   </div>
                 </div>
@@ -62,7 +62,7 @@
                     <p class="mb-0 font-sans text-sm font-semibold leading-normal">Pengguna</p>
                     <h5 class="mb-0 font-bold">
                       {{ $user }}
-                      <span class="text-sm leading-normal text-red-600 font-weight-bolder">-2%</span>
+                      <span class="text-sm leading-normal text-red-600 font-weight-bolder">-2</span>
                     </h5>
                   </div>
                 </div>
@@ -86,7 +86,7 @@
                     <p class="mb-0 font-sans text-sm font-semibold leading-normal">Pesanan</p>
                     <h5 class="mb-0 font-bold">
                       {{ $pesanan }}
-                      <span class="text-sm leading-normal font-weight-bolder text-lime-500">+5%</span>
+                      <span class="text-sm leading-normal font-weight-bolder text-lime-500">+5</span>
                     </h5>
                   </div>
                 </div>
