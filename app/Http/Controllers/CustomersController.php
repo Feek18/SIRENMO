@@ -7,6 +7,8 @@ use App\Http\Requests\StoreCustomersRequest;
 use App\Http\Requests\UpdateCustomersRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
 
 class CustomersController extends Controller
 {
@@ -18,8 +20,18 @@ class CustomersController extends Controller
     public function index()
     {
         //
+        $searchTerm = request('search');
+
+        $cust = DB::table('customers')
+            ->when($searchTerm, function ($query) use ($searchTerm) {
+                return $query->where('nama', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('nik', 'LIKE', '%' . $searchTerm . '%')
+                    ->orWhere('telepon', 'LIKE', '%' . $searchTerm . '%');
+            })
+            ->paginate(1);
+
         return view('admin.pages.data-customers', [
-            'customers' => Customers::all(),
+            'customers' => $cust,
             'users' => User::where('role', '!=', 'drivers')->get()
         ]);
     }

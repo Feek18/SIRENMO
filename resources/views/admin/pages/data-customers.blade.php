@@ -89,6 +89,9 @@
               </tbody>
             </table>
           </div>
+          <div class="d-flex justify-content-center mt-4 mb-4">
+            {{ $customers->links() }}
+          </div>
         </div>
       </div>
     </div>

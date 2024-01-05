@@ -47,9 +47,12 @@
           href="/data-customers">
           <div
           class="{{ Request::is('data-customers') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
-          <svg class="h-8 w-8 {{ Request::is('data-customers') ? 'fill-white' : ''}}"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="7" r="4" />  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>         
+          <svg class="h-8 w-8 {{ Request::is('data-customers') ? 'fill-white' : ''}}"  viewBox="0 0 24 24"  fill="none" @if (!Request::is('data-customers'))
+          stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
+          @endif >  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />  <circle cx="9" cy="7" r="4" />  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />  <path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+          </svg>                    
           </div>
-          <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Data Customers</span>
+          <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Data Pelanggan</span>
         </a>
       </li>
 
@@ -71,7 +74,9 @@
           href="/data-kategori">
           <div
           class="{{ Request::is('data-kategori') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
-          <svg class="h-20 w-20 {{ Request::is('data-kategori') ? 'text-white' : ''}}"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="3"  stroke-linecap="round"  stroke-linejoin="round">  <rect x="3" y="3" width="7" height="7" />  <rect x="14" y="3" width="7" height="7" />  <rect x="14" y="14" width="7" height="7" />  <rect x="3" y="14" width="7" height="7" /></svg>
+          <svg class="w-6 h-6 text-gray-800 dark:text-white {{ Request::is('data-kategori') ? 'fill-white' : ''}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 14" >
+            <path d="M16 2H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 0 1 0 2Z"/>
+          </svg>          
           </div>
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Data Kategori</span>
         </a>
