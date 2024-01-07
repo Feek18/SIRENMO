@@ -127,4 +127,19 @@
         @apply
         text-color
     }
+
+    .footer {
+        @apply
+        bg-secondary mt-14 pt-8 flex
+    }
+
+    .footer a {
+        @apply
+        text-white
+    }
+
+    .footer-desc {
+        @apply
+        w-[318px] text-white text-xs font-normal leading-[27.12px] tracking-widest mt-4 opacity-80
+    }
 }
