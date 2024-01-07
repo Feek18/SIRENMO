@@ -71,9 +71,17 @@ class FeedbackController extends Controller
      * @param  \App\Models\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function edit(Feedback $feedback)
+    public function edit(Feedback $feedback, $id)
     {
         //
+        $dataFeedback = $feedback::find($id);
+        $dataPesanan = Pesanan::find($dataFeedback->pesanan_id);
+        $dataCustomers = Customers::find($dataPesanan->customer_id);
+        return response()->json([
+            'status' => 200,
+            'feedback' => $dataFeedback,
+            'customers' => $dataCustomers
+        ]);
     }
 
     /**
@@ -94,8 +102,12 @@ class FeedbackController extends Controller
      * @param  \App\Models\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Feedback $feedback)
+    public function destroy(Feedback $feedback, $id)
     {
         //
+        $feedback->findOrFail($id)->delete();
+
+        // Redirect ke halaman data-kendaraan setelah penghapusan
+        return redirect('/data-feedback')->with('flash', 'Dihapus!');;
     }
 }

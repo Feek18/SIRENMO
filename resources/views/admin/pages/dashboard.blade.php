@@ -1,6 +1,7 @@
 @extends('admin.main')
 
 @section('content')
+<div class="feedback" data-flash="{{ session('flash') }}"></div>
     <!-- cards -->
     <div class="w-full px-6 py-6 mx-auto">
       <!-- row 1 -->
@@ -162,13 +163,13 @@
                                   <p class="mb-0 text-xs font-semibold leading-tight" style="width: 200px">{{ $p->pesanan->customers->nama }}</p>
                                 </td>
                                 <td class="px-6 py-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                  <button type="button" class="text-xs font-semibold ms-4 leading-tight text-slate-400 viewTransaksi" value="{{ $p->id }}"> Lihat </button>
+                                  <button type="button" class="text-xs font-semibold ms-4 leading-tight text-slate-400 viewFB" value="{{ $p->id }}"> Lihat </button>
                                 </td>
                                 <td class="px-6 py-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                  <form action="/data-transaksi/" method="post" class="hapusTransaksi">
+                                  <form action="/data-feedback/" method="post" class="hapusFeedback">
                                     @csrf
                                     @method('delete')
-                                    <button class="text-xs font-semibold leading-tight text-slate-400 tombol-hapus-transaksi" type="submit" value="{{ $p->id }}">Hapus</button>
+                                    <button class="text-xs font-semibold leading-tight text-slate-400 tombol-hapus-feedback" type="submit" value="{{ $p->id }}">Hapus</button>
                                   </form>                  
                                 </td>
                               </tr>
@@ -193,4 +194,42 @@
       @include('../admin/layout/partials/footer')
     </div>
     <!-- end cards -->
+
+    <!-- Card View -->
+    <div class="modal fade" id="viewFeedback" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 judulModal" id="judulModal">Detail Feedback</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+          </div>
+          <div class="modal-body">
+            <div class="row pb-3 mb-2">
+              <div class="col-sm d-flex align-items-center justify-content-center">
+                <div class="d-flex justify-content-center align-items-center" id="penilaian-view">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-sm-3">Ulasan</div>
+              <div class="col-sm-1">:</div>
+              <div class="col-sm-7">
+                <input for="ulasan-lihat" id="ulasan-lihat" style="width: 480px;"></input>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-sm-3">Pemesan</div>
+              <div class="col-sm-1">:</div>
+              <div class="col-sm-7">
+                <input for="pemesan-lihat" id="pemesan-lihat" style="width: 480px;"></input>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="block text-white bg-cyan-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 @endsection
