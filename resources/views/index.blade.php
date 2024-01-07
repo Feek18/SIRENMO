@@ -634,7 +634,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about bg-secondary">
+    <!-- <section id="about" class="about bg-secondary">
         <div class="mx-auto flex items-center justify-center mt-10 py-24">
             <div>
                 <img class="rounded-sm w-auto left-0 top-0" src="img/about1.png" alt="">
@@ -670,7 +670,7 @@
                 <img class="rounded-sm w-auto left-0 top-0" src="img/about2.png" alt="">
             </div>
         </div>
-    </section>
+    </section> -->
 
 
 
