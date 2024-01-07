@@ -28,7 +28,7 @@ class CustomersController extends Controller
                     ->orWhere('nik', 'LIKE', '%' . $searchTerm . '%')
                     ->orWhere('telepon', 'LIKE', '%' . $searchTerm . '%');
             })
-            ->paginate(1);
+            ->paginate(5);
 
         return view('admin.pages.data-customers', [
             'customers' => $cust,

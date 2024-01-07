@@ -46,13 +46,13 @@
                 <a class="dropdown-item" href="#">Profile & Setting</a>
                 <a class="dropdown-item" href="/logout">Logout</a>
               </div> --}}
-              <button class="border-none text-black dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              <button class="border-none text-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-user sm:mr-1"></i>
                 <span class="hidden sm:inline">More</span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="/profile">Profile & Settings</a></li>
-                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                <li><a class="dropdown-item text-secondary" href="/profile">Profile & Settings</a></li>
+                <li><a class="dropdown-item text-secondary" href="/logout">Logout</a></li>
               </ul>
             </div>
           </li>
