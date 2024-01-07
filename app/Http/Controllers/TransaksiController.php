@@ -111,6 +111,6 @@ class TransaksiController extends Controller
         $transaksi->findOrFail($id)->delete();
 
         // Redirect ke halaman data-kendaraan setelah penghapusan
-        return redirect('/data-transaksi')->with('flash', 'Dihapus!');;
+        return redirect('/data-transaksi')->with('flash', 'Dihapus!');
     }
 }

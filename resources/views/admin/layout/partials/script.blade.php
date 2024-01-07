@@ -715,3 +715,75 @@
         })
     })
 </script>
+
+{{-- Feedback  --}}
+<script>
+    const Feedback = $('.feedback').data('flash');
+
+    if (Feedback) {
+        Swal.fire(
+            'Data Feedback',
+            'Berhasil ' + Feedback,
+            'success'
+        )
+    }
+
+    $(document).on('click', '.tombol-hapus-feedback', function(e) {
+        e.preventDefault();
+        let feedback_id = $(this).val();
+        
+        // Get the current action attribute
+        let currentAction = $('.hapusFeedback').attr('action');
+        
+        // Update the action attribute with the new URL
+        const href = currentAction + feedback_id;
+        
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            text: "Anda akan menghapus sebuah data!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus Data!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Update the action attribute of the form
+                $('.hapusFeedback').attr('action', href);
+                
+                // Submit the form
+                $('.hapusFeedback').submit();
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.viewFB', function() {
+            let feedback_id = $(this).val()
+
+            $('#viewFeedback').modal('show')
+
+            $.ajax({
+                type: "GET",
+                url: "/data-feedback/" + feedback_id + "/edit",
+                success: function (response) {
+                    $('#penilaian-view').empty();
+
+                    for (let i = 0; i < response.feedback.penilaian; i++) {
+                        var imgElement = $('<img>', {
+                            src: '../assets/img/star.png',
+                            alt: 'Rating',
+                            width: '70' // Atur lebar gambar sesuai kebutuhan
+                        });
+
+                        $('#penilaian-view').append(imgElement);
+                    }
+
+                    $('#ulasan-lihat').val(response.feedback.ulasan);
+                    $('#pemesan-lihat').val(response.customers.nama);
+                }
+            });
+        })
+    })
+</script>
