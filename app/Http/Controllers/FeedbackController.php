@@ -5,6 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Feedback;
 use App\Http\Requests\StoreFeedbackRequest;
 use App\Http\Requests\UpdateFeedbackRequest;
+use App\Models\Customers;
+use App\Models\Transaksi;
+use App\Models\Pesanan;
+use App\Models\User;
+use App\Models\Kendaraan;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
 
 class FeedbackController extends Controller
 {
@@ -16,6 +23,14 @@ class FeedbackController extends Controller
     public function index()
     {
         //
+        return view('admin.pages.dashboard', [
+            'feedback' => Feedback::paginate(4),
+            'pesanan' => Pesanan::all(),
+            'pendapatan' => Transaksi::sum('jumlah_pembayaran'),
+            'user' => User::count('id'),
+            'pesanan_total' => Pesanan::count('id'),
+            'kendaraan' => Kendaraan::count('id')
+        ]);
     }
 
     /**
