@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\DriversController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\PesananController;
@@ -33,14 +34,16 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/dashboard-admin', function () {
-    return view('admin.pages.dashboard', [
-        'pendapatan' => Transaksi::sum('jumlah_pembayaran'),
-        'user' => User::count('id'),
-        'pesanan' => Pesanan::count('id'),
-        'kendaraan' => Kendaraan::count('id')
-    ]);
-})->middleware('auth');
+
+// admin punya
+// Route::get('/dashboard-admin', function () {
+//     return view('admin.pages.dashboard', [
+//         'pendapatan' => Transaksi::sum('jumlah_pembayaran'),
+//         'user' => User::count('id'),
+//         'pesanan' => Pesanan::count('id'),
+//         'kendaraan' => Kendaraan::count('id')
+//     ]);
+// })->middleware('auth');
 
 Route::resource('/data-kendaraan', KendaraanController::class)->middleware('auth');
 Route::resource('/data-pengguna', UsersController::class)->middleware('auth');
@@ -50,7 +53,7 @@ Route::resource('/data-drivers', DriversController::class)->middleware('auth');
 Route::resource('/data-pesanan', PesananController::class)->middleware('auth');
 Route::resource('/data-transaksi', TransaksiController::class)->middleware('auth');
 Route::post('/data-profile/{id}', [UsersController::class, 'profile']);
-
+Route::resource('/data-feedback', FeedbackController::class);
 Route::get('/profile', function () {
     return view('admin.pages.profile', [
         'users' => Customers::find(Auth::user()->id)

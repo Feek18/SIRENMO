@@ -5,6 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Feedback;
 use App\Http\Requests\StoreFeedbackRequest;
 use App\Http\Requests\UpdateFeedbackRequest;
+use App\Models\Customers;
+use App\Models\Transaksi;
+use App\Models\Pesanan;
+use App\Models\User;
+use App\Models\Kendaraan;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
 
 class FeedbackController extends Controller
 {
@@ -16,6 +23,14 @@ class FeedbackController extends Controller
     public function index()
     {
         //
+        return view('admin.pages.dashboard', [
+            'feedback' => Feedback::paginate(4),
+            'pesanan' => Pesanan::all(),
+            'pendapatan' => Transaksi::sum('jumlah_pembayaran'),
+            'user' => User::count('id'),
+            'pesanan_total' => Pesanan::count('id'),
+            'kendaraan' => Kendaraan::count('id')
+        ]);
     }
 
     /**
@@ -56,9 +71,17 @@ class FeedbackController extends Controller
      * @param  \App\Models\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function edit(Feedback $feedback)
+    public function edit(Feedback $feedback, $id)
     {
         //
+        $dataFeedback = $feedback::find($id);
+        $dataPesanan = Pesanan::find($dataFeedback->pesanan_id);
+        $dataCustomers = Customers::find($dataPesanan->customer_id);
+        return response()->json([
+            'status' => 200,
+            'feedback' => $dataFeedback,
+            'customers' => $dataCustomers
+        ]);
     }
 
     /**
@@ -79,8 +102,12 @@ class FeedbackController extends Controller
      * @param  \App\Models\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Feedback $feedback)
+    public function destroy(Feedback $feedback, $id)
     {
         //
+        $feedback->findOrFail($id)->delete();
+
+        // Redirect ke halaman data-kendaraan setelah penghapusan
+        return redirect('/data-feedback')->with('flash', 'Dihapus!');;
     }
 }

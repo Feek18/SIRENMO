@@ -31,4 +31,9 @@ class Pesanan extends Model
     {
         return $this->hasOne(Transaksi::class);
     }
+
+    public function feedback()
+    {
+        return $this->hasOne(Feedback::class);
+    }
 }

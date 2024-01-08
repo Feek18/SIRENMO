@@ -12,6 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Flowbite -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
 
@@ -419,8 +424,8 @@
     </div>
     <!-- End Top Navbar -->
 
-    <div class="">
-        <nav class="bg-white shadow flex justify-between items-center p-2 md:items-center md:justify-between">
+    <section class="">
+        <div class="bg-white shadow flex justify-between items-center p-2 md:items-center md:justify-between">
             <div>
                 <span class="text-2xl font-[Poppins] cursor-pointer font-bold">
                     <a class="font-bold text-xl pt-4" href="">
@@ -454,7 +459,7 @@
             <button class="lg:hidden block btntoogle">
                 <img class="h-6" src="img/hamburger-menu.png" alt="">
             </button>
-        </nav>
+        </div>
 
         <div class="mobile hidden mx-auto lg:hidden md:hidden">
             <ul class="text-secondary text-sm font-normal gap-7">
@@ -480,7 +485,7 @@
                 </button>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Hero Section -->
     <section id="home" class="py-5">
@@ -527,150 +532,263 @@
         </div>
     </section>
 
+    <!-- Why Us -->
+    <section class="ride mt-12">
+        <div class="heading">
+            <span class="text-color">WHY US</span>
+            <h1>Enjoy Your Travelling With Fast and Easy Rents</h1>
+        </div>
+        <div class="ride-container">
+            <div class="box">
+                <i class="fa fa-solid fa-gear"></i>
+                <h2>Healthy Machine Standardization</h2>
+                <p>Elevating Wellness: Advancing Healthy Machine Standardization for Optimal Performance and Sustainability.</p>
+            </div>
+
+            <div class="box">
+                <i class="fa fa-regular fa-handshake"></i>
+                <h2>Friendly and Fast Service</h2>
+                <p>Effortless Excellence: Providing Friendly and Fast Service to Elevate Your Experience.</p>
+            </div>
+
+            <div class="box">
+                <i class="fa fa-solid fa-wallet"></i>
+                <h2>Cheap Price and Safe</h2>
+                <p>Affordable Assurance: Offering Cheap Prices with Uncompromised Safety Standards for Your Peace of Mind.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Product Section -->
     <section class="" id="specialdeals">
-        <div class="container lg:h-screen mx-auto mt-12">
-                <div class="text-center lg:flex lg:justify-between mt-4 pt-8">
-                    <h1
-                        class="text-secondary text-[28px] lg:text-4xl font-medium lg:font-semibold leading-loose tracking-widest mt-4">
-                        Specials
-                        <span
-                            class="text-color text-[28px] lg:text-4xl font-semibold leading-loose tracking-widest">Offer</span>
-                    </h1>
-                    <button
-                        class="px-4 py-2 lg:p-4 bg-secondary border hover:bg-color justify-center items-center inline-flex mt-2">
-                        <a class="text-white font-medium text-[11px] lg:text-[13px] text-sm font-medium tracking-widest hover:text-white"
-                            href="">See More</a>
-                    </button>
-                </div>
-                <div class="lg:flex lg:items-center lg:justify-center lg:gap-12 mt-14">
-                    <div class="card">
-                        <img class="lg:w-full h-full object-cover mt-6 px-4 py-2" src="img/pict1.png" alt="All New Avanza">
-                        <div class="p-5 flex flex-col gap-3">
-                            <div class="flex items-center gap-2">
-                                <span class="badge">stock ready</span>
-                                <span class="badge">most recommend</span>
-                            </div>
-                            <h2 class="tittle">All New Avanza</h2>
-                            <p class="text-xl font-bold">Rp 350.000</p>
-                            <div class="flex items-center gap-2 mt-1">
-                                <p class="text-sm line-through opacity-50">Rp 450.000</p>
-                                <p class="percent">save 15% </p>
-                            </div>
-                            <div class="mt-4 flex gap-2">
-                                <button class="btn-product">
-                                    <a href="">Book Now</a>
-                                </button>
-                                <p class="stock">8 Stock</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict2.png" alt="All New Avanza">
-                        <div class="p-5 flex flex-col gap-3">
-                            <div class="flex items-center gap-2">
-                                <span class="badge">stock ready</span>
-                                <span class="badge">most recommend</span>
-                            </div>
-                            <h2 class="tittle">Rush</h2>
-                            <p class="text-xl font-bold">Rp 400.000</p>
-                            <div class="flex items-center gap-2 mt-1">
-                                <p class="text-sm line-through opacity-50">Rp 550.000</p>
-                                <p class="percent">save 20% </p>
-                            </div>
-                            <div class="mt-4 flex gap-2">
-                                <button class="btn-product">
-                                    <a href="">Book Now</a>
-                                </button>
-                                <p class="stock">4 Stock</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict3.png" alt="All New Avanza">
-                        <div class="p-5 flex flex-col gap-3">
-                            <div class="flex items-center gap-2">
-                                <span class="badge">stock ready</span>
-                                <span class="badge">most recommend</span>
-                            </div>
-                            <h2 class="tittle">Veloz</h2>
-                            <p class="text-xl font-bold">Rp 350.000</p>
-                            <div class="flex items-center gap-2 mt-1">
-                                <p class="text-sm line-through opacity-50">Rp 450.000</p>
-                                <p class="percent">save 15% </p>
-                            </div>
-                            <div class="mt-4 flex gap-2">
-                                <button class="btn-product">
-                                    <a href="">Book Now</a>
-                                </button>
-                                <p class="stock">9 Stock</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict4.png" alt="All New Avanza">
-                        <div class="p-5 flex flex-col gap-3">
-                            <div class="flex items-center gap-2">
-                                <span class="badge">stock ready</span>
-                                <span class="badge">most recommend</span>
-                            </div>
-                            <h2 class="tittle">Honda HR-V</h2>
-                            <p class="text-xl font-bold">Rp 450.000</p>
-                            <div class="flex items-center gap-2 mt-1">
-                                <p class="text-sm line-through opacity-50">Rp 500.000</p>
-                                <p class="percent">save 25% </p>
-                            </div>
-                            <div class="mt-4 flex gap-2">
-                                <button class="btn-product">
-                                    <a href="">Book Now</a>
-                                </button>
-                                <p class="stock">4 Stock</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
+        <div class="container lg:h-screen mx-auto mt-14">
+            <div class="text-center lg:flex lg:justify-between mt-4 pt-8">
+                <h1
+                    class="text-secondary text-[28px] lg:text-4xl font-medium lg:font-semibold leading-loose tracking-widest mt-4">
+                    Specials
+                    <span
+                        class="text-color text-[28px] lg:text-4xl font-semibold leading-loose tracking-widest">Offer</span>
+                </h1>
+                <button
+                    class="px-4 py-2 lg:p-4 bg-secondary border hover:bg-color justify-center items-center inline-flex mt-2">
+                    <a class="text-white font-medium text-[11px] lg:text-[13px] text-sm font-medium tracking-widest hover:text-white"
+                        href="">See More</a>
+                </button>
             </div>
+            <div class="lg:flex lg:items-center lg:justify-center lg:gap-12 mt-14">
+                <div class="card">
+                    <img class="lg:w-full h-full object-cover mt-6 px-4 py-2" src="img/pict1.png" alt="All New Avanza">
+                    <div class="p-5 flex flex-col gap-3">
+                        <div class="flex items-center gap-2">
+                            <span class="badge">stock ready</span>
+                            <span class="badge">most recommend</span>
+                        </div>
+                        <h2 class="tittle">All New Avanza</h2>
+                        <p class="text-xl font-bold">Rp 350.000</p>
+                        <div class="flex items-center gap-2 mt-1">
+                            <p class="text-sm line-through opacity-50">Rp 450.000</p>
+                            <p class="percent">save 15% </p>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button class="btn-product">
+                                <a href="">Book Now</a>
+                            </button>
+                            <p class="stock">8 Stock</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict2.png" alt="All New Avanza">
+                    <div class="p-5 flex flex-col gap-3">
+                        <div class="flex items-center gap-2">
+                            <span class="badge">stock ready</span>
+                            <span class="badge">most recommend</span>
+                        </div>
+                        <h2 class="tittle">Rush</h2>
+                        <p class="text-xl font-bold">Rp 400.000</p>
+                        <div class="flex items-center gap-2 mt-1">
+                            <p class="text-sm line-through opacity-50">Rp 550.000</p>
+                            <p class="percent">save 20% </p>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button class="btn-product">
+                                <a href="">Book Now</a>
+                            </button>
+                            <p class="stock">4 Stock</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict3.png" alt="All New Avanza">
+                    <div class="p-5 flex flex-col gap-3">
+                        <div class="flex items-center gap-2">
+                            <span class="badge">stock ready</span>
+                            <span class="badge">most recommend</span>
+                        </div>
+                        <h2 class="tittle">Veloz</h2>
+                        <p class="text-xl font-bold">Rp 350.000</p>
+                        <div class="flex items-center gap-2 mt-1">
+                            <p class="text-sm line-through opacity-50">Rp 450.000</p>
+                            <p class="percent">save 15% </p>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button class="btn-product">
+                                <a href="">Book Now</a>
+                            </button>
+                            <p class="stock">9 Stock</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict4.png" alt="All New Avanza">
+                    <div class="p-5 flex flex-col gap-3">
+                        <div class="flex items-center gap-2">
+                            <span class="badge">stock ready</span>
+                            <span class="badge">most recommend</span>
+                        </div>
+                        <h2 class="tittle">Honda HR-V</h2>
+                        <p class="text-xl font-bold">Rp 450.000</p>
+                        <div class="flex items-center gap-2 mt-1">
+                            <p class="text-sm line-through opacity-50">Rp 500.000</p>
+                            <p class="percent">save 25% </p>
+                        </div>
+                        <div class="mt-4 flex gap-2">
+                            <button class="btn-product">
+                                <a href="">Book Now</a>
+                            </button>
+                            <p class="stock">4 Stock</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about bg-secondary">
-        <div class="mx-auto flex items-center justify-center mt-10 py-24">
-            <div>
-                <img class="rounded-sm w-auto left-0 top-0" src="img/about1.png" alt="">
-            </div>
-            <div class="mb-14 lg:mb-0 lg:mb-1/2">
-                <h1 class="headline mb-6">ORDINARY BOY'S CAR</h1>
-                <p class="desc mb-10 w-96">Lorem ipsum dolor sit amet consectetur. Nulla etiam sed varius proin morbi ut ultrices.</p>
-                <button class="text-color text-sm font-medium tracking-wider ml-4">
-                    <a href="">Learn More</a>
-                </button>
-            </div>
-        </div>
-        <div class="container mx-auto flex items-center justify-center">
-            <div class="w-auto pt-1">
-                <h1 class="headline2 mb-4">BEST RENTS TRIP ADVENTURE</h1>
-                <p class="w-[600px] text-white text-[13px] font-normal font-['Poppins'] leading-[29.38px] tracking-[2.60px] mb-14">Lorem ipsum dolor sit amet consectetur. Penatibus enim tempor tincidunt aenean vitae dignissim. Egestas tempor velit tristique nulla cras. Augue lorem accumsan urna eu id.</p>
-                <div class="flex gap-6">
-                    <div class="gap-6 ml-2">
-                        <img class="ml-20 mb-5" src="img/settings.png" alt="">
-                        <p class="desc-about">Healthy Machine Standardization</p>
-                    </div>
-                    <div class="gap-6 ml-2">
-                        <img class="ml-20 mb-5" src="img/thumbs-up.png" alt="">
-                        <p class="desc-about">Very Cheap Rental Prices</p>
-                    </div>
-                    <div class="gap-6 ml-2">
-                        <img class="ml-20 mb-5" src="img/truck.png" alt="">
-                        <p class="desc-about">Uncomplicated Ordering</p>
-                    </div>
+        <div class="container">
+            <div class="flex items-center justify-center mt-10 py-20">
+                <div>
+                    <img class="rounded-sm w-[810px] h-[455px]" src="img/about1.png" alt="">
                 </div>
-            </div>
-            <div class="ml-4">
-                <img class="rounded-sm w-auto left-0 top-0" src="img/about2.png" alt="">
+                <div class="mb-14 lg:mb-0 lg:mb-1/2">
+                    <h1 class="headline mb-6">Feel The Best Experience With Our Rental Deals</h1>
+                    <p class="desc mb-10 w-96">Immerse Yourself in Excellence: Elevate Your Journey with Unparalleled
+                        Experiences Through Our Exclusive Rental Deals</p>
+                    <button class="text-color text-sm font-medium tracking-wider ml-4">
+                        <a href="">Learn More<i class="fa-solid fa-chevron-right ml-2"></i></a>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Testimonials -->
+    <section class="testi mt-16">
+    <div class="heading">
+        <span class="text-color">Testimonials</span>
+        <h1>What Our Customers Say</h1>
+    </div>
+    <div class="testi-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="box bg-white p-6 rounded-lg">
+            <div class="stars">
+                <i class="fa fa-solid fa-star"></i>
+                <i class="fa fa-solid fa-star"></i>
+                <i class="fa fa-solid fa-star"></i>
+                <i class="fa fa-solid fa-star"></i>
+                <i class="fa fa-solid fa-star-half"></i>
+            </div>
+            <p class="pt-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio praesentium delectus porro
+                voluptate ut itaque ducimus vel corporis minus dolores!</p>
+            <div class="flex items-center mt-2">
+                <div class="testi-img">
+                    <img class="h-12 w-12 object-cover rounded-full mr-4" src="img/testi1.png" alt="Morgan Steve">
+                </div>
+                <div>
+                    <h2 class="font-bold">Morgan Steve</h2>
+                    <span>Traveller</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="box bg-white p-6 rounded-lg">
+            <div class="stars">
+                <i class="fa fa-solid fa-star"></i>
+                <i class="fa fa-solid fa-star"></i>
+                <i class="fa fa-solid fa-star"></i>
+                <i class="fa fa-solid fa-star"></i>
+                <i class="fa fa-solid fa-star-half"></i>
+            </div>
+            <p class="pt-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio praesentium delectus porro
+                voluptate ut itaque ducimus vel corporis minus dolores!</p>
+            <div class="flex items-center mt-2">
+                <div class="testi-img">
+                    <img class="h-12 w-12 object-cover rounded-full mr-4" src="img/testi2.png" alt="Morgan Steve">
+                </div>
+                <div>
+                    <h2 class="font-bold">Jessica Lawrence</h2>
+                    <span>Food Vlogger</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="box bg-white p-6 rounded-lg">
+            <div class="stars">
+                <i class="fa fa-solid fa-star"></i>
+                <i class="fa fa-solid fa-star"></i>
+                <i class="fa fa-solid fa-star"></i>
+                <i class="fa fa-solid fa-star"></i>
+                <i class="fa fa-solid fa-star-half"></i>
+            </div>
+            <p class="pt-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio praesentium delectus porro
+                voluptate ut itaque ducimus vel corporis minus dolores!</p>
+            <div class="flex items-center mt-2">
+                <div class="testi-img">
+                    <img class="h-12 w-12 object-cover rounded-full mr-4" src="img/testi3.png" alt="Morgan Steve">
+                </div>
+                <div>
+                    <h2 class="font-bold">Martis Bounce</h2>
+                    <span>Influencer</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white
+    mt-16 py-6">
+        <div class="container mx-auto flex justify-between pt-4 py-4">
+            <div class="w-1/3">
+                <a href="#" class="text-2xl font-bold flex items-center">
+                    <img class="h-8 mr-2" src="img/logo.png" alt="Logo">
+                    FAST CAR
+                </a>
+                <p class="mt-4 text-[16px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
+                    delectus dolore
+                    exercitationem sunt eius quod.</p>
+            </div>
+            <ul class="flex flex-col lg:flex-row lg:space-x-8 mt-6 lg:mt-0">
+                <li><a href="" class="hover:text-color text-sm">About Us</a></li>
+                <li><a href="" class="hover:text-color text-sm">Our Rents</a></li>
+                <li><a href="" class="hover:text-color text-sm">Terms & Conditions</a></li>
+                <li><a href="" class="hover:text-color text-sm">Privacy Policy</a></li>
+                <li>
+                    <button class="bg-color p-3">
+                        <a href="#" class=""><i class="fa-solid fa-phone mr-2"></i>+62 822 3788
+                            6327</a>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <div class="text-[12px] opacity-60 text-center mt-2">
+            <span>Copyright ©2023 VOID</span>
+        </div>
+    </footer>
+
 
 
 
@@ -742,8 +860,7 @@
         const mobile = document.querySelector('.mobile');
 
         btntoogle.addEventListener('click', function () {
-            mobile.classList.toggle('hidden');
-        });
+            mobile.classList.to('hidden'});
     </script>
 
 
