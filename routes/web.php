@@ -66,7 +66,10 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/driver', [DriversController::class, 'register']);
 Route::get('/driver-main', [DriversController::class, 'index']);
 
+
 // driver
+Route::resource('/pesanan', PesananDriversController::class)->middleware('auth');
+
 Route::get('/dashboard-driver', function () {
     if (Drivers::where('user_id', Auth::user()->id)->first()) {
         return view('drivers.pages.dashboard', [
@@ -75,10 +78,23 @@ Route::get('/dashboard-driver', function () {
         ]);
     } else {
         return view('drivers.pages.profile_driver', [
-            'driver' => Drivers::all(),
+            'driver' => Drivers::where('user_id', Auth::user()->id)->first(),
             'userId' => Drivers::where('user_id', Auth::user()->id)->first()
         ]);
     }
 })->middleware('auth');
 
-Route::resource('/pesanan', PesananDriversController::class)->middleware('auth');
+// get
+Route::get('/profile-drivers', function() {
+    return view('drivers.pages.profile_driver', [
+        'driver' => Drivers::where('user_id', Auth::user()->id)->first(),
+        'userId' => Drivers::where('user_id', Auth::user()->id)->first()
+    ]);
+})->middleware('auth');
+
+// Route::get('/dashboard-driver', function() {
+//     return view('drivers.pages.dashboard', [
+//         'driver' => Drivers::all(),
+//         'userId' => Drivers::where('user_id', Auth::user()->id)->first()
+//     ]);
+// })->middleware('auth');
