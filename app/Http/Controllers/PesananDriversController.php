@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\PesananDrivers;
 use Illuminate\Http\Request;
+use App\Models\Drivers;
+use Illuminate\Support\Facades\Auth;
 
 class PesananDriversController extends Controller
 {
@@ -15,7 +17,7 @@ class PesananDriversController extends Controller
     public function index()
     {
         return view('drivers.pages.pesanancust', [
-            
+            'userId' => Drivers::where('user_id', Auth::user()->id)->first()
         ]);
     }
 

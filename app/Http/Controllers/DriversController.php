@@ -71,7 +71,12 @@ class DriversController extends Controller
         }
 
         Drivers::create($validatedData);
-        return redirect('/data-drivers')->with('flash', 'Ditambahkan!');
+        if ($request->driver_tambah) {
+            # code...
+            return redirect('/dashboard-driver')->with('flash', 'Ditambahkan!');
+        } else {
+            return redirect('/data-driver')->with('flash', 'Ditambahkan!');
+        }
     }
 
     /**
