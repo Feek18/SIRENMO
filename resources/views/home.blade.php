@@ -9,9 +9,10 @@
     <link rel="icon" type="image/png" href="img/logo.png">
 
     <link rel="stylesheet" href="../css/app.css">
-    
+
 </head>
 <body>
+    <h1>Hello World</h1>
     
 </body>
 </html>
