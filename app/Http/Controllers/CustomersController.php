@@ -36,6 +36,12 @@ class CustomersController extends Controller
         ]);
     }
 
+    public function dashboardCust()
+    {
+        //
+        return view('customers.home');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

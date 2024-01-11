@@ -46,7 +46,7 @@ class LoginController extends Controller
                 return redirect()->intended('data-feedback');
             }
             if (Auth::user()->role == 'customers') {
-                return redirect()->intended('dashboard');
+                return redirect()->intended('customers');
             }
             if (Auth::user()->role == 'drivers') {
                 return redirect()->intended('dashboard-driver');

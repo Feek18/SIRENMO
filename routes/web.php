@@ -101,3 +101,6 @@ Route::get('/profile-drivers', function() {
 //         'userId' => Drivers::where('user_id', Auth::user()->id)->first()
 //     ]);
 // })->middleware('auth');
+
+// Customers
+Route::get('/customers', [CustomersController::class, 'dashboardCust'])->middleware('auth');
