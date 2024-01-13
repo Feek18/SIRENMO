@@ -684,6 +684,8 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+
     <!-- Testimonials -->
     <section class="testi mt-16">
     <div class="heading">
