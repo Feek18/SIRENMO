@@ -146,6 +146,8 @@
     </button>
   </div>
 
+  <!-- Book Steps -->
+
   <!-- Product Section -->
   <section class="" id="specialdeals">
     <div class="container lg:h-screen mx-auto mt-12">
@@ -252,8 +254,6 @@
   </section>
 
   <!-- Book Form -->
-
-  <!-- Step Book -->
 
   <!-- Testimonials -->
   <section class="testi mt-8">
