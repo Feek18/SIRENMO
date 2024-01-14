@@ -65,7 +65,7 @@
 
     .heading h1 {
         @apply
-        font-bold text-2xl leading-normal tracking-wider
+        font-bold text-2xl text-white leading-normal tracking-wider
     }
 
     .ride-container {
@@ -85,7 +85,12 @@
 
     .ride-container .box h2 {
         @apply
-        text-lg font-medium m-4
+        text-lg font-medium text-white m-4
+    }
+
+    .ride-container .box p {
+        @apply
+        text-sm text-white font-normal
     }
 
     .ride-container .box .fa:hover {
@@ -96,6 +101,11 @@
     .testi-container {
         @apply
         grid grid-cols-3 gap-4 mt-8
+    }
+
+    .testi .heading h1 {
+        @apply
+        text-secondary
     }
 
     .testi-img {

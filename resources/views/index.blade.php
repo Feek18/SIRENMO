@@ -533,7 +533,7 @@
     </section>
 
     <!-- Why Us -->
-    <section class="ride mt-12">
+    <section class="ride mt-12 bg-secondary p-12">
         <div class="heading">
             <span class="text-color">WHY US</span>
             <h1>Enjoy Your Travelling With Fast and Easy Rents</h1>
@@ -542,7 +542,8 @@
             <div class="box">
                 <i class="fa fa-solid fa-gear"></i>
                 <h2>Healthy Machine Standardization</h2>
-                <p>Elevating Wellness: Advancing Healthy Machine Standardization for Optimal Performance and Sustainability.</p>
+                <p>Elevating Wellness: Advancing Healthy Machine Standardization for Optimal Performance and
+                    Sustainability.</p>
             </div>
 
             <div class="box">
@@ -554,7 +555,8 @@
             <div class="box">
                 <i class="fa fa-solid fa-wallet"></i>
                 <h2>Cheap Price and Safe</h2>
-                <p>Affordable Assurance: Offering Cheap Prices with Uncompromised Safety Standards for Your Peace of Mind.</p>
+                <p>Affordable Assurance: Offering Cheap Prices with Uncompromised Safety Standards for Your Peace of
+                    Mind.</p>
             </div>
         </div>
     </section>
@@ -685,78 +687,90 @@
     </section>
 
     <!-- FAQ -->
+    <section class="faq">
+        <div class="container mx-auto mt-14">
+            <div>
+                <h1>Frequently asked questions</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente ea saepe ipsum pariatur eius
+                    inventore eum id, consequatur ipsa autem!</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Testimonials -->
     <section class="testi mt-16">
-    <div class="heading">
-        <span class="text-color">Testimonials</span>
-        <h1>What Our Customers Say</h1>
-    </div>
-    <div class="testi-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="box bg-white p-6 rounded-lg">
-            <div class="stars">
-                <i class="fa fa-solid fa-star"></i>
-                <i class="fa fa-solid fa-star"></i>
-                <i class="fa fa-solid fa-star"></i>
-                <i class="fa fa-solid fa-star"></i>
-                <i class="fa fa-solid fa-star-half"></i>
-            </div>
-            <p class="pt-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio praesentium delectus porro
-                voluptate ut itaque ducimus vel corporis minus dolores!</p>
-            <div class="flex items-center mt-2">
-                <div class="testi-img">
-                    <img class="h-12 w-12 object-cover rounded-full mr-4" src="img/testi1.png" alt="Morgan Steve">
-                </div>
-                <div>
-                    <h2 class="font-bold">Morgan Steve</h2>
-                    <span>Traveller</span>
-                </div>
-            </div>
+        <div class="heading">
+            <span class="text-color">Testimonials</span>
+            <h1>What Our Customers Say</h1>
         </div>
+        <div class="testi-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="box bg-white p-6 rounded-lg">
+                <div class="stars">
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star-half"></i>
+                </div>
+                <p class="pt-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio praesentium delectus
+                    porro
+                    voluptate ut itaque ducimus vel corporis minus dolores!</p>
+                <div class="flex items-center mt-2">
+                    <div class="testi-img">
+                        <img class="h-12 w-12 object-cover rounded-full mr-4" src="img/testi1.png" alt="Morgan Steve">
+                    </div>
+                    <div>
+                        <h2 class="font-bold">Morgan Steve</h2>
+                        <span>Traveller</span>
+                    </div>
+                </div>
+            </div>
 
-        <div class="box bg-white p-6 rounded-lg">
-            <div class="stars">
-                <i class="fa fa-solid fa-star"></i>
-                <i class="fa fa-solid fa-star"></i>
-                <i class="fa fa-solid fa-star"></i>
-                <i class="fa fa-solid fa-star"></i>
-                <i class="fa fa-solid fa-star-half"></i>
-            </div>
-            <p class="pt-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio praesentium delectus porro
-                voluptate ut itaque ducimus vel corporis minus dolores!</p>
-            <div class="flex items-center mt-2">
-                <div class="testi-img">
-                    <img class="h-12 w-12 object-cover rounded-full mr-4" src="img/testi2.png" alt="Morgan Steve">
+            <div class="box bg-white p-6 rounded-lg">
+                <div class="stars">
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star-half"></i>
                 </div>
-                <div>
-                    <h2 class="font-bold">Jessica Lawrence</h2>
-                    <span>Food Vlogger</span>
+                <p class="pt-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio praesentium delectus
+                    porro
+                    voluptate ut itaque ducimus vel corporis minus dolores!</p>
+                <div class="flex items-center mt-2">
+                    <div class="testi-img">
+                        <img class="h-12 w-12 object-cover rounded-full mr-4" src="img/testi2.png" alt="Morgan Steve">
+                    </div>
+                    <div>
+                        <h2 class="font-bold">Jessica Lawrence</h2>
+                        <span>Food Vlogger</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="box bg-white p-6 rounded-lg">
-            <div class="stars">
-                <i class="fa fa-solid fa-star"></i>
-                <i class="fa fa-solid fa-star"></i>
-                <i class="fa fa-solid fa-star"></i>
-                <i class="fa fa-solid fa-star"></i>
-                <i class="fa fa-solid fa-star-half"></i>
-            </div>
-            <p class="pt-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio praesentium delectus porro
-                voluptate ut itaque ducimus vel corporis minus dolores!</p>
-            <div class="flex items-center mt-2">
-                <div class="testi-img">
-                    <img class="h-12 w-12 object-cover rounded-full mr-4" src="img/testi3.png" alt="Morgan Steve">
+            <div class="box bg-white p-6 rounded-lg">
+                <div class="stars">
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-star-half"></i>
                 </div>
-                <div>
-                    <h2 class="font-bold">Martis Bounce</h2>
-                    <span>Influencer</span>
+                <p class="pt-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio praesentium delectus
+                    porro
+                    voluptate ut itaque ducimus vel corporis minus dolores!</p>
+                <div class="flex items-center mt-2">
+                    <div class="testi-img">
+                        <img class="h-12 w-12 object-cover rounded-full mr-4" src="img/testi3.png" alt="Morgan Steve">
+                    </div>
+                    <div>
+                        <h2 class="font-bold">Martis Bounce</h2>
+                        <span>Influencer</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <!-- Footer -->
