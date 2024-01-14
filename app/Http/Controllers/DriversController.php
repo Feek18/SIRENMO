@@ -9,7 +9,7 @@ use App\Http\Requests\UpdateDriversRequest;
 use Illuminate\Http\Request;
 use SebastianBergmann\CodeCoverage\Driver\Driver;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\Auth;
 class DriversController extends Controller
 {
     /**
@@ -139,7 +139,12 @@ class DriversController extends Controller
 
         Drivers::where('id', $request->id)
             ->update($validatedData);
-        return redirect('/data-drivers')->with('flash', 'Diubah!');
+            // ->update([$request]);      
+        if (Auth::user()->role == 'drivers') {
+            return redirect('/profile-drivers')->with('flash', 'Diubah!');
+        } else {
+            return redirect('/data-drivers')->with('flash', 'Diubah!');
+        } 
     }
 
     /**
