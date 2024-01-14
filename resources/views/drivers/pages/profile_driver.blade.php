@@ -1,29 +1,18 @@
-<!--
-=========================================================
-* Soft UI Dashboard Tailwind - v1.0.5
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-tailwind
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
-<!DOCTYPE html>
-<html lang="en">
-    <head>
+{{-- <!DOCTYPE html>
+<html lang="en"> --}}
+    {{-- <head>
         @include('../drivers/layout/partials/header')
     </head>
 
     <body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500">
         @include('../drivers/layout/partials/sidebar')
+        @include('../drivers/layout/partials/script') --}}
+@extends('drivers.main')
 
-    <div class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen bg-gray-50 transition-all duration-200">
-      <nav class="absolute z-20 flex flex-wrap items-center justify-between w-full px-6 py-2 text-white transition-all shadow-none duration-250 ease-soft-in lg:flex-nowrap lg:justify-start" navbar-profile navbar-scroll="true">
-        <div class="flex items-center justify-between w-full px-6 py-1 mx-auto flex-wrap-inherit">
+@section('content')
+      <div class="profile" data-profile="{{ session('flash') }}"></div>
+      <nav class="absolute z-20 flex flex-wrap items-center justify-between w-full px-6 py-6 text-white transition-all shadow-none duration-250 ease-soft-in lg:flex-nowrap lg:justify-start" navbar-profile navbar-scroll="true">
+        <div class="flex items-center justify-between w-full px-6 py-1 my-4 flex-wrap-inherit">
           <nav>
             <!-- breadcrumb -->
             <ol class="flex flex-wrap pt-1 pl-2 pr-4 mr-12 bg-transparent rounded-lg sm:mr-16">
@@ -34,13 +23,14 @@
             </ol>
             <h6 class="mb-2 ml-2 font-bold text-white capitalize">Profile</h6>
           </nav>
+
           <div class="flex items-center justify-end">
             <a href="/logout" class="block px-4 py-2 font-semibold text-white transition-all ease-soft-in-out text-sm">
                 <i class="fa fa-user sm:mr-1" aria-hidden="true"></i>
                 <span class="hidden sm:inline">Logout</span>
             </a>
-          </div>
-          
+        </div>
+        
         </div>
       </nav>
 
@@ -91,9 +81,7 @@
                                 <th
                                   class="p-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                 </th>
-                                <th
-                                  class="p-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                </th>
+                                
                               </tr>
                             </thead>
 
@@ -132,13 +120,7 @@
                                 <td class="p-3 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                   <button type="button" class="text-xs font-semibold leading-tight text-slate-400 viewDriver" value="{{ $driver->id }}"> Lihat </button>
                                 </td>
-                                <td class="p-3 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                  <form action="/data-driver/" method="post" class="hapusDrivers">
-                                    @csrf
-                                    @method('delete')
-                                    <button class="text-xs font-semibold leading-tight text-slate-400 hapus-driver" type="submit" value="{{ $driver->id }}">Hapus</button>
-                                  </form>                  
-                                </td>
+                    
                               </tr>
                               
                             </tbody>
@@ -206,6 +188,134 @@
           </div>
         </div>
       </div>
+      
+      <!-- Modal Ubah -->
+      <div class="modal fade" id="editDriver" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 judulModal" id="judulModal">Ubah Data Diri Anda</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="formEditDriver" method="post" enctype="multipart/form-data">
+                @csrf
+                @method('put')
+                <input type="hidden" name="id" id="id-ubah">
+                <input type="hidden" name="user_id" id="user_id-ubah">
+                {{-- <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"> --}}
+                <input type="hidden" name="oldSIM" id="oldSIM" value="">
+                <div class="row">
+                  <div class="col">
+                    <div class="mb-3">
+                        <label for="nik" class="form-label">NIK</label>
+                        <input type="text" class="form-control rounded border-slate-200 rounded border-slate-200" id="nik-ubah" name="nik" required>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control rounded border-slate-200 rounded border-slate-200" id="nama-ubah" name="nama" required>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="mb-3">
+                        <label for="telepon" class="form-label">Telepon</label>
+                        <input type="number" class="form-control rounded border-slate-200 rounded border-slate-200" id="telepon-ubah" name="telepon" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="alamat" class="form-label">Alamat</label>
+                            <input type="text" class="form-control rounded border-slate-200" id="alamat-ubah" name="alamat" required>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="tgl_lahir" class="form-label">Tanggal Lahir</label>
+                            <input type="date" class="form-control rounded border-slate-200" id="tgl_lahir-ubah" name="tgl_lahir" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                  <div class="row"><hr>
+                    <div class="col-lg-10 mt-4">
+                      <label class="form-label" for="foto_sim">Foto SIM</label>
+                      <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="foto_sim" type="file" name="foto_sim" onchange="priviewSIMDriver()">
+                    </div>
+                    <div class="col-lg-2 mt-4">
+                      <img id="foto_sim-ubah" src="" alt="" class="priview-sim-driver img-fluid col-sm-10">
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="block text-white bg-cyan-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save changes</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card View -->
+      <div class="modal fade" id="viewDriver" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 judulModal" id="judulModal">Detail Data Diri Anda</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-lg">
+                  <img id="foto_sim-view" alt="" class="priview-sim img-fluid mb-3 col-lg-12">
+                </div>
+              </div>
+              <div class="row mb-1 mb-1">
+                <div class="col-sm-4">NIK</div>
+                <div class="col-sm-1">:</div>
+                <div class="col-sm-6">
+                  <input for="nik-view" id="nik-view"></input>
+                </div>
+              </div>
+              <div class="row mb-1">
+                <div class="col-sm-4">Nama</div>
+                <div class="col-sm-1">:</div>
+                <div class="col-sm-6">
+                  <input for="nama-view" id="nama-view"></input>
+                </div>
+              </div>
+              <div class="row mb-1">
+                <div class="col-sm-4">Telepon</div>
+                <div class="col-sm-1">:</div>
+                <div class="col-sm-6">
+                  <input for="telepon-view" id="telepon-view"></input>
+                </div>
+              </div>
+              <div class="row mb-1">
+                <div class="col-sm-4">Alamat</div>
+                <div class="col-sm-1">:</div>
+                <div class="col-sm-6">
+                  <input for="alamat-view" id="alamat-view"></input>
+                </div>
+              </div>
+              <div class="row mb-1">
+                <div class="col-sm-4">Tanggal Lahir</div>
+                <div class="col-sm-1">:</div>
+                <div class="col-sm-6">
+                  <input for="tgl_lahir-view" id="tgl_lahir-view"></input>
+                </div>
+              </div>
+              
+            <div class="modal-footer">
+              <button type="button" class="block text-white bg-cyan-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="w-full p-6 mx-auto">
         <footer class="pt-4">
           <div class="w-full px-6 mx-auto">
@@ -241,7 +351,6 @@
           </div>
         </footer>
       </div>
-    </div>
   </body>
   <!-- plugin for scrollbar  -->
   <script src="../assets/js/plugins/perfect-scrollbar.min.js" async></script>
@@ -250,3 +359,5 @@
   <!-- main script file  -->
   <script src="../assets/js/soft-ui-dashboard-tailwind.js?v=1.0.5" async></script>
 </html>
+
+@endsection
