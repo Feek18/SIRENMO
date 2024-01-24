@@ -94,7 +94,7 @@
         </button>
       </div>
     </div>
-  </nav>
+  </nav>`
 
   <!-- Banner Information -->
   <section>
