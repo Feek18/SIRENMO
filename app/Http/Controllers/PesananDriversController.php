@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\PesananDrivers;
 use Illuminate\Http\Request;
 use App\Models\Drivers;
+use App\Models\Customers;
+use App\Models\Kendaraan;
+use App\Models\Pesanan;
 use Illuminate\Support\Facades\Auth;
 
 class PesananDriversController extends Controller
@@ -17,7 +20,11 @@ class PesananDriversController extends Controller
     public function index()
     {
         return view('drivers.pages.pesanancust', [
-            'userId' => Drivers::where('user_id', Auth::user()->id)->first()
+            'userId' => Drivers::where('user_id', Auth::user()->id)->first(),
+            'pesanans' => Pesanan::where('driver_id', Auth::user()->id)->get(),
+            'customers' => Customers::all(),
+            'kendaraan' => Kendaraan::all(),
+            'drivers' => Drivers::where('user_id', Auth::user()->id)->get(),
         ]);
     }
 
