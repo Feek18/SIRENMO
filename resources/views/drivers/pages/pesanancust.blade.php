@@ -29,15 +29,18 @@
                     Pemesan</th>
                   <th
                     class="px-3 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                    Driver</th>
-                  <th
-                    class="px-3 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                     Kendaraan</th>
+                  <th
+                    class="p-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                  </th>
+                  <th
+                    class="p-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                  </th>
                 </tr>
               </thead>
-
               <tbody>
                 @foreach ($pesanans as $pesanan)
+                {{-- @dd($pesanans) --}}
                 <tr>
                   <td class="px-3 py-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
@@ -59,12 +62,14 @@
                     <p class="mb-0 text-xs font-semibold leading-tight">{{ $pesanan->customers->nama }}</p>
                   </td>
                   <td class="px-3 py-2 align-middle text-center bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <p class="mb-0 text-xs font-semibold leading-tight">{{ $pesanan->drivers->nama }}</p>
-                  </td>
-                  <td class="px-3 py-2 align-middle text-center bg-transparent border-b whitespace-nowrap shadow-transparent">
                     <p class="mb-0 text-xs font-semibold leading-tight">{{ $pesanan->kendaraan->nama }}</p>
                   </td>
-                  
+                  <td class="p-3 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                    <button type="button" class="text-xs font-semibold leading-tight text-slate-400 btn btn-danger" > TOLAK </button>
+                  </td>
+                  <td class="p-3 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                    <button type="button" class="text-xs font-semibold leading-tight text-slate-400 btn btn-success"> TERIMA </button>
+                  </td>
                 </tr>
                 @endforeach
               </tbody>
@@ -74,11 +79,5 @@
       </div>
     </div>
   </div>
-</div>
-
-<div fixed-plugin>
-  <a fixed-plugin-button class="bottom-7.5 right-7.5 text-xl z-990 shadow-soft-lg rounded-circle fixed cursor-pointer bg-white px-4 py-2 text-slate-700" data-bs-toggle="modal" data-bs-target="#tambahPesanan">
-    <i class="py-2 pointer-events-none fa fa-plus"></i>
-  </a>
 </div>
 @endsection
