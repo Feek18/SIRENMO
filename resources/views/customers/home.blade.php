@@ -322,13 +322,13 @@
   </section>
 
 
-  <!-- New Arrival -->
-  <section >
-    <div>
+  <!-- CTA Section -->
+  <section class="bg-gray-600 mt-12">
+    <div class="container text-center text-white p-8">
       <div>
-        <h1></h1>
-        <p></p>
-        <button></button>
+        <h1 class="text-3xl font-semibold mb-3">Let's Start Your Global Journey With <span class="text-color">Fast Car</span></h1>
+        <p class="text-base mb-4">Unleash the Thrill of [Fast Car Model] and Begin Your Expedition Across Boundaries in Style and Speed</p>
+        <button class="px-14 py-2 bg-color rounded-full justify-center items-center inline-flex mt-2">Let's Begin</button>
       </div>
     </div>
   </section>
@@ -336,7 +336,7 @@
 
   <!-- Footer -->
   <footer class="bg-secondary text-white
-    mt-16 py-6">
+    mt-8 py-6">
     <div class="container mx-auto flex justify-between pt-4 py-4">
       <div class="w-1/3">
         <a href="#" class="text-2xl font-bold flex items-center">
