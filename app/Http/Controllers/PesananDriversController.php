@@ -21,7 +21,7 @@ class PesananDriversController extends Controller
     {
         return view('drivers.pages.pesanancust', [
             'userId' => Drivers::where('user_id', Auth::user()->id)->first(),
-            'pesanans' => Pesanan::where('driver_id', Auth::user()->id)->get(),
+            'pesanans' => Pesanan::where('driver_id', Auth::user()->id)->where('status', 'menunggu_konfirmasi')->get(),
             'customers' => Customers::all(),
             'kendaraan' => Kendaraan::all(),
             'drivers' => Drivers::where('user_id', Auth::user()->id)->get(),
@@ -36,6 +36,16 @@ class PesananDriversController extends Controller
     public function create()
     {
         //
+    }
+    public function accept($id)
+    {
+        Pesanan::where('id', $id)->update(['status' => 'terkonfirmasi']);
+        return redirect('/pesanan')->with('konfirmasi', 'Diterima!');
+    }
+    public function reject($id)
+    {
+        Pesanan::where('id', $id)->update(['status' => 'ditolak']);
+        return redirect('/pesanan')->with('konfirmasi', 'Ditolak!');
     }
 
     /**
