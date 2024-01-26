@@ -33,11 +33,9 @@
                       class="px-3 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                       Kendaraan</th>
                     <th
-                      class="p-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                    </th>
-                    <th
-                      class="p-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                    </th>
+                      class="pl-9 font-bold uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                      Status</th>
+                  
                   </tr>
                 </thead>
                 <tbody>
@@ -67,12 +65,43 @@
                     <td class="px-3 py-2 align-middle text-center bg-transparent border-b whitespace-nowrap shadow-transparent">
                       <p class="mb-0 text-xs font-semibold leading-tight">{{ $pesanan->kendaraan->nama }}</p>
                     </td>
-                    <td class="p-3 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                      <button type="button" class="text-xs font-semibold leading-tight text-slate-400 btn btn-danger tolak-pesanan" value="{{ $pesanan->id }}"> TOLAK </button>
-                    </td>
-                    <td class="p-3 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                      <button type="button" class="text-xs font-semibold leading-tight text-slate-400 btn btn-success terima-pesanan" value="{{ $pesanan->id }}"> TERIMA </button>
-                    </td>
+
+                    @if($pesanan->status == 'menunggu_konfirmasi')
+                      <td class="align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                        <button type="button" class="text-xs font-semibold leading-tight text-slate-400 btn btn-danger tolak-pesanan" value="{{ $pesanan->id }}"> TOLAK </button>
+                        <button type="button" class="text-xs font-semibold leading-tight text-slate-400 btn btn-success terima-pesanan" value="{{ $pesanan->id }}"> TERIMA </button>
+                      </td>
+                      
+                    @else
+                      @if($pesanan->status == 'ditolak')
+                        <td
+                        class="text-sm leading-normal pl-6 bg-transparent border-b whitespace-nowrap shadow-transparent">
+                        <span
+                          class="bg-gradient-to-tl from-red-500 to-red-800 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $pesanan->status }}</span>
+                        </td>
+                      @endif
+                      @if($pesanan->status == 'terkonfirmasi')
+                        <td
+                        class="text-sm leading-normal pl-1 bg-transparent border-b whitespace-nowrap shadow-transparent">
+                        <span
+                          class="bg-gradient-to-tl from-green-500 to-green-700 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $pesanan->status }}</span>
+                        </td>
+                      @endif
+                      @if($pesanan->status == 'berlangsung')
+                        <td
+                        class="text-sm leading-normal pl-2 bg-transparent border-b whitespace-nowrap shadow-transparent">
+                        <span
+                          class="bg-gradient-to-tl from-amber-300 to-yellow-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $pesanan->status }}</span>
+                        </td>
+                      @endif
+                      @if($pesanan->status == 'selesai')
+                        <td
+                        class="text-sm leading-normal pl-7 bg-transparent border-b whitespace-nowrap shadow-transparent">
+                        <span
+                          class="bg-gradient-to-tl from-sky-500 to-blue-600 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{{ $pesanan->status }}</span>
+                        </td>
+                      @endif
+                    @endif  
                   </tr>
                   @endforeach
                 </tbody>
