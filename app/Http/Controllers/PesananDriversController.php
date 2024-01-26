@@ -21,12 +21,13 @@ class PesananDriversController extends Controller
     {
         return view('drivers.pages.pesanancust', [
             'userId' => Drivers::where('user_id', Auth::user()->id)->first(),
-            'pesanans' => Pesanan::where('driver_id', Auth::user()->id)->where('status', 'menunggu_konfirmasi')->get(),
+            'pesanans' => Pesanan::where('driver_id', Auth::user()->id)->orderBy('id', 'desc')->get(),
             'customers' => Customers::all(),
             'kendaraan' => Kendaraan::all(),
             'drivers' => Drivers::where('user_id', Auth::user()->id)->get(),
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
