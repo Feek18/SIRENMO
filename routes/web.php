@@ -72,6 +72,8 @@ Route::get('/driver-main', [DriversController::class, 'index']);
 
 // driver
 Route::resource('/pesanan', PesananDriversController::class)->middleware('auth');
+Route::post('/pesanan-accept/{id}', [PesananDriversController::class, 'accept']);
+Route::post('/pesanan-reject/{id}', [PesananDriversController::class, 'reject']);
 
 Route::get('/dashboard-driver', function () {
     if (Drivers::where('user_id', Auth::user()->id)->first()) {
@@ -88,7 +90,7 @@ Route::get('/dashboard-driver', function () {
 })->middleware('auth');
 
 // get
-Route::get('/profile-drivers', function() {
+Route::get('/profile-drivers', function () {
     return view('drivers.pages.profile_driver', [
         'driver' => Drivers::where('user_id', Auth::user()->id)->first(),
         'userId' => Drivers::where('user_id', Auth::user()->id)->first()

@@ -787,3 +787,115 @@
         })
     })
 </script>
+
+<script>
+    const Konfirmasi = $('.konfirmasi').data('konfirmasi');
+
+    if (Konfirmasi == 'Diterima!') {
+        Swal.fire(
+            'Pesanan',
+            'Telah ' + Konfirmasi,
+            'success'
+        )
+    }
+    if (Konfirmasi == 'Ditolak!'){
+        Swal.fire(
+            'Pesanan',
+            'Telah ' + Konfirmasi,
+            'error'
+        )
+    }
+    $(document).on('click', '.terima-pesanan', function(e) {
+        e.preventDefault();
+        let pesanan_id = $(this).val();
+        
+        // Get the current action attribute
+        let currentAction = $('.form-konfirmasi').attr('action');
+        
+        // Update the action attribute with the new URL
+        const href = currentAction + pesanan_id;
+        
+        Swal.fire({
+            title: 'Terima Pesanan?',
+            text: "Anda akan menerima pesanan dari Customers!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: 'grey',
+            confirmButtonText: 'Terima!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Update the action attribute of the form
+                $('.form-konfirmasi').attr('action', href);
+                
+                // Submit the form
+                $('.form-konfirmasi').submit();
+            }
+        });
+    });
+    $(document).on('click', '.tolak-pesanan', function(e) {
+        e.preventDefault();
+        let pesanan_id = $(this).val();
+        
+        // Update the action attribute with the new URL
+        const href = "pesanan-reject/" + pesanan_id;
+        
+        Swal.fire({
+            title: 'Tolak Pesanan?',
+            text: "Anda akan menolak pesanan dari Customers!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: 'red',
+            cancelButtonColor: 'grey',
+            confirmButtonText: 'Tolak!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Update the action attribute of the form
+                $('.form-konfirmasi').attr('action', href);
+                
+                // Submit the form
+                $('.form-konfirmasi').submit();
+            }
+        });
+    });
+</script>
+
+<script>
+    const Konfirmasi = $('.konfirmasi').data('konfirmasi');
+
+    if (Konfirmasi) {
+        Swal.fire(
+            'Pesanan',
+            'Telah ' + Konfirmasi,
+            'success'
+        )
+    }
+    $(document).on('click', '.terima-pesanan', function(e) {
+        e.preventDefault();
+        let pesanan_id = $(this).val();
+        
+        // Get the current action attribute
+        let currentAction = $('.form-konfirmasi').attr('action');
+        
+        // Update the action attribute with the new URL
+        const href = currentAction + pesanan_id;
+        
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            text: "Anda akan menghapus sebuah data Pesanan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus Data!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Update the action attribute of the form
+                $('.form-konfirmasi').attr('action', href);
+                
+                // Submit the form
+                $('.form-konfirmasi').submit();
+            }
+        });
+    });
+</script>
