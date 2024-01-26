@@ -87,7 +87,7 @@
   <!-- Banner Information -->
   <section
     class="bg-center bg-no-repeat bg-[url('https://images.unsplash.com/photo-1562716190-5c19488ea1fe?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-gray-700 bg-blend-multiply">
-    <div class="px-4 mx-auto max-w-screen-xl text-center pt-24 lg:py-56">
+    <div class="px-4 mx-auto max-w-screen-xl text-center pt-24 lg:py-32">
       <div
         class="inline-flex justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
         <span class="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 me-3">New</span> <span
@@ -321,14 +321,120 @@
     </header>
   </section>
 
+  <!-- New Arrival -->
+  <section>
+    <header class="container pt-8">
+      <div class="flex items-center justify-between space-x-2 rtl:space-x-reverse">
+        <div class="flex items-center space-x-2 rtl:space-x-reverse">
+          <img class="h-8" src="../img/fire.png" alt="">
+          <h1 class="text-2xl font-medium">New Arrival Cars</h1>
+        </div>
+        <button
+          class="px-4 py-2 lg:p-4 bg-secondary border hover:bg-color justify-center items-center inline-flex mt-2">
+          <a class="text-white font-medium text-[11px] lg:text-[13px] text-sm font-medium tracking-widest hover:text-white"
+            href="">See More</a>
+        </button>
+      </div>
+      <div class="lg:flex lg:items-center lg:justify-center lg:gap-12 mt-14">
+        <div class="card">
+          <img class="lg:w-full h-full object-cover mt-6 px-4 py-2" src="img/pict1.png" alt="All New Avanza">
+          <div class="p-5 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="badge">stock ready</span>
+              <span class="badge">most recommend</span>
+            </div>
+            <h2 class="tittle">All New Avanza</h2>
+            <p class="text-xl font-bold">Rp 350.000</p>
+            <div class="flex items-center gap-2 mt-1">
+              <p class="text-sm line-through opacity-50">Rp 450.000</p>
+              <p class="percent">save 15% </p>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <button class="btn-product">
+                <a href="">Book Now</a>
+              </button>
+              <p class="stock">8 Stock</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict2.png" alt="All New Avanza">
+          <div class="p-5 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="badge">stock ready</span>
+              <span class="badge">most recommend</span>
+            </div>
+            <h2 class="tittle">Rush</h2>
+            <p class="text-xl font-bold">Rp 400.000</p>
+            <div class="flex items-center gap-2 mt-1">
+              <p class="text-sm line-through opacity-50">Rp 550.000</p>
+              <p class="percent">save 20% </p>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <button class="btn-product">
+                <a href="">Book Now</a>
+              </button>
+              <p class="stock">4 Stock</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict3.png" alt="All New Avanza">
+          <div class="p-5 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="badge">stock ready</span>
+              <span class="badge">most recommend</span>
+            </div>
+            <h2 class="tittle">Veloz</h2>
+            <p class="text-xl font-bold">Rp 350.000</p>
+            <div class="flex items-center gap-2 mt-1">
+              <p class="text-sm line-through opacity-50">Rp 450.000</p>
+              <p class="percent">save 15% </p>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <button class="btn-product">
+                <a href="">Book Now</a>
+              </button>
+              <p class="stock">9 Stock</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict4.png" alt="All New Avanza">
+          <div class="p-5 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="badge">stock ready</span>
+              <span class="badge">most recommend</span>
+            </div>
+            <h2 class="tittle">Honda HR-V</h2>
+            <p class="text-xl font-bold">Rp 450.000</p>
+            <div class="flex items-center gap-2 mt-1">
+              <p class="text-sm line-through opacity-50">Rp 500.000</p>
+              <p class="percent">save 25% </p>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <button class="btn-product">
+                <a href="">Book Now</a>
+              </button>
+              <p class="stock">4 Stock</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </section>
+
 
   <!-- CTA Section -->
   <section class="bg-gray-600 mt-12">
     <div class="container text-center text-white p-8">
       <div>
-        <h1 class="text-3xl font-semibold mb-3">Let's Start Your Global Journey With <span class="text-color">Fast Car</span></h1>
-        <p class="text-base mb-4">Unleash the Thrill of [Fast Car Model] and Begin Your Expedition Across Boundaries in Style and Speed</p>
-        <button class="px-14 py-2 bg-color rounded-full justify-center items-center inline-flex mt-2">Let's Begin</button>
+        <h1 class="text-3xl font-semibold mb-3">Let's Start Your Global Journey With <span class="text-color">Fast
+            Car</span></h1>
+        <p class="text-base mb-4">Unleash the Thrill of [Fast Car Model] and Begin Your Expedition Across Boundaries in
+          Style and Speed</p>
+        <button class="px-14 py-2 bg-color rounded-full justify-center items-center inline-flex mt-2">Let's
+          Begin</button>
       </div>
     </div>
   </section>
