@@ -134,26 +134,208 @@
 
   <!-- Section Header -->
   <section>
-    <header>
-      <div>
-        <h1>Drive your dream cars</h1>
+    <header class="container pt-8">
+      <div class="flex items-center justify-between space-x-2 rtl:space-x-reverse">
+        <div class="flex items-center space-x-2 rtl:space-x-reverse">
+          <img class="h-8" src="../img/fire.png" alt="">
+          <h1 class="text-2xl font-medium">Drive your dream cars</h1>
+        </div>
+        <button
+          class="px-4 py-2 lg:p-4 bg-secondary border hover:bg-color justify-center items-center inline-flex mt-2">
+          <a class="text-white font-medium text-[11px] lg:text-[13px] text-sm font-medium tracking-widest hover:text-white"
+            href="">See More</a>
+        </button>
+      </div>
+      <div class="lg:flex lg:items-center lg:justify-center lg:gap-12 mt-14">
+        <div class="card">
+          <img class="lg:w-full h-full object-cover mt-6 px-4 py-2" src="img/pict1.png" alt="All New Avanza">
+          <div class="p-5 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="badge">stock ready</span>
+              <span class="badge">most recommend</span>
+            </div>
+            <h2 class="tittle">All New Avanza</h2>
+            <p class="text-xl font-bold">Rp 350.000</p>
+            <div class="flex items-center gap-2 mt-1">
+              <p class="text-sm line-through opacity-50">Rp 450.000</p>
+              <p class="percent">save 15% </p>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <button class="btn-product">
+                <a href="">Book Now</a>
+              </button>
+              <p class="stock">8 Stock</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict2.png" alt="All New Avanza">
+          <div class="p-5 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="badge">stock ready</span>
+              <span class="badge">most recommend</span>
+            </div>
+            <h2 class="tittle">Rush</h2>
+            <p class="text-xl font-bold">Rp 400.000</p>
+            <div class="flex items-center gap-2 mt-1">
+              <p class="text-sm line-through opacity-50">Rp 550.000</p>
+              <p class="percent">save 20% </p>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <button class="btn-product">
+                <a href="">Book Now</a>
+              </button>
+              <p class="stock">4 Stock</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict3.png" alt="All New Avanza">
+          <div class="p-5 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="badge">stock ready</span>
+              <span class="badge">most recommend</span>
+            </div>
+            <h2 class="tittle">Veloz</h2>
+            <p class="text-xl font-bold">Rp 350.000</p>
+            <div class="flex items-center gap-2 mt-1">
+              <p class="text-sm line-through opacity-50">Rp 450.000</p>
+              <p class="percent">save 15% </p>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <button class="btn-product">
+                <a href="">Book Now</a>
+              </button>
+              <p class="stock">9 Stock</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict4.png" alt="All New Avanza">
+          <div class="p-5 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="badge">stock ready</span>
+              <span class="badge">most recommend</span>
+            </div>
+            <h2 class="tittle">Honda HR-V</h2>
+            <p class="text-xl font-bold">Rp 450.000</p>
+            <div class="flex items-center gap-2 mt-1">
+              <p class="text-sm line-through opacity-50">Rp 500.000</p>
+              <p class="percent">save 25% </p>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <button class="btn-product">
+                <a href="">Book Now</a>
+              </button>
+              <p class="stock">4 Stock</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:flex lg:items-center lg:justify-center lg:gap-12 mt-14">
+        <div class="card">
+          <img class="lg:w-full h-full object-cover mt-6 px-4 py-2" src="img/pict1.png" alt="All New Avanza">
+          <div class="p-5 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="badge">stock ready</span>
+              <span class="badge">most recommend</span>
+            </div>
+            <h2 class="tittle">All New Avanza</h2>
+            <p class="text-xl font-bold">Rp 350.000</p>
+            <div class="flex items-center gap-2 mt-1">
+              <p class="text-sm line-through opacity-50">Rp 450.000</p>
+              <p class="percent">save 15% </p>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <button class="btn-product">
+                <a href="">Book Now</a>
+              </button>
+              <p class="stock">8 Stock</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict2.png" alt="All New Avanza">
+          <div class="p-5 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="badge">stock ready</span>
+              <span class="badge">most recommend</span>
+            </div>
+            <h2 class="tittle">Rush</h2>
+            <p class="text-xl font-bold">Rp 400.000</p>
+            <div class="flex items-center gap-2 mt-1">
+              <p class="text-sm line-through opacity-50">Rp 550.000</p>
+              <p class="percent">save 20% </p>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <button class="btn-product">
+                <a href="">Book Now</a>
+              </button>
+              <p class="stock">4 Stock</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict3.png" alt="All New Avanza">
+          <div class="p-5 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="badge">stock ready</span>
+              <span class="badge">most recommend</span>
+            </div>
+            <h2 class="tittle">Veloz</h2>
+            <p class="text-xl font-bold">Rp 350.000</p>
+            <div class="flex items-center gap-2 mt-1">
+              <p class="text-sm line-through opacity-50">Rp 450.000</p>
+              <p class="percent">save 15% </p>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <button class="btn-product">
+                <a href="">Book Now</a>
+              </button>
+              <p class="stock">9 Stock</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict4.png" alt="All New Avanza">
+          <div class="p-5 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="badge">stock ready</span>
+              <span class="badge">most recommend</span>
+            </div>
+            <h2 class="tittle">Honda HR-V</h2>
+            <p class="text-xl font-bold">Rp 450.000</p>
+            <div class="flex items-center gap-2 mt-1">
+              <p class="text-sm line-through opacity-50">Rp 500.000</p>
+              <p class="percent">save 25% </p>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <button class="btn-product">
+                <a href="">Book Now</a>
+              </button>
+              <p class="stock">4 Stock</p>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
   </section>
 
 
-  <!-- Card Product -->
-  <section>
+  <!-- New Arrival -->
+  <section >
     <div>
       <div>
-
+        <h1></h1>
+        <p></p>
+        <button></button>
       </div>
     </div>
   </section>
 
 
   <!-- Footer -->
-  <!-- <footer class="bg-secondary text-white
+  <footer class="bg-secondary text-white
     mt-16 py-6">
     <div class="container mx-auto flex justify-between pt-4 py-4">
       <div class="w-1/3">
@@ -182,7 +364,7 @@
     <div class="text-[12px] opacity-60 text-center mt-2">
       <span>Copyright ©2023 VOID</span>
     </div>
-  </footer> -->
+  </footer>
 
 
 
