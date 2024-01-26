@@ -106,3 +106,9 @@ Route::get('/profile-drivers', function () {
 
 // Customers
 Route::get('/customers', [CustomersController::class, 'dashboardCust'])->middleware('auth');
+
+Route::get('/dasboard-customers', function () {
+    return view('customers.pages.dashboard', [
+        'kendaraan'=> Kendaraan::all()
+    ]);
+})->middleware('auth');
