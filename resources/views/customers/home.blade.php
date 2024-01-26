@@ -232,7 +232,7 @@
           </div>
         </div>
       </div>
-      <div class="lg:flex lg:items-center lg:justify-center lg:gap-12 mt-14">
+      <div class="lg:flex lg:items-center lg:justify-center lg:gap-12 mt-8">
         <div class="card">
           <img class="lg:w-full h-full object-cover mt-6 px-4 py-2" src="img/pict1.png" alt="All New Avanza">
           <div class="p-5 flex flex-col gap-3">
