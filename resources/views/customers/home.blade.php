@@ -322,18 +322,20 @@
   </section>
 
 
-  <!-- Card Product -->
-  <section>
+  <!-- New Arrival -->
+  <section >
     <div>
       <div>
-
+        <h1></h1>
+        <p></p>
+        <button></button>
       </div>
     </div>
   </section>
 
 
   <!-- Footer -->
-  <!-- <footer class="bg-secondary text-white
+  <footer class="bg-secondary text-white
     mt-16 py-6">
     <div class="container mx-auto flex justify-between pt-4 py-4">
       <div class="w-1/3">
@@ -362,7 +364,7 @@
     <div class="text-[12px] opacity-60 text-center mt-2">
       <span>Copyright ©2023 VOID</span>
     </div>
-  </footer> -->
+  </footer>
 
 
 
