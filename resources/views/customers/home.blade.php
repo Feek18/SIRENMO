@@ -335,12 +335,12 @@
             href="">See More</a>
         </button>
       </div>
-      <div class="lg:flex lg:items-center lg:justify-center lg:gap-12 mt-14">
+      <div class="lg:flex lg:items-center lg:justify-around lg:gap-8 mt-14">
         <div class="card">
           <img class="lg:w-full h-full object-cover mt-6 px-4 py-2" src="img/pict1.png" alt="All New Avanza">
           <div class="p-5 flex flex-col gap-3">
             <div class="flex items-center gap-2">
-              <span class="badge">stock ready</span>
+              <span class="badge">new car</span>
               <span class="badge">most recommend</span>
             </div>
             <h2 class="tittle">All New Avanza</h2>
@@ -361,7 +361,7 @@
           <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict2.png" alt="All New Avanza">
           <div class="p-5 flex flex-col gap-3">
             <div class="flex items-center gap-2">
-              <span class="badge">stock ready</span>
+              <span class="badge">new car</span>
               <span class="badge">most recommend</span>
             </div>
             <h2 class="tittle">Rush</h2>
@@ -382,7 +382,7 @@
           <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict3.png" alt="All New Avanza">
           <div class="p-5 flex flex-col gap-3">
             <div class="flex items-center gap-2">
-              <span class="badge">stock ready</span>
+              <span class="badge">new car</span>
               <span class="badge">most recommend</span>
             </div>
             <h2 class="tittle">Veloz</h2>
@@ -396,27 +396,6 @@
                 <a href="">Book Now</a>
               </button>
               <p class="stock">9 Stock</p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict4.png" alt="All New Avanza">
-          <div class="p-5 flex flex-col gap-3">
-            <div class="flex items-center gap-2">
-              <span class="badge">stock ready</span>
-              <span class="badge">most recommend</span>
-            </div>
-            <h2 class="tittle">Honda HR-V</h2>
-            <p class="text-xl font-bold">Rp 450.000</p>
-            <div class="flex items-center gap-2 mt-1">
-              <p class="text-sm line-through opacity-50">Rp 500.000</p>
-              <p class="percent">save 25% </p>
-            </div>
-            <div class="mt-4 flex gap-2">
-              <button class="btn-product">
-                <a href="">Book Now</a>
-              </button>
-              <p class="stock">4 Stock</p>
             </div>
           </div>
         </div>
