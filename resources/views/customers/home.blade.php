@@ -134,7 +134,7 @@
 
   <!-- Section Header -->
   <section>
-    <header class="container pt-8">
+    <header class="container pt-14">
       <div class="flex items-center justify-between space-x-2 rtl:space-x-reverse">
         <div class="flex items-center space-x-2 rtl:space-x-reverse">
           <img class="h-8" src="../img/fire.png" alt="">
@@ -323,10 +323,10 @@
 
   <!-- New Arrival -->
   <section>
-    <header class="container pt-8">
+    <header class="container pt-12">
       <div class="flex items-center justify-between space-x-2 rtl:space-x-reverse">
         <div class="flex items-center space-x-2 rtl:space-x-reverse">
-          <img class="h-8" src="../img/fire.png" alt="">
+          <img class="h-8" src="../img/car.png" alt="">
           <h1 class="text-2xl font-medium">New Arrival Cars</h1>
         </div>
         <button
@@ -336,7 +336,7 @@
         </button>
       </div>
       <div class="lg:flex lg:items-center lg:justify-around lg:gap-8 mt-14">
-        <div class="card">
+        <div class="card bg-green-100">
           <img class="lg:w-full h-full object-cover mt-6 px-4 py-2" src="img/pict1.png" alt="All New Avanza">
           <div class="p-5 flex flex-col gap-3">
             <div class="flex items-center gap-2">
@@ -357,7 +357,7 @@
             </div>
           </div>
         </div>
-        <div class="card">
+        <div class="card bg-yellow-100">
           <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict2.png" alt="All New Avanza">
           <div class="p-5 flex flex-col gap-3">
             <div class="flex items-center gap-2">
@@ -378,7 +378,7 @@
             </div>
           </div>
         </div>
-        <div class="card">
+        <div class="card bg-orange-100">
           <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict3.png" alt="All New Avanza">
           <div class="p-5 flex flex-col gap-3">
             <div class="flex items-center gap-2">
@@ -399,13 +399,34 @@
             </div>
           </div>
         </div>
+        <div class="card bg-red-100">
+          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict4.png" alt="All New Avanza">
+          <div class="p-5 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+              <span class="badge">stock ready</span>
+              <span class="badge">most recommend</span>
+            </div>
+            <h2 class="tittle">Honda HR-V</h2>
+            <p class="text-xl font-bold">Rp 450.000</p>
+            <div class="flex items-center gap-2 mt-1">
+              <p class="text-sm line-through opacity-50">Rp 500.000</p>
+              <p class="percent">save 25% </p>
+            </div>
+            <div class="mt-4 flex gap-2">
+              <button class="btn-product">
+                <a href="">Book Now</a>
+              </button>
+              <p class="stock">4 Stock</p>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
   </section>
 
 
   <!-- CTA Section -->
-  <section class="bg-gray-600 mt-12">
+  <section class="bg-gray-600 mt-16 p-8">
     <div class="container text-center text-white p-8">
       <div>
         <h1 class="text-3xl font-semibold mb-3">Let's Start Your Global Journey With <span class="text-color">Fast
