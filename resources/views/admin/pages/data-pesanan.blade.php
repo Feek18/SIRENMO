@@ -47,6 +47,7 @@
 
               <tbody>
                 @foreach ($pesanans as $pesanan)
+                {{-- @dd($pesanan->kendaraan) --}}
                 <tr>
                   <td class="px-3 py-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                     <div class="flex px-2 py-1">
@@ -71,7 +72,7 @@
                     <p class="mb-0 text-xs font-semibold leading-tight">{{ $pesanan->drivers->nama }}</p>
                   </td>
                   <td class="px-3 py-2 align-middle text-center bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <p class="mb-0 text-xs font-semibold leading-tight">{{ $pesanan->kendaraan->nama }}</p>
+                    <p class="mb-0 text-xs font-semibold leading-tight">{{ $pesanan->kendaraan->id }}</p>
                   </td>
                   
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">

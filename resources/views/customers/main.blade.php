@@ -22,7 +22,9 @@
 </head>
 
 <body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500">
-  @include('../customers/layout/partials/sidebar')
+  @if (Request::is('dasboard-customers'))
+    @include('../customers/layout/partials/sidebar')
+  @endif
 
   <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
     @include('../customers/layout/partials/navbar')

@@ -305,6 +305,15 @@
 </script>
 
 <script>
+    const flashPesananSaya = $('.pesananSaya').data('pesanan');
+
+    if (flashPesananSaya) {
+        Swal.fire(
+            'Pesanan',
+            'Berhasil ' + flashPesananSaya,
+            'success'
+        )
+    }
     $(document).on('click', '.tambahPesanan', function(e) {
         e.preventDefault();
         let kendaraan_id = $(this).val();

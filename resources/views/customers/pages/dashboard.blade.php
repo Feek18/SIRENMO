@@ -1,7 +1,8 @@
 @extends('customers.main')
 
 @section('content')
- 
+
+<div class="pesananSaya" data-pesanan="{{ session('pesanan') }}"></div>
 <section class="" id="specialdeals">
   <div class="container lg:h-screen mx-auto mt-2">
       <div class="lg:flex lg:items-center lg:justify-center lg:gap-12">
@@ -11,7 +12,7 @@
                 <form class="formPesanan" action="form-pesanan/" method="get">
                 @csrf
                     <div class="card">
-                        <img class="w-full h-full object-cover mt-6 px-4 py-2" src="{{ asset('storage/' . $mobil->foto_kendaraan) }}" alt="All New Avanza">
+                        <img class="w-full h-full object-cover mt-6 px-4 py-2" src="../img/pict2.png" alt="All New Avanza">
                         <div class="p-5 flex flex-col gap-3">
                             <div class="flex items-center gap-2">
                                 <span class="badge">stock ready</span>

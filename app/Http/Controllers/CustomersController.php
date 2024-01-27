@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\Paginator;
 use SebastianBergmann\CodeCoverage\Driver\Driver;
+use Illuminate\Support\Facades\Auth;
 
 class CustomersController extends Controller
 {
@@ -59,8 +60,10 @@ class CustomersController extends Controller
     {
         //
         return view('customers.pages.form_pesanan', [
-            // 'data' => Kendaraan::where('id', $id)->first(),
-            // 'drivers' => Drivers::all()
+            'data' => Kendaraan::where('id', $id)->first(),
+            'drivers' => Drivers::all(),
+            'userId' => Auth::user()->id,
+            'kode_pesanan' => rand(1, 1000)
         ]);
     }
 

@@ -57,7 +57,11 @@ class PesananController extends Controller
         ]);
 
         Pesanan::create($validatedData);
-        return redirect('/data-pesanan')->with('flash', 'Ditambahkan!');
+        if ($request->form_pesanan) {
+            return redirect('/dasboard-customers')->with('pesanan', 'Dibuat!');
+        } else {
+            return redirect('/data-pesanan')->with('flash', 'Ditambahkan!');
+        }
     }
 
     /**
