@@ -110,7 +110,7 @@ Route::get('/customers', [CustomersController::class, 'dashboardCust'])->middlew
 Route::get('/dasboard-customers', function () {
     if (Customers::where('user_id', Auth::user()->id)->first()) {
         return view('customers.pages.dashboard', [
-            'kendaraan'=> Kendaraan::all(),
+            'kendaraan' => Kendaraan::all(),
             'userId' => Customers::where('user_id', Auth::user()->id)->first()
         ]);
     } else {
@@ -127,3 +127,5 @@ Route::get('/profile-customers', function () {
         'userId' => Customers::where('user_id', Auth::user()->id)->first()
     ]);
 })->middleware('auth');
+
+Route::get('/form-pesanan/{id}', [CustomersController::class, 'tambahPesanan']);

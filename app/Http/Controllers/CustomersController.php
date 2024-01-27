@@ -58,9 +58,9 @@ class CustomersController extends Controller
     public function tambahPesanan($id)
     {
         //
-        return view('customers.pages.form-pesanan', [
-            'data' => Kendaraan::where('id', $id)->first(),
-            'drivers' => Drivers::all()
+        return view('customers.pages.form_pesanan', [
+            // 'data' => Kendaraan::where('id', $id)->first(),
+            // 'drivers' => Drivers::all()
         ]);
     }
 
