@@ -55,7 +55,7 @@ class TransaksiController extends Controller
         Transaksi::where('kode', $request->kode)
             ->update($validatedData);
         Pesanan::where('kode', $request->kode)
-            ->update(['status' => 'berlangsung']);
+            ->update(['status' => 'menunggu_admin']);
         return redirect('/pesanan-saya')->with('bayarTransaksi', 'Dibayar!');
     }
 
