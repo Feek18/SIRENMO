@@ -303,3 +303,21 @@
         }
     }
 </script>
+
+<script>
+    $(document).on('click', '.tambahPesanan', function(e) {
+        e.preventDefault();
+        let kendaraan_id = $(this).val();
+        
+        // Get the current action attribute
+        let currentAction = $('.formPesanan').attr('action');
+        
+        // Update the action attribute with the new URL
+        const href = currentAction + kendaraan_id;
+        
+        $('.formPesanan').attr('action', href);
+        
+        // Submit the form
+        $('.formPesanan').submit();
+    });
+</script>

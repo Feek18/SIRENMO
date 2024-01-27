@@ -66,8 +66,8 @@
                     <p class="mb-0 text-xs leading-tight text-slate-400">{{ $k->transmisi }}</p>
                   </td>
                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <p class="mb-0 text-xs font-semibold leading-tight">{{ $k->harga_perjam }}.000/jam</p>
-                    <p class="mb-0 text-xs leading-tight text-slate-400">{{ $k->harga_paket }}.000/paket</p>
+                    <p class="mb-0 text-xs font-semibold leading-tight">{{ $k->harga_perjam }}/jam</p>
+                    <p class="mb-0 text-xs leading-tight text-slate-400">{{ $k->harga_paket }}/paket</p>
                   </td>
                   @if ($k->status == 'tersedia')
                   <td

@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Customers;
 use App\Http\Requests\StoreCustomersRequest;
 use App\Http\Requests\UpdateCustomersRequest;
+use App\Models\Drivers;
+use App\Models\Kendaraan;
 use App\Models\User;
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\Paginator;
+use SebastianBergmann\CodeCoverage\Driver\Driver;
 
 class CustomersController extends Controller
 {
@@ -50,6 +54,14 @@ class CustomersController extends Controller
     public function create()
     {
         //
+    }
+    public function tambahPesanan($id)
+    {
+        //
+        return view('customers.pages.form-pesanan', [
+            'data' => Kendaraan::where('id', $id)->first(),
+            'drivers' => Drivers::all()
+        ]);
     }
 
     /**
