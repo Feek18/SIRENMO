@@ -12,8 +12,7 @@
 
   <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
     @include('../customers/layout/partials/navbar')
-
-    @yield('content')
+    <h1>halo</h1>
   </main>
   @include('../customers/layout/partials/footer')
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
