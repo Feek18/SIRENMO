@@ -22,7 +22,7 @@
 </head>
 
 <body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500">
-  @if (Request::is('dasboard-customers'))
+  @if (Request::is('dashboard-customers') || Request::is('pesanan-saya') || Request::is('dasboard-customers'))
     @include('../customers/layout/partials/sidebar')
   @endif
 

@@ -8,6 +8,8 @@ use App\Http\Requests\UpdateTransaksiRequest;
 use App\Models\Customers;
 use App\Models\Pesanan;
 use App\Models\User;
+use Illuminate\Http\Client\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TransaksiController extends Controller
 {
@@ -44,6 +46,15 @@ class TransaksiController extends Controller
     public function store(StoreTransaksiRequest $request)
     {
         //
+        $validatedData = [
+            'tanggal' => now(),
+            'bukti' => $request->file('bukti')->store('foto-sistem'),
+            'status' => 'selesai'
+        ];
+
+        Transaksi::where('kode', $request->kode)
+            ->update($validatedData);
+        return redirect('/pesanan-saya')->with('bayarTransaksi', 'Dibayar!');
     }
 
     /**
@@ -75,6 +86,12 @@ class TransaksiController extends Controller
             'pesanan' => $dataPesanan,
             'customers' => $dataCustomers
         ]);
+    }
+
+    public function bayarPesanan(Request $request)
+    {
+        //
+        dd($request);
     }
 
     /**

@@ -136,3 +136,5 @@ Route::get('/dashboard-customers', function () {
 })->middleware('auth');
 
 Route::get('/form-pesanan/{id}', [CustomersController::class, 'tambahPesanan']);
+Route::get('/pesanan-saya', [CustomersController::class, 'lihatPesanan']);
+Route::post('/pembayaran', [TransaksiController::class, 'bayarPesanan']);

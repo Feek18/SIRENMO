@@ -438,3 +438,53 @@
         $('.formPesanan').submit();
     });
 </script>
+<script>
+    const psnSaya = $('.bayarPesanan').data('transaksi');
+
+    if (psnSaya) {
+        Swal.fire(
+            'Pesanan',
+            'Telah ' + psnSaya,
+            'success'
+        )
+    }
+    $(document).ready(function() {
+        $(document).on('click', '.pesananLihat', function() {
+            let pesananID = $(this).val()
+
+            $('#pesananSaya').modal('show')
+
+            $.ajax({
+                type: "GET",
+                url: "/data-pesanan/" + pesananID + "/edit",
+                success: function (response) {
+                    // Pastikan format tanggal yang valid
+                    var tglAmbil = new Date(response.pesanan.tgl_ambil);
+                    var tglKembali = new Date(response.pesanan.tgl_kembali);
+
+                    // Menghitung selisih hari
+                    var jumlahHari = Math.ceil((tglKembali - tglAmbil) / (1000 * 60 * 60 * 24));
+
+                    // Melakukan validasi selisih hari
+                    if (jumlahHari < 0) {
+                        console.error('Tanggal kembali harus setelah tanggal ambil');
+                        return;
+                    }
+
+                    let harga = response.kendaraan.harga_paket;
+                    // Menghitung total bayar
+                    
+                    var totalBayar = harga * jumlahHari;
+
+                    // Menetapkan nilai pada elemen HTML
+                    $('#kode-pesanan-customers').val(response.pesanan.kode);
+                    $('#total_bayar').val(totalBayar);
+                    $('#formBayar').attr('action', 'http://127.0.0.1:8000/pembayaran');
+
+                    console.log(totalBayar);
+                }
+
+            });
+        })
+    })
+</script>

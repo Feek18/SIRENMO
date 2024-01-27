@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateCustomersRequest;
 use App\Models\Drivers;
 use App\Models\Kendaraan;
 use App\Models\User;
+use App\Models\Pesanan;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
@@ -52,10 +53,18 @@ class CustomersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function lihatPesanan()
     {
         //
+        return view('customers.pages.pesanan_saya', [
+            'userId' => Auth::user()->id,
+            'pesanans' => Pesanan::where('customer_id', Auth::user()->id)->get(),
+            'drivers' => Drivers::all(),
+            'customers' => Customers::all(),
+            'kendaraan' => Kendaraan::all()
+        ]);
     }
+
     public function tambahPesanan($id)
     {
         //
@@ -92,7 +101,7 @@ class CustomersController extends Controller
         }
 
         Customers::create($validatedData);
-        
+
         if ($request->customers_tambah) {
             # code...
             return redirect('/dashboard-customers')->with('flash', 'Ditambahkan!');
@@ -161,7 +170,7 @@ class CustomersController extends Controller
 
         Customers::where('id', $request->id)
             ->update($validatedData);
-        
+
         if (Auth::user()->role == 'customers') {
             return redirect('/profile-customers')->with('flash', 'Diubah!');
         } else {

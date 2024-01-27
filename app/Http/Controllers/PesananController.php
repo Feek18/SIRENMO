@@ -8,7 +8,9 @@ use App\Http\Requests\UpdatePesananRequest;
 use App\Models\Customers;
 use App\Models\Drivers;
 use App\Models\Kendaraan;
+use App\Models\Transaksi;
 use SebastianBergmann\CodeCoverage\Driver\Driver;
+use Carbon\Carbon;
 
 class PesananController extends Controller
 {
@@ -56,7 +58,28 @@ class PesananController extends Controller
             'kendaraan_id' => 'required'
         ]);
 
+        $validatedData['status'] = 'menunggu_konfirmasi';
         Pesanan::create($validatedData);
+
+        // Tanggal mulai dan selesai
+        $tanggalMulai = Carbon::parse($request->tgl_ambil);
+        $tanggalSelesai = Carbon::parse($request->tgl_kembali);
+
+        // Menghitung selisih hari
+        $totalHari = $tanggalMulai->diffInDays($tanggalSelesai);
+        $kendaraan = Kendaraan::where('id', $request->kendaraan_id)->first();
+        $totalHarga = $totalHari * $kendaraan->harga_paket;
+        $pesanan_id = Pesanan::where('kode', $validatedData['kode'])->first();
+
+        $dataTransaksi = [
+            'kode' => $validatedData['kode'],
+            'jumlah_pembayaran' => $totalHarga,
+            'status' => 'menunggu',
+            'pesanan_id' => $pesanan_id->id
+        ];
+
+        Transaksi::create($dataTransaksi);
+
         if ($request->form_pesanan) {
             return redirect('/dasboard-customers')->with('pesanan', 'Dibuat!');
         } else {
