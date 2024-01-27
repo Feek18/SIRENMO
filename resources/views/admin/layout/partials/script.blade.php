@@ -712,6 +712,22 @@
                     $('#nomor-plat-lihat').val(response.kendaraan.nomor_plat);
                 }
             });
+
+            $(document).on('click', '.verifikasiData', function() {
+                
+                // Get the current action attribute
+                let currentAction = $('.formVerifikasi').attr('action');
+                
+                // Update the action attribute with the new URL
+                const href = currentAction + pesanan_id;
+
+                console.log(href);
+                
+                $('.formVerifikasi').attr('action', href);
+                
+                // Submit the form
+                $('.formVerifikasi').submit();
+            }) 
         })
     })
 </script>

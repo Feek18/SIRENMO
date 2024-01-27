@@ -257,72 +257,76 @@
 <!-- Card View -->
 <div class="modal fade" id="viewPesanans" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5 judulModal" id="judulModal">Detail Pesanan</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <form class="formVerifikasi" action="data-verifikasi/" action="get">
+      @csrf
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 judulModal" id="judulModal">Detail Pesanan</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg d-flex align-items-center justify-content-center">
+              <img id="foto-kendaraan-lihat" alt="" class="img-priview img-fluid mb-3 col-lg-7">
+            </div>
+            <hr><br>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">Kode</div>
+            <div class="col-sm-1">:</div>
+            <div class="col-sm-6">
+              <input for="kode-pesanan-lihat" id="kode-pesanan-lihat"></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">Tanggal Ambil</div>
+            <div class="col-sm-1">:</div>
+            <div class="col-sm-6">
+              <input for="tgl-ambil-lihat" id="tgl-ambil-lihat"></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">Tanggal Kembali</div>
+            <div class="col-sm-1">:</div>
+            <div class="col-sm-6">
+              <input for="tgl-kembali-lihat" id="tgl-kembali-lihat"></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">Pemesan</div>
+            <div class="col-sm-1">:</div>
+            <div class="col-sm-6">
+              <input for="pemesan-lihat" id="pemesan-lihat"></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">Pengemudi</div>
+            <div class="col-sm-1">:</div>
+            <div class="col-sm-6">
+              <input for="pengemudi-lihat" id="pengemudi-lihat"></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">Kendaraan</div>
+            <div class="col-sm-1">:</div>
+            <div class="col-sm-6">
+              <input for="kendaraan-lihat" id="kendaraan-lihat"></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">Nomor Plat</div>
+            <div class="col-sm-1">:</div>
+            <div class="col-sm-6">
+              <input for="nomor-plat-lihat" id="nomor-plat-lihat"></input>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 verifikasiData">Verifikasi</button>
+          <button type="button" class="block text-white bg-cyan-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-bs-dismiss="modal">Close</button>
+        </div>
       </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-lg d-flex align-items-center justify-content-center">
-            <img id="foto-kendaraan-lihat" alt="" class="img-priview img-fluid mb-3 col-lg-7">
-          </div>
-          <hr><br>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">Kode</div>
-          <div class="col-sm-1">:</div>
-          <div class="col-sm-6">
-            <input for="kode-pesanan-lihat" id="kode-pesanan-lihat"></input>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">Tanggal Ambil</div>
-          <div class="col-sm-1">:</div>
-          <div class="col-sm-6">
-            <input for="tgl-ambil-lihat" id="tgl-ambil-lihat"></input>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">Tanggal Kembali</div>
-          <div class="col-sm-1">:</div>
-          <div class="col-sm-6">
-            <input for="tgl-kembali-lihat" id="tgl-kembali-lihat"></input>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">Pemesan</div>
-          <div class="col-sm-1">:</div>
-          <div class="col-sm-6">
-            <input for="pemesan-lihat" id="pemesan-lihat"></input>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">Pengemudi</div>
-          <div class="col-sm-1">:</div>
-          <div class="col-sm-6">
-            <input for="pengemudi-lihat" id="pengemudi-lihat"></input>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">Kendaraan</div>
-          <div class="col-sm-1">:</div>
-          <div class="col-sm-6">
-            <input for="kendaraan-lihat" id="kendaraan-lihat"></input>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">Nomor Plat</div>
-          <div class="col-sm-1">:</div>
-          <div class="col-sm-6">
-            <input for="nomor-plat-lihat" id="nomor-plat-lihat"></input>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="block text-white bg-cyan-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
+    </form>
   </div>
 </div>
 

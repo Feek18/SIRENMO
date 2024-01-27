@@ -4,6 +4,7 @@
 <div class="bayarPesanan" data-transaksi="{{ session('bayarTransaksi') }}"></div>
 <div class="selesai" data-statuspsn="{{ session('selesai') }}"></div>
 <div class="feedback" data-feedback="{{ session('feedback') }}"></div>
+<div class="editBerhasil" data-editpesanan="{{ session('editPesananSaya') }}"></div>
 <div class="w-full px-6 py-6 mx-auto">
   <div class="flex flex-wrap -mx-3">
     <div class="flex-none w-full max-w-full px-3">
@@ -100,8 +101,9 @@
                   </td>
 
                   @if ($pesanan->status == 'menunggu_konfirmasi')
-                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                        <button type="button" class="text-xs font-semibold leading-tight text-slate-400 ubahPesanan" value="{{ $pesanan->id }}"> Edit </button>
+                    <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                        <button class="bg-zinc-400 text-white active:bg-zinc-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 ubahPesanan" type="button" value="{{ $pesanan->id }}">
+                        Edit</button>
                     </td>
                   @endif
 

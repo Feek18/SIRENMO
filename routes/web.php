@@ -53,6 +53,7 @@ Route::resource('/data-drivers', DriversController::class)->middleware('auth');
 Route::resource('/data-pesanan', PesananController::class)->middleware('auth');
 Route::resource('/data-transaksi', TransaksiController::class)->middleware('auth');
 Route::post('/data-profile/{id}', [UsersController::class, 'profile']);
+Route::get('/data-verifikasi/{id}', [PesananController::class, 'verifikasiData']);
 Route::resource('/data-feedback', FeedbackController::class);
 Route::get('/profile', function () {
     return view('admin.pages.profile', [

@@ -474,6 +474,19 @@
         imageAlt: "Custom image"
         });
     }
+
+    const editPesananSaya = $('.editBerhasil').data('editpesanan');
+
+    if (editPesananSaya) {
+        Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Berhasil merubah pesanan!",
+        showConfirmButton: false,
+        timer: 1500
+        });
+    }
+
     $(document).ready(function() {
         $(document).on('click', '.pesananLihat', function() {
             let pesananID = $(this).val()

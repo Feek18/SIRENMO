@@ -24,7 +24,7 @@ class PesananController extends Controller
     {
         //
         return view('admin.pages.data-pesanan', [
-            'pesanans' => Pesanan::all(),
+            'pesanans' => Pesanan::where('status', 'terkonfirmasi')->get(),
             'customers' => Customers::all(),
             'drivers' => Drivers::all(),
             'kendaraan' => Kendaraan::all()
@@ -42,6 +42,19 @@ class PesananController extends Controller
         Pesanan::where('id', $id)
             ->update(['status' => 'selesai']);
         return redirect('/pesanan-saya')->with('selesai', 'Selesai!');
+    }
+
+    public function verifikasiData($id)
+    {
+        //
+        Pesanan::where('id', $id)
+            ->update(['status' => 'berlangsung']);
+
+        if (Auth::user()->role == 'admin') {
+            return redirect('/data-pesanan')->with('flash', 'Diubah!');
+        } else {
+            return redirect('/pesanan-saya')->with('selesai', 'Selesai!');
+        }
     }
 
     /**
@@ -131,7 +144,7 @@ class PesananController extends Controller
     public function update(UpdatePesananRequest $request, Pesanan $pesanan)
     {
         //
-        
+
         $validatedData = $request->validate([
             'kode' => 'required',
             'tgl_ambil' => 'required',
@@ -143,11 +156,10 @@ class PesananController extends Controller
 
         Pesanan::where('id', $request->id)->update($validatedData);
         if (Auth::user()->role == 'customers') {
-            return redirect('/pesanan-saya')->with('flash', 'Diubah!');
+            return redirect('/pesanan-saya')->with('editPesananSaya', 'Diubah!');
         } else {
             return redirect('/data-pesanan')->with('flash', 'Diubah!');
         }
-        
     }
 
     /**
