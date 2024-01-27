@@ -108,7 +108,22 @@ Route::get('/profile-drivers', function () {
 Route::get('/customers', [CustomersController::class, 'dashboardCust'])->middleware('auth');
 
 Route::get('/dasboard-customers', function () {
-    return view('customers.pages.dashboard', [
-        'kendaraan'=> Kendaraan::all()
+    if (Customers::where('user_id', Auth::user()->id)->first()) {
+        return view('customers.pages.dashboard', [
+            'kendaraan'=> Kendaraan::all(),
+            'userId' => Customers::where('user_id', Auth::user()->id)->first()
+        ]);
+    } else {
+        return view('customers.pages.profile_customers', [
+            'customers' => Customers::where('user_id', Auth::user()->id)->first(),
+            'userId' => Customers::where('user_id', Auth::user()->id)->first()
+        ]);
+    }
+})->middleware('auth');
+
+Route::get('/profile-customers', function () {
+    return view('customers.pages.profile_customers', [
+        'customers' => Customers::where('user_id', Auth::user()->id)->first(),
+        'userId' => Customers::where('user_id', Auth::user()->id)->first()
     ]);
 })->middleware('auth');
