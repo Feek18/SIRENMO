@@ -134,7 +134,7 @@
 
   <!-- Section Header -->
   <section>
-    <header class="container pt-14">
+    <header class="container pt-14 p-8">
       <div class="flex items-center justify-between space-x-2 rtl:space-x-reverse">
         <div class="flex items-center space-x-2 rtl:space-x-reverse">
           <img class="h-8" src="../img/fire.png" alt="">
@@ -323,7 +323,7 @@
 
   <!-- New Arrival -->
   <section>
-    <header class="container pt-12">
+    <header class="container pt-12 p-8">
       <div class="flex items-center justify-between space-x-2 rtl:space-x-reverse">
         <div class="flex items-center space-x-2 rtl:space-x-reverse">
           <img class="h-8" src="../img/car.png" alt="">
@@ -426,7 +426,7 @@
 
 
   <!-- CTA Section -->
-  <section class="bg-gray-600 mt-16 p-8">
+  <!-- <section class="bg-gray-600 mt-16 p-8">
     <div class="container text-center text-white p-8">
       <div>
         <h1 class="text-3xl font-semibold mb-3">Let's Start Your Global Journey With <span class="text-color">Fast
@@ -437,7 +437,7 @@
           Begin</button>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
   <!-- Footer -->
