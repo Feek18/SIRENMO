@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\Paginator;
 use SebastianBergmann\CodeCoverage\Driver\Driver;
+use Illuminate\Support\Facades\Auth;
 
 class CustomersController extends Controller
 {
@@ -89,7 +90,13 @@ class CustomersController extends Controller
         }
 
         Customers::create($validatedData);
-        return redirect('/data-customers')->with('flash', 'Ditambahkan!');
+        
+        if ($request->customers_tambah) {
+            # code...
+            return redirect('/dashboard-customers')->with('flash', 'Ditambahkan!');
+        } else {
+            return redirect('/data-customers')->with('flash', 'Ditambahkan!');
+        }
     }
 
     /**
@@ -152,7 +159,12 @@ class CustomersController extends Controller
 
         Customers::where('id', $request->id)
             ->update($validatedData);
-        return redirect('/data-customers')->with('flash', 'Diubah!');
+        
+        if (Auth::user()->role == 'customers') {
+            return redirect('/profile-customers')->with('flash', 'Diubah!');
+        } else {
+            return redirect('/data-customers')->with('flash', 'Diubah!');
+        }
     }
 
     /**

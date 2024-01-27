@@ -304,6 +304,114 @@
     }
 </script>
 
+{{-- Customers --}}
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.editCust', function() {
+            let cust_id = $(this).val()
+
+            $('#editCust').modal('show')
+
+            $.ajax({
+                type: "GET",
+                url: "/data-customers/" + cust_id + "/edit",
+                success: function (response) {
+                    $('#id-ubah').val(response.customers.id);
+                    $('#nik-ubah').val(response.customers.nik);
+                    $('#nama-ubah').val(response.customers.nama);
+                    $('#telepon-ubah').val(response.customers.telepon);
+                    $('#alamat-ubah').val(response.customers.alamat);
+                    $('#tgl_lahir-ubah').val(response.customers.tgl_lahir);
+                    $('#user_id-ubah').val(response.customers.user_id);
+                    $('#foto_sim-ubah').attr('src', 'http://127.0.0.1:8000/storage/' + response.customers.foto_sim);
+                    $('#formEditCust').attr('action', 'http://127.0.0.1:8000/data-customers/' + cust_id);
+                    $('#oldSIM').val(response.customers.foto_sim);
+                }
+            });
+        })
+    })
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.viewCustomers', function() {
+            let cust_id = $(this).val()
+
+            $('#viewCustomers').modal('show')
+
+            $.ajax({
+                type: "GET",
+                url: "/data-customers/" + cust_id + "/edit",
+                success: function (response) {
+                    $('#foto_sim-view').attr('src', 'http://127.0.0.1:8000/storage/' + response.customers.foto_sim);
+                    $('#nik-view').val(response.customers.nik);
+                    $('#nama-view').val(response.customers.nama);
+                    $('#telepon-view').val(response.customers.telepon);
+                    $('#alamat-view').val(response.customers.alamat);
+                    $('#tgl_lahir-view').val(response.customers.tgl_lahir);
+                    $('#user_id-view').val(response.customers.user_id);
+                }
+            });
+        })
+    })
+</script>
+<script>
+    const flashCust = $('.customers').data('flash');
+
+    if (flashCust) {
+        Swal.fire(
+            'Data Customers',
+            'Berhasil ' + flashCust,
+            'success'
+        )
+    }
+
+    $(document).on('click', '.hapus-cust', function(e) {
+        e.preventDefault();
+        let cust_id = $(this).val();
+        
+        // Get the current action attribute
+        let currentAction = $('.hapusCust').attr('action');
+        
+        // Update the action attribute with the new URL
+        const href = currentAction + cust_id;
+        
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            text: "Anda akan menghapus sebuah data Customers!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus Data!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Update the action attribute of the form
+                $('.hapusCust').attr('action', href);
+                
+                // Submit the form
+                $('.hapusCust').submit();
+            }
+        });
+    });
+</script>
+<script>
+    function priviewSIM() {
+        const image = document.querySelector('#foto_sim');
+        const imagePriview = document.querySelector('.priview-sim');
+
+        const oFReader = new FileReader();
+        
+        oFReader.onload = function(oFREvent) {
+            imagePriview.src = oFREvent.target.result;
+        }
+
+        if (image.files.length > 0) {
+            oFReader.readAsDataURL(image.files[0]);
+        }
+    }
+</script>
+
+{{-- Pesanan --}}
 <script>
     $(document).on('click', '.tambahPesanan', function(e) {
         e.preventDefault();

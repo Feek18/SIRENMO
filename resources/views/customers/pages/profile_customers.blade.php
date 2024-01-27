@@ -16,13 +16,12 @@
             </ol>
             <h6 class="mb-2 ml-2 font-bold text-white capitalize">Profile</h6>
             </nav>
-
-            <div class="flex items-center justify-end">
+            {{-- <div class="flex items-center justify-end">
             <a href="/logout" class="block px-4 py-2 font-semibold text-white transition-all ease-soft-in-out text-sm">
                 <i class="fa fa-user sm:mr-1" aria-hidden="true"></i>
                 <span class="hidden sm:inline">Logout</span>
             </a>
-            </div>
+            </div> --}}
         </div>
     </nav>
 
@@ -107,10 +106,10 @@
                                   <span class="text-xs font-semibold leading-tight text-slate-400">{{ $customers->tgl_lahir }}</span>
                                 </td>
                                 <td class="p-3 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                  <button type="button" class="text-xs font-semibold leading-tight text-slate-400 editDriver" value="{{ $customers->id }}" data-bs-toggle="modal" data-bs-target="#editDriver"> Edit </button>
+                                  <button type="button" class="text-xs font-semibold leading-tight text-slate-400 editCust" value="{{ $customers->id }}" data-bs-toggle="modal" data-bs-target="#editCust"> Edit </button>
                                 </td>
                                 <td class="p-3 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                  <button type="button" class="text-xs font-semibold leading-tight text-slate-400 viewDriver" value="{{ $customers->id }}"> Lihat </button>
+                                  <button type="button" class="text-xs font-semibold leading-tight text-slate-400 viewCustomers" value="{{ $customers->id }}"> Lihat </button>
                                 </td>
                     
                               </tr>
@@ -182,7 +181,7 @@
       </div>
 
       <!-- Modal Ubah -->
-      <div class="modal fade" id="editDriver" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+      <div class="modal fade" id="editCust" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
@@ -190,7 +189,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form id="formEditDriver" method="post" enctype="multipart/form-data">
+              <form id="formEditCust" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <input type="hidden" name="id" id="id-ubah">
@@ -253,7 +252,7 @@
       </div>
 
       <!-- Card View -->
-      <div class="modal fade" id="viewDriver" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+      <div class="modal fade" id="viewCustomers" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
