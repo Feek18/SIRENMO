@@ -52,6 +52,14 @@ class FeedbackController extends Controller
     public function store(StoreFeedbackRequest $request)
     {
         //
+        $validatedData = [
+            'ulasan' => $request->ulasan,
+            'penilaian' => $request->penilaian,
+            'pesanan_id' => $request->pesanan_id
+        ];
+
+        Feedback::create($validatedData);
+        return redirect('/pesanan-saya')->with('feedback', 'Berhasil!');
     }
 
     /**

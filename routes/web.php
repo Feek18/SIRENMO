@@ -138,3 +138,4 @@ Route::get('/dashboard-customers', function () {
 Route::get('/form-pesanan/{id}', [CustomersController::class, 'tambahPesanan']);
 Route::get('/pesanan-saya', [CustomersController::class, 'lihatPesanan']);
 Route::post('/pembayaran', [TransaksiController::class, 'bayarPesanan']);
+Route::get('/detailPesanan/{id}', [PesananController::class, 'detailPesanan']);

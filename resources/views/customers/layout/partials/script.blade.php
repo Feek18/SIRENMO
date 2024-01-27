@@ -448,6 +448,32 @@
             'success'
         )
     }
+
+    const sttsPsn = $('.selesai').data('statuspsn');
+
+    if (sttsPsn) {
+        Swal.fire({
+        title: "Terimakasih!",
+        text: "Silahkan berikan ulasan yaa!",
+        imageUrl: "https://unsplash.it/400/200",
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: "Custom image"
+        });
+    }
+
+    const FeedbackUser = $('.feedback').data('feedback');
+
+    if (FeedbackUser) {
+        Swal.fire({
+        title: "Terimakasih!",
+        text: "See u next time",
+        imageUrl: "https://unsplash.it/400/200",
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: "Custom image"
+        });
+    }
     $(document).ready(function() {
         $(document).on('click', '.pesananLihat', function() {
             let pesananID = $(this).val()
@@ -477,14 +503,66 @@
                     var totalBayar = harga * jumlahHari;
 
                     // Menetapkan nilai pada elemen HTML
-                    $('#kode-pesanan-customers').val(response.pesanan.kode);
+                    $('#kode-transaksi').val(response.pesanan.kode);
                     $('#total_bayar').val(totalBayar);
                     $('#formBayar').attr('action', 'http://127.0.0.1:8000/pembayaran');
 
-                    console.log(totalBayar);
+                    console.log(response.pesanan.kode);
                 }
 
             });
+        })
+    })
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.detailPesanan', function() {
+            let pesananId = $(this).val()
+
+            $('#detailPesanan').modal('show')
+
+            $.ajax({
+                type: "GET",
+                url: "/data-pesanan/" + pesananId + "/edit",
+                success: function (response) {
+                    $('#kode-pesanan-customers').val(response.pesanan.kode);
+                    $('#status').val(response.pesanan.status);
+                }
+            });
+
+            $(document).on('click', '.btnSelesai', function() {
+                
+                // Get the current action attribute
+                let currentAction = $('.formDetail').attr('action');
+                
+                // Update the action attribute with the new URL
+                const href = currentAction + pesananId;
+
+                console.log(href);
+                
+                $('.formDetail').attr('action', href);
+                
+                // Submit the form
+                $('.formDetail').submit();
+            })
+        })
+    })
+</script>
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '.ulasanPesanan', function() {
+            let pesananId = $(this).val()
+
+            $('#ulasanPesanan').modal('show')
+
+            $('#pesanan_id').val(pesananId);
+
+            console.log(pesananId);
+
+            $(document).on('click', '.btnSimpan', function() {
+                // Submit the form
+                $('.formFeedback').submit();
+            })
         })
     })
 </script>

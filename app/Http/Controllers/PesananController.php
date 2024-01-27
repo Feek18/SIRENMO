@@ -35,9 +35,12 @@ class PesananController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function detailPesanan($id)
     {
         //
+        Pesanan::where('id', $id)
+            ->update(['status' => 'selesai']);
+        return redirect('/pesanan-saya')->with('selesai', 'Selesai!');
     }
 
     /**
