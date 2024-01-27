@@ -128,4 +128,11 @@ Route::get('/profile-customers', function () {
     ]);
 })->middleware('auth');
 
+Route::get('/dashboard-customers', function () {
+    return view('customers.pages.dashboard', [
+        'kendaraan' => Kendaraan::all(),
+        'userId' => Customers::where('user_id', Auth::user()->id)->first()
+    ]);
+})->middleware('auth');
+
 Route::get('/form-pesanan/{id}', [CustomersController::class, 'tambahPesanan']);

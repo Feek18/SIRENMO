@@ -24,12 +24,12 @@
             <h6 class="mb-2 ml-2 font-bold text-white capitalize">Profile</h6>
           </nav>
 
-          <div class="flex items-center justify-end">
+          {{-- <div class="flex items-center justify-end">
             <a href="/logout" class="block px-4 py-2 font-semibold text-white transition-all ease-soft-in-out text-sm">
                 <i class="fa fa-user sm:mr-1" aria-hidden="true"></i>
                 <span class="hidden sm:inline">Logout</span>
             </a>
-        </div>
+          </div> --}}
         
         </div>
       </nav>
