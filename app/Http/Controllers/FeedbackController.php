@@ -29,7 +29,8 @@ class FeedbackController extends Controller
             'pendapatan' => Transaksi::sum('jumlah_pembayaran'),
             'user' => User::count('id'),
             'pesanan_total' => Pesanan::count('id'),
-            'kendaraan' => Kendaraan::count('id')
+            'kendaraan' => Kendaraan::count('id'),
+            'customers' => Customers::all()
         ]);
     }
 
