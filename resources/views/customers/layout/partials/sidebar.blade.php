@@ -15,6 +15,7 @@
 
   <div class="items-center block w-auto max-h-screen h-sidenav grow basis-full">
     <ul class="flex flex-col pl-0 mb-0">
+      @if ($userId)
       <li class="mt-0.5 w-full">
         <a class="{{ Request::is('dashboard-customers') ? 'py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors' : 'py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors' }}"
           href="/dashboard-customers">
@@ -40,7 +41,8 @@
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">TEST</span>
         </a>
       </li>
-
+      @endif
+      
       <li class="w-full mt-4">
         <h6 class="pl-6 ml-2 text-xs font-bold leading-tight uppercase opacity-60">Account pages</h6>
       </li>
