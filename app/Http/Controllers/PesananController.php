@@ -11,6 +11,7 @@ use App\Models\Kendaraan;
 use App\Models\Transaksi;
 use SebastianBergmann\CodeCoverage\Driver\Driver;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class PesananController extends Controller
 {
@@ -130,17 +131,23 @@ class PesananController extends Controller
     public function update(UpdatePesananRequest $request, Pesanan $pesanan)
     {
         //
+        
         $validatedData = $request->validate([
             'kode' => 'required',
             'tgl_ambil' => 'required',
             'tgl_kembali' => 'required',
-            'customer_id' => 'required',
             'driver_id' => 'required',
             'kendaraan_id' => 'required'
         ]);
+        $validateData['customer_id'] = Auth::user()->id;
 
         Pesanan::where('id', $request->id)->update($validatedData);
-        return redirect('/data-pesanan')->with('flash', 'Diubah!');
+        if (Auth::user()->role == 'customers') {
+            return redirect('/pesanan-saya')->with('flash', 'Diubah!');
+        } else {
+            return redirect('/data-pesanan')->with('flash', 'Diubah!');
+        }
+        
     }
 
     /**
