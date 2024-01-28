@@ -2,7 +2,8 @@
 
 @section('content')
 
-<section class="flex justify-center items-center bg-gray-50 mt-12 gap-6">
+<div class="pesananSaya" data-pesanan="{{ session('pesanan') }}"></div>
+<section class="flex justify-center items-center bg-gray-50 mt-8 gap-6 overflow-hidden">
     <div class="bg-white shadow-md hover:scale-105 duration-300">
         <a href="">
             <img class="object-cover mt-8" src="../img/pict2.png" alt="">
@@ -15,7 +16,7 @@
             <span class="text-gray-400 uppercase text-sm">
                 BRAND
             </span>
-            <p class="text-lg font-bold block truncate capitalize">Product Name</p>
+            <p class="text-lg font-bold block truncate capitalize">Mazda CX-3</p>
             <div class="flex items-center">
                 <p class="text-lg font-semibold my-3">$150</p>
                 <del>
@@ -40,7 +41,7 @@
             <span class="text-gray-400 uppercase text-sm">
                 BRAND
             </span>
-            <p class="text-lg font-bold block truncate capitalize">Product Name</p>
+            <p class="text-lg font-bold block truncate capitalize">Chevron</p>
             <div class="flex items-center">
                 <p class="text-lg font-semibold my-3">$150</p>
                 <del>
@@ -65,7 +66,7 @@
             <span class="text-gray-400 uppercase text-sm">
                 BRAND
             </span>
-            <p class="text-lg font-bold block truncate capitalize">Product Name</p>
+            <p class="text-lg font-bold block truncate capitalize">Civic</p>
             <div class="flex items-center">
                 <p class="text-lg font-semibold my-3">$150</p>
                 <del>
@@ -90,7 +91,7 @@
             <span class="text-gray-400 uppercase text-sm">
                 BRAND
             </span>
-            <p class="text-lg font-bold block truncate capitalize">Product Name</p>
+            <p class="text-lg font-bold block truncate capitalize">Supra</p>
             <div class="flex items-center">
                 <p class="text-lg font-semibold my-3">$150</p>
                 <del>
@@ -104,13 +105,12 @@
         </div>
     </div>
 </section>
-<div class="pesananSaya" data-pesanan="{{ session('pesanan') }}"></div>
-<section class="flex flex-wrap justify-center bg-gray-50 gap-6" id="specialdeals">
+<section class="flex flex-wrap justify-center bg-gray-50 mt-8 gap-6 overflow-hidden" id="specialdeals">
     @foreach ($kendaraan as $mobil)
     <form class="formPesanan" action="form-pesanan/" method="get">
         @csrf
         <div class="bg-white shadow-md hover:scale-105 duration-300">
-            <img class="object-cover mt-12" src="../img/pict1.png" alt="All New Avanza">
+            <img class="object-cover pt-8" src="../img/pict1.png" alt="All New Avanza">
             <div class="px-4 py-3 w-72">
                 <div class="flex items-center gap-2 mb-3 mt-2">
                     <span class="px-3 py-1 rounded-full text-xs bg-gray-100">stock ready</span>
