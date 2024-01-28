@@ -11,6 +11,7 @@ use App\Models\User;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Storage;
 
+
 class TransaksiController extends Controller
 {
     /**
@@ -132,4 +133,29 @@ class TransaksiController extends Controller
         // Redirect ke halaman data-kendaraan setelah penghapusan
         return redirect('/data-transaksi')->with('flash', 'Dihapus!');
     }
+
+    // public function view_pdf()
+    // {
+    //     // Periksa apakah autoload.php tersedia
+    //     $autoloadFile = base_path('vendor/autoload.php');
+    //     if (!file_exists($autoloadFile)) {
+    //         die('Composer autoload file not found. Please run "composer install".');
+    //     }
+
+    //     // Muat autoload.php
+    //     require_once $autoloadFile;
+
+    //     // Jika ingin menampilkan pesan kesalahan
+    //     error_reporting(E_ALL);
+    //     ini_set('display_errors', 1);
+
+    //     // Buat objek Mpdf dan buat PDF
+    //     $mpdf = new \Mpdf\Mpdf();
+    //     $mpdf->WriteHTML('<h1>Hello world!</h1>');
+
+    //     // Tampilkan PDF di browser
+    //     $mpdf->Output();
+    // }
+
+
 }

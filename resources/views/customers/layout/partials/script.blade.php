@@ -524,6 +524,8 @@
                 }
 
             });
+
+            // window.print()
         })
     })
 </script>
@@ -557,6 +559,11 @@
                 
                 // Submit the form
                 $('.formDetail').submit();
+            })
+
+            $(document).on('click', '.cetakPDF', function() {
+                
+                window.print()
             })
         })
     })
