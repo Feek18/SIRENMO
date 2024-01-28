@@ -573,7 +573,7 @@
         $(document).on('click', '.ulasanPesanan', function() {
             let pesananId = $(this).val()
 
-            $('#ulasanPesanan').modal('show')
+            $('.ulsn').modal('show')
 
             $('#pesanan_id').val(pesananId);
 

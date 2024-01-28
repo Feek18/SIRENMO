@@ -267,13 +267,14 @@
                 <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 btnSelesai">Selesai</button>
                 <button type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900 cetakPDF">Cetak</button>
                 <button type="button" class="block text-white bg-neutral-400 hover:bg-neutral-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-bs-dismiss="modal">Close</button>
+              </div>
             </div>
       </form>
     </div>
-  </div> 
+</div> 
 
 <!-- Card View -->
-<div class="modal fade" id="ulasanPesanan" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+<div class="modal fade ulsn" id="ulasanPesanan" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
     <div class="modal-dialog">
       <form action="/data-feedback" method="post" class="formFeedback" enctype="multipart/form-data">
           @csrf
