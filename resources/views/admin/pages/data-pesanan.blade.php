@@ -68,9 +68,15 @@
                   <td class="px-3 py-2 align-middle text-center bg-transparent border-b whitespace-nowrap shadow-transparent">
                     <p class="mb-0 text-xs font-semibold leading-tight">{{ $pesanan->customers->nama }}</p>
                   </td>
-                  <td class="px-3 py-2 align-middle text-center bg-transparent border-b whitespace-nowrap shadow-transparent">
-                    <p class="mb-0 text-xs font-semibold leading-tight">{{ $pesanan->drivers->nama }}</p>
-                  </td>
+                  @if ($pesanan->drivers)
+                    <td class="px-3 py-2 align-middle text-center bg-transparent border-b whitespace-nowrap shadow-transparent">
+                      <p class="mb-0 text-xs font-semibold leading-tight">{{ $pesanan->drivers->nama }}</p>
+                    </td>
+                  @else
+                    <td class="px-3 py-2 align-middle text-center bg-transparent border-b whitespace-nowrap shadow-transparent">
+                      <p class="mb-0 text-xs font-semibold leading-tight">Tanpa Pengemudi</p>
+                    </td>
+                  @endif
                   <td class="px-3 py-2 align-middle text-center bg-transparent border-b whitespace-nowrap shadow-transparent">
                     <p class="mb-0 text-xs font-semibold leading-tight">{{ $pesanan->kendaraan->id }}</p>
                   </td>
@@ -191,7 +197,7 @@
         <form id="formUbahPesanan" method="post" enctype="multipart/form-data">
           @csrf
           @method('put')
-          <input type="hidden" name="id" id="id-pesanan">
+          <input type="hidden" name="id" id="id-pesanan-ubah">
             <div class="row">
               <div class="col">
                 <div class="mb-3">
@@ -217,6 +223,7 @@
                 <div class="mb-3">
                     <label for="pemesan" class="form-label">Pemesan</label>
                     <select class="form-select" id="pemesan-ubah" name="customer_id" required>
+                      <option value="Pilih Customers"></option>
                       @foreach ($customers as $cust)
                         <option value="{{ $cust->id }}">{{ $cust->nama }}</option>
                       @endforeach
@@ -227,6 +234,8 @@
                 <div class="mb-3">
                     <label for="driver" class="form-label">Pengemudi</label>
                     <select class="form-select" id="driver-ubah" name="driver_id" required>
+                      <option value="Pilih Pengemudi">Pilih Pengemudi</option>
+                      <option value="Tanpa Pengemudi">Tanpa Pengemudi</option>
                       @foreach ($drivers as $drive)
                         <option value="{{ $drive->id }}">{{ $drive->nama }}</option>
                       @endforeach

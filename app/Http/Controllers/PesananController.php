@@ -51,7 +51,7 @@ class PesananController extends Controller
             ->update(['status' => 'berlangsung']);
 
         if (Auth::user()->role == 'admin') {
-            return redirect('/data-pesanan')->with('flash', 'Diubah!');
+            return redirect('/data-pesanan')->with('flash', 'Diverifikasi!');
         } else {
             return redirect('/pesanan-saya')->with('selesai', 'Selesai!');
         }
@@ -75,7 +75,11 @@ class PesananController extends Controller
             'kendaraan_id' => 'required'
         ]);
 
-        $validatedData['status'] = 'menunggu_konfirmasi';
+        if ($validatedData['driver_id'] == '0') {
+            $validatedData['status'] = 'terkonfirmasi';
+        } else {
+            $validatedData['status'] = 'menunggu_konfirmasi';
+        }
         Pesanan::create($validatedData);
 
         // Tanggal mulai dan selesai
@@ -141,10 +145,9 @@ class PesananController extends Controller
      * @param  \App\Models\Pesanan  $pesanan
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePesananRequest $request, Pesanan $pesanan)
+    public function update(UpdatePesananRequest $request, Pesanan $pesanan, $id)
     {
         //
-
         $validatedData = $request->validate([
             'kode' => 'required',
             'tgl_ambil' => 'required',
@@ -154,7 +157,7 @@ class PesananController extends Controller
         ]);
         $validateData['customer_id'] = Auth::user()->id;
 
-        Pesanan::where('id', $request->id)->update($validatedData);
+        Pesanan::where('id', $id)->update($validatedData);
         if (Auth::user()->role == 'customers') {
             return redirect('/pesanan-saya')->with('editPesananSaya', 'Diubah!');
         } else {

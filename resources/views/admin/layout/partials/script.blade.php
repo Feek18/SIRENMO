@@ -644,8 +644,13 @@
                     $('#tgl_ambil-ubah').val(response.pesanan.tgl_ambil);
                     $('#tgl_kembali-ubah').val(response.pesanan.tgl_kembali);
                     $('#pemesan-ubah').val(response.pesanan.customer_id);
-                    $('#pengemudi-ubah').val(response.pesanan.driver_id);
                     $('#kendaraan-ubah').val(response.pesanan.kendaraan_id);
+                    $('#formUbahPesanan').attr('action', 'http://127.0.0.1:8000/data-pesanan/' + pesanan_id);
+                    if (response.drivers) {
+                        $('#driver-ubah').val(response.drivers.id);
+                    } else {
+                        $('#driver-ubah').val("Tanpa Pengemudi");
+                    }
                 }
             });
         })
@@ -707,9 +712,13 @@
                     $('#tgl-ambil-lihat').val(response.pesanan.tgl_ambil);
                     $('#tgl-kembali-lihat').val(response.pesanan.tgl_kembali);
                     $('#pemesan-lihat').val(response.customers.nama);
-                    $('#pengemudi-lihat').val(response.drivers.nama);
                     $('#kendaraan-lihat').val(response.kendaraan.nama);
                     $('#nomor-plat-lihat').val(response.kendaraan.nomor_plat);
+                    if (response.drivers) {
+                        $('#pengemudi-lihat').val(response.drivers.nama);
+                    } else {
+                        $('#pengemudi-lihat').val("Tanpa Pengemudi");
+                    }
                 }
             });
 
