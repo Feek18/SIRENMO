@@ -41,7 +41,7 @@
             <span class="text-gray-400 uppercase text-sm">
                 BRAND
             </span>
-            <p class="text-lg font-bold block truncate capitalize">Chevron</p>
+            <p class="text-lg font-bold block truncate capitalize">Kijang Innova</p>
             <div class="flex items-center">
                 <p class="text-lg font-semibold my-3">$150</p>
                 <del>
@@ -56,7 +56,7 @@
     </div>
     <div class="bg-white shadow-md hover:scale-105 duration-300">
         <a href="">
-            <img class="object-cover mt-8" src="../img/pict2.png" alt="">
+            <img class="object-cover mt-8" src="../img/civic.png" alt="">
         </a>
         <div class="px-4 py-3 w-72">
             <div class="flex items-center gap-2 mb-3 mt-2">

@@ -234,13 +234,13 @@
       </div>
       <div class="lg:flex lg:items-center lg:justify-center lg:gap-12 mt-8">
         <div class="card">
-          <img class="lg:w-full h-full object-cover mt-6 px-4 py-2" src="img/pict1.png" alt="All New Avanza">
+          <img class="lg:w-full h-full object-cover mt-6 px-4 py-2" src="img/crv.png" alt="All New Avanza">
           <div class="p-5 flex flex-col gap-3">
             <div class="flex items-center gap-2">
               <span class="badge">stock ready</span>
               <span class="badge">most recommend</span>
             </div>
-            <h2 class="tittle">All New Avanza</h2>
+            <h2 class="tittle">Honda CR-V</h2>
             <p class="text-xl font-bold">Rp 350.000</p>
             <div class="flex items-center gap-2 mt-1">
               <p class="text-sm line-through opacity-50">Rp 450.000</p>
@@ -255,13 +255,13 @@
           </div>
         </div>
         <div class="card">
-          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict2.png" alt="All New Avanza">
+          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/mazda.png" alt="All New Avanza">
           <div class="p-5 flex flex-col gap-3">
             <div class="flex items-center gap-2">
               <span class="badge">stock ready</span>
               <span class="badge">most recommend</span>
             </div>
-            <h2 class="tittle">Rush</h2>
+            <h2 class="tittle">Mazda 3</h2>
             <p class="text-xl font-bold">Rp 400.000</p>
             <div class="flex items-center gap-2 mt-1">
               <p class="text-sm line-through opacity-50">Rp 550.000</p>
@@ -276,13 +276,13 @@
           </div>
         </div>
         <div class="card">
-          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict3.png" alt="All New Avanza">
+          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/civic.png" alt="All New Avanza">
           <div class="p-5 flex flex-col gap-3">
             <div class="flex items-center gap-2">
               <span class="badge">stock ready</span>
               <span class="badge">most recommend</span>
             </div>
-            <h2 class="tittle">Veloz</h2>
+            <h2 class="tittle">Civic</h2>
             <p class="text-xl font-bold">Rp 350.000</p>
             <div class="flex items-center gap-2 mt-1">
               <p class="text-sm line-through opacity-50">Rp 450.000</p>
@@ -297,13 +297,13 @@
           </div>
         </div>
         <div class="card">
-          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/pict4.png" alt="All New Avanza">
+          <img class="w-full h-full object-cover mt-6 px-4 py-2" src="img/brv.png" alt="All New Avanza">
           <div class="p-5 flex flex-col gap-3">
             <div class="flex items-center gap-2">
               <span class="badge">stock ready</span>
               <span class="badge">most recommend</span>
             </div>
-            <h2 class="tittle">Honda HR-V</h2>
+            <h2 class="tittle">Honda BR-V</h2>
             <p class="text-xl font-bold">Rp 450.000</p>
             <div class="flex items-center gap-2 mt-1">
               <p class="text-sm line-through opacity-50">Rp 500.000</p>
