@@ -22,13 +22,23 @@ class PesananController extends Controller
      */
     public function index()
     {
-        //
-        return view('admin.pages.data-pesanan', [
-            'pesanans' => Pesanan::where('status', 'menunggu_admin')->get(),
-            'customers' => Customers::all(),
-            'drivers' => Drivers::all(),
-            'kendaraan' => Kendaraan::all()
-        ]);
+        if(Auth::user()->role == 'admin')
+        {
+            return view('admin.pages.data-pesanan', [
+                'pesanans' => Pesanan::where('status', 'menunggu_admin')->get(),
+                'customers' => Customers::all(),
+                'drivers' => Drivers::all(),
+                'kendaraan' => Kendaraan::all()
+            ]);
+        } else {
+            return view('owner.pages.data-pesanan', [
+                'pesanans' => Pesanan::all(),
+                'customers' => Customers::all(),
+                'drivers' => Drivers::all(),
+                'kendaraan' => Kendaraan::all()
+            ]);
+        }
+        
     }
 
     /**

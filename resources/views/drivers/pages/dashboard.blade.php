@@ -1,6 +1,8 @@
 @extends('drivers.main')
 
 @section('content')
+    <div class="w-full px-3 py-8 mx-auto">
+      <div class="flex flex-wrap -mx-3">
         <div class="w-full max-w-full px-3 sm:w-1/2 sm:flex-none xl:w-1/4">
           <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
             <div class="flex-auto p-4">
@@ -20,6 +22,7 @@
           </div>
         </div>
       </div>
+      
 
       <!-- cards row 3 -->
 
@@ -161,7 +164,7 @@
         </div>
       </div>
 
-      <!-- cards row 4 -->
+        <!-- cards row 4 -->
 
       @include('../drivers/layout/partials/footer')
     </div>

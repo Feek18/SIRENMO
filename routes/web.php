@@ -56,9 +56,15 @@ Route::post('/data-profile/{id}', [UsersController::class, 'profile']);
 Route::get('/data-verifikasi/{id}', [PesananController::class, 'verifikasiData']);
 Route::resource('/data-feedback', FeedbackController::class);
 Route::get('/profile', function () {
-    return view('admin.pages.profile', [
-        'users' => Customers::find(Auth::user()->id)
-    ]);
+    if(Auth::user()->role == 'admin') {
+        return view('admin.pages.profile', [
+            'users' => Customers::find(Auth::user()->id)
+        ]);
+    } else {
+        return view('owner.pages.profile', [
+            'users' => Customers::find(Auth::user()->id)
+        ]);
+    }
 });
 
 // routes/get login
@@ -140,6 +146,3 @@ Route::get('/form-pesanan/{id}', [CustomersController::class, 'tambahPesanan']);
 Route::get('/pesanan-saya', [CustomersController::class, 'lihatPesanan']);
 Route::post('/pembayaran', [TransaksiController::class, 'bayarPesanan']);
 Route::get('/detailPesanan/{id}', [PesananController::class, 'detailPesanan']);
-
-// PDF
-// Route::get('view-pdf', [TransaksiController::class, 'view_pdf']);
