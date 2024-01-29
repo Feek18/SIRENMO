@@ -10,6 +10,7 @@ use App\Models\Pesanan;
 use App\Models\User;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 
 class TransaksiController extends Controller
@@ -21,11 +22,19 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        //
-        return view('admin.pages.data-transaksi', [
-            'transaksi' => Transaksi::all(),
-            'pesanan' => Pesanan::all()
-        ]);
+        if(Auth::user()->role == 'admin')
+        {
+            return view('admin.pages.data-transaksi', [
+                'transaksi' => Transaksi::all(),
+                'pesanan' => Pesanan::all()
+            ]);
+        } else {
+            return view('owner.pages.data-transaksi', [
+                'transaksi' => Transaksi::all(),
+                'pesanan' => Pesanan::all()
+            ]);
+        }
+        
     }
 
     /**

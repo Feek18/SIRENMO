@@ -12,6 +12,7 @@ use App\Models\User;
 use App\Models\Kendaraan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
 
 class FeedbackController extends Controller
 {
@@ -23,15 +24,28 @@ class FeedbackController extends Controller
     public function index()
     {
         //
-        return view('admin.pages.dashboard', [
-            'feedback' => Feedback::paginate(4),
-            'pesanan' => Pesanan::all(),
-            'pendapatan' => Transaksi::sum('jumlah_pembayaran'),
-            'user' => User::count('id'),
-            'pesanan_total' => Pesanan::count('id'),
-            'kendaraan' => Kendaraan::count('id'),
-            'customers' => Customers::all()
-        ]);
+        if(Auth::user()->role == 'admin') {
+            return view('admin.pages.dashboard', [
+                'feedback' => Feedback::paginate(4),
+                'pesanan' => Pesanan::all(),
+                'pendapatan' => Transaksi::sum('jumlah_pembayaran'),
+                'user' => User::count('id'),
+                'pesanan_total' => Pesanan::count('id'),
+                'kendaraan' => Kendaraan::count('id'),
+                'customers' => Customers::all()
+            ]);
+        } else {
+            return view('owner.pages.dashboard', [
+                'feedback' => Feedback::paginate(4),
+                'pesanan' => Pesanan::all(),
+                'pendapatan' => Transaksi::sum('jumlah_pembayaran'),
+                'user' => User::count('id'),
+                'pesanan_total' => Pesanan::count('id'),
+                'kendaraan' => Kendaraan::count('id'),
+                'customers' => Customers::all()
+            ]);
+        }
+            
     }
 
     /**
