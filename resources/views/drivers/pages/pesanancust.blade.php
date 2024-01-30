@@ -69,7 +69,7 @@
                     @if($pesanan->status == 'menunggu_konfirmasi')
                       <td class="align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                         <button type="button" class="text-xs font-semibold leading-tight text-slate-400 btn btn-danger tolak-pesanan" value="{{ $pesanan->id }}"> TOLAK </button>
-                        <button type="button" class="text-xs font-semibold leading-tight text-slate-400 btn btn-success terima-pesanan" value="{{ $pesanan->id }}"> TERIMA </button>
+                        <button type="button" class="bg-gradient-to-tl from-amber-300 to-yellow-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white terima-pesanan" value="{{ $pesanan->id }}"> TERIMA </button>
                       </td>
                       
                     @else

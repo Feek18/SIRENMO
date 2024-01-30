@@ -256,7 +256,7 @@
                 </div>
                 <hr>
                 <div class="row my-4">
-                  <div class="col-sm-4">Kode</div>
+                  <div class="col-sm-4">Nomor Kode</div>
                   <div class="col-sm-1">:</div>
                   <div class="col-sm-6 text-right">
                     <input for="kode-pesanan-customers" id="kode-pesanan-customers"></input>

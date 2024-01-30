@@ -557,7 +557,7 @@
             </div>
 
             <div class="box">
-                <i class="fa fa-solid fa-wallet"></i>
+                <i class="fa fa-solid fa-money-bill" style="color: #ffffff;"></i>
                 <h2>Cheap Price and Safe</h2>
                 <p>Affordable Assurance: Offering Cheap Prices with Uncompromised Safety Standards for Your Peace of
                     Mind.</p>
@@ -715,7 +715,9 @@
                         </h2>
                         <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
                             <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                                <p class="mb-2 text-gray-500 dark:text-gray-400">Late returns may incur additional charges. It's crucial to communicate with the rental company if you anticipate being late to make necessary arrangements.</p>
+                                <p class="mb-2 text-gray-500 dark:text-gray-400">Late returns may incur additional
+                                    charges. It's crucial to communicate with the rental company if you anticipate being
+                                    late to make necessary arrangements.</p>
                             </div>
                         </div>
                         <h2 id="accordion-flush-heading-2">
@@ -733,7 +735,9 @@
                         </h2>
                         <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
                             <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                                <p class="mb-2 text-gray-500 dark:text-gray-400">Rental cars are typically provided with a full tank, and customers are expected to return the vehicle with a full tank. Some companies offer pre-paid fuel options.</p>
+                                <p class="mb-2 text-gray-500 dark:text-gray-400">Rental cars are typically provided with
+                                    a full tank, and customers are expected to return the vehicle with a full tank. Some
+                                    companies offer pre-paid fuel options.</p>
                             </div>
                         </div>
                         <h2 id="accordion-flush-heading-3">
@@ -751,7 +755,9 @@
                         </h2>
                         <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
                             <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                                <p class="mb-2 text-gray-500 dark:text-gray-400">Contact the rental company and local authorities immediately. Most companies provide roadside assistance and guidelines on what steps to take in such situations.</p>        
+                                <p class="mb-2 text-gray-500 dark:text-gray-400">Contact the rental company and local
+                                    authorities immediately. Most companies provide roadside assistance and guidelines
+                                    on what steps to take in such situations.</p>
                             </div>
                         </div>
                     </div>
@@ -941,7 +947,7 @@
         btntoogle.addEventListener('click', function () { classList.to('hn'});
     </script>
 
-    
+
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
