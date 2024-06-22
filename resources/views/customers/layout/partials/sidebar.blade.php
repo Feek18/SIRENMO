@@ -8,7 +8,7 @@
             target="_blank">
             <img src="img/logo.png" class="inline h-full max-w-full transition-all duration-200 ease-nav-brand max-h-8"
                 alt="main_logo" />
-            <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">GORENTCARS</span>
+            <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand text-[24px]">Fast Car</span>
         </a>
     </div>
 
