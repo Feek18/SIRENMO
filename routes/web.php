@@ -13,6 +13,7 @@ use App\Http\Controllers\PesananDriversController;
 use App\Http\Controllers\TransaksiController;
 use App\Models\Customers;
 use App\Models\Drivers;
+use App\Models\Kategori;
 use App\Models\Kendaraan;
 use App\Models\Pesanan;
 use App\Models\Transaksi;
@@ -56,7 +57,7 @@ Route::post('/data-profile/{id}', [UsersController::class, 'profile']);
 Route::get('/data-verifikasi/{id}', [PesananController::class, 'verifikasiData']);
 Route::resource('/data-feedback', FeedbackController::class);
 Route::get('/profile', function () {
-    if(Auth::user()->role == 'admin') {
+    if (Auth::user()->role == 'admin') {
         return view('admin.pages.profile', [
             'users' => Customers::find(Auth::user()->id)
         ]);
@@ -118,11 +119,12 @@ Route::get('/dasboard-customers', function () {
     if (Customers::where('user_id', Auth::user()->id)->first()) {
         return view('customers.pages.dashboard', [
             'kendaraan' => Kendaraan::all(),
+            'kategori' => Kategori::all(),
             'userId' => Customers::where('user_id', Auth::user()->id)->first()
         ]);
     } else {
         return view('customers.pages.profile_customers', [
-            'customers' => Customers::where('user_id', Auth::user()->id)->first(),
+            'customers' =>  Customers::where('user_id', Auth::user()->id)->first(),
             'userId' => Customers::where('user_id', Auth::user()->id)->first()
         ]);
     }

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('pesanans', function (Blueprint $table) {
             //
-            $table->enum('status', ['ditolak', 'menunggu_konfirmasi', 'terkonfirmasi', 'berlangsung', 'selesai'])->after('tgl_kembali');
+            $table->enum('status', ['ditolak', 'menunggu_admin', 'menunggu_konfirmasi', 'terkonfirmasi', 'berlangsung', 'selesai'])->after('tgl_kembali');
         });
     }
 

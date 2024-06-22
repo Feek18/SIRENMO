@@ -24,7 +24,7 @@ class PesananController extends Controller
     {
         if (Auth::user()->role == 'admin') {
             return view('admin.pages.data-pesanan', [
-                'pesanans' => Pesanan::where('status', 'terkonfirmasi')->get(),
+                'pesanans' => Pesanan::where('status', 'menunggu_admin')->get(),
                 'customers' => Customers::all(),
                 'drivers' => Drivers::all(),
                 'kendaraan' => Kendaraan::all()

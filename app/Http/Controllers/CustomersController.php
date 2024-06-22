@@ -45,7 +45,9 @@ class CustomersController extends Controller
     public function dashboardCust()
     {
         //
-        return view('customers.home');
+        return view('customers.home', [
+            'customers' => Customers::where('user_id', Auth::user()->id)->first(),
+        ]);
     }
 
     /**
