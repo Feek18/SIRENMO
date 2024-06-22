@@ -413,71 +413,7 @@
 <body class="overflow-y-scroll">
 
     {{-- navbar --}}
-    <section class="bg-white">
-        <div class="container mx-auto">
-            <div class="shadow flex justify-between items-center p-2 md:items-center md:justify-between"
-                style="height: 68px">
-                <div>
-                    <span class="text-2xl font-[Poppins] cursor-pointer font-bold">
-                        <a class="font-bold text-xl pt-4" href="">
-                            <img class="h-10 inline" src="img/logo.png" alt="">
-                            FAST CAR
-                        </a>
-                    </span>
-                </div>
-                <ul class="text-secondary text-sm lg:flex lg:items-center gap-7 hidden">
-                    <li>
-                        <a class="hover:text-color duration-500 font-medium" href="#home">Home</a>
-                    </li>
-                    <li>
-                        <a class="hover:text-color duration-500 font-medium" href="#specialdeals">Special Deals</a>
-                    </li>
-                    <li>
-                        <a class="hover:text-color duration-500 font-medium" href="#about">About Us</a>
-                    </li>
-                    <li>
-                        <a class="hover:text-color duration-500 font-medium" href="#">Testimonials</a>
-                    </li>
-                    <li>
-                        <a class="hover:text-color duration-500 font-medium" href="#">Contact</a>
-                    </li>
-                    <div class="lg:flex hidden">
-                        <button class="bg-color text-white text-[16px] lg:text-[17px] px-7 py-2 font-bold rounded">
-                            <a href="{{ route('login') }}">Login</a>
-                        </button>
-                    </div>
-                </ul>
-                <button class="lg:hidden block btntoggle">
-                    <img class="h-6" src="img/hamburger-menu.png" alt="">
-                </button>
-            </div>
-        </div>
-
-        <div class="mobile mx-auto lg:hidden md:hidden hidden">
-            <ul class="text-secondary text-sm font-normal gap-7">
-                <li class="px-3 py-3 hover:bg-color hover:text-white cursor-pointer ease-in duration-200">
-                    <a href="#home">Home</a>
-                </li>
-                <li class="px-3 py-3 hover:bg-color hover:text-white cursor-pointer ease-in duration-200">
-                    <a href="#specialdeals">Special Deals</a>
-                </li>
-                <li class="px-3 py-3 hover:bg-color hover:text-white cursor-pointer ease-in duration-200">
-                    <a href="#about">About Us</a>
-                </li>
-                <li class="px-3 py-3 hover:bg-color hover:text-white cursor-pointer ease-in duration-200">
-                    <a href="#">Testimonials</a>
-                </li>
-                <li class="px-3 py-3 hover:bg-color hover:text-white cursor-pointer ease-in duration-200">
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-            <div class="lg:flex mt-3">
-                <button class="bg-color text-white text-[16px] lg:text-[17px] px-7 py-2 font-bold rounded">
-                    <a href="{{ route('login') }}">Login</a>
-                </button>
-            </div>
-        </div>
-    </section>
+    @include('layouts.navbar')
 
     <!-- Hero Section -->
     <section id="home" class="py-5">
@@ -757,7 +693,7 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testi mt-8">
+    <section class="testi mt-8" id="testi">
         <div class="container mx-auto px-8">
             <div class="text-center">
                 <span class="text-color">Testimonials</span>
@@ -827,39 +763,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-secondary text-white mt-16 py-6">
-        <div class="container mx-auto px-6">
-            <div class="lg:flex lg:justify-between lg:items-center">
-                <div class="lg:w-1/2 mb-6 lg:mb-0">
-                    <a href="#" class="text-2xl font-bold flex items-center mb-4 lg:mb-4">
-                        <img class="h-8 mr-2" src="img/logo.png" alt="Logo">
-                        FAST CAR
-                    </a>
-                    <p class="text-[16px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
-                        delectus dolore exercitationem sunt eius quod.</p>
-                </div>
-                <ul class="flex flex-col lg:flex-row lg:items-center lg:space-x-8 mt-6 lg:mt-0 ">
-                    <li class="mb-4 lg:mb-0"><a href="#" class="hover:text-color text-sm">About Us</a></li>
-                    <li class="mb-4 lg:mb-0"><a href="#" class="hover:text-color text-sm">Our Rents</a></li>
-                    <li class="mb-4 lg:mb-0"><a href="#" class="hover:text-color text-sm">Terms &
-                            Conditions</a></li>
-                    <li class="mb-4 lg:mb-0"><a href="#" class="hover:text-color text-sm">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <button class="bg-color p-3">
-                            <a href="#" class="inline-flex items-center"><i
-                                    class="fa-solid fa-phone mr-2"></i>+62 822 3788 6327</a>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-            <hr class="my-4">
-            <div class="text-[12px] opacity-60 text-center">
-                <span>Copyright ©2023 VOID</span>
-            </div>
-        </div>
-    </footer>
+    {{-- footer --}}
+    @include('layouts.footer')
 
 
 
