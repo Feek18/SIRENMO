@@ -23,12 +23,11 @@
     <link rel="stylesheet" href="../css/app.css">
 </head>
 
-<body class="m-0 font-sans text-base antialiased font-normal leading-default bg-slate-600 text-slate-500">
-    @if (Request::is('dashboard-customers') || Request::is('pesanan-saya') || Request::is('dasboard-customers'))
-        @include('../customers/layout/partials/sidebar')
-    @endif
+<body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-100 text-slate-500">
+    @include('../customers/layout/partials/sidebar')
 
     <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
+        @include('../customers/layout/partials/navbar')
 
         @yield('content')
     </main>
