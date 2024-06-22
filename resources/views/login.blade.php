@@ -19,74 +19,74 @@
     <link href="../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.5" rel="stylesheet" />
     @vite('resources/css/app.css')
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+
     <!-- Nepcha Analytics (nepcha.com) -->
     <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
     <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
 </head>
 
-<body class="m-0 font-sans antialiased font-normal bg-white text-start text-base leading-default text-slate-500">
-    <div class="container sticky top-0 z-sticky">
-        <div class="flex flex-wrap -mx-3">
-            <div class="w-full max-w-full px-3 flex-0">
-                <main class="mt-0 transition-all duration-200 ease-soft-in-out">
-                    <section>
-                        <div class="relative flex items-center p-0 overflow-hidden bg-center bg-cover">
-                            <div class="container mx-auto z-10">
-                                <div class="flex flex-wrap items-center">
-                                    <div
-                                        class="flex flex-col w-full max-w-full mx-auto xl:w-4/12">
-                                        <div
-                                            class="relative flex flex-col min-w-0 mt-32 break-words bg-transparent border-0 shadow-none rounded-2xl bg-clip-border">
-                                            <div class="p-6 pb-0 mb-0 bg-transparent border-b-0 rounded-t-2xl">
-                                                <h3 class="relative z-10 font-bold text-4xl mb-3">
-                                                    Welcome to Login</h3>
-                                                <p class="mb-0">Hey, enter your details to get login to your account
-                                                </p>
-                                            </div>
-                                            <div class="flex-auto p-6">
-                                                <form role="form" action="/login" method="post">
-                                                    @csrf
-                                                    <label
-                                                        class="mb-2 ml-1 font-bold text-xs text-slate-700">Username</label>
-                                                    <div class="mb-4">
-                                                        <input type="text" name="username"
-                                                            class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
-                                                            placeholder="Username" />
-                                                    </div>
-                                                    <label
-                                                        class="mb-2 ml-1 font-bold text-xs text-slate-700">Password</label>
-                                                    <div class="mb-4">
-                                                        <input type="password" name="password"
-                                                            class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
-                                                            placeholder="Password" />
-                                                    </div>
-                                                    <div class="text-center">
-                                                        <button type="submit"
-                                                            class="inline-block w-full px-6 py-3 mt-6 mb-0 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer shadow-soft-md bg-x-25 bg-150 leading-pro text-xs ease-soft-in tracking-tight-soft bg-gradient-to-tl from-blue-600 to-cyan-400 hover:scale-102 hover:shadow-soft-xs active:opacity-85">Sign
-                                                            in</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div
-                                                class="p-6 px-1 pt-0 text-center bg-transparent border-t-0 border-t-solid rounded-b-2xl lg:px-2">
-                                                <p class="mx-auto mb-6 leading-normal text-sm">
-                                                    Don't have an account?
-                                                    <a href="/register"
-                                                        class="relative z-10 font-semibold text-transparent bg-gradient-to-tl from-blue-600 to-cyan-400 bg-clip-text">Sign
-                                                        up</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="w-full hidden lg:block max-w-full px-3 lg:flex-0 shrink-0 md:w-6/12">
-                                        <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                            alt="">
-                                    </div>
-                                </div>
-                            </div>
+<body class="">
+
+    {{-- navbar --}}
+    @include('layouts.navbar')
+
+    {{-- form login --}}
+    <section class="lg:mt-14">
+        <div class="container mx-auto">
+            <div class="flex justify-center items-center space-x-4">
+                <div class="">
+                    <div
+                        class="relative flex flex-col min-w-0 mt-32 break-words bg-transparent border-0 shadow-none rounded-2xl bg-clip-border">
+                        <div class="p-6 pb-0 mb-0 bg-transparent border-b-0 rounded-t-2xl">
+                            <h3 class="relative z-10 font-bold text-4xl mb-3">
+                                Welcome Back!!</h3>
+                            <p class="mb-0">Hey, enter your details to get login to your account
+                            </p>
                         </div>
-                    </section>
-                </main>
+                        <div class="flex-auto p-6">
+                            <form role="form" action="/login" method="post">
+                                @csrf
+                                <label class="mb-2 ml-1 font-bold text-xs text-slate-700">Username</label>
+                                <div class="mb-4">
+                                    <input type="text" name="username"
+                                        class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
+                                        placeholder="Username" />
+                                </div>
+                                <label class="mb-2 ml-1 font-bold text-xs text-slate-700">Password</label>
+                                <div class="mb-4">
+                                    <input type="password" name="password"
+                                        class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
+                                        placeholder="Password" />
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit"
+                                        class="inline-block w-full px-6 py-3 mt-6 mb-0 font-bold text-center text-white uppercase align-middle transition-all border-0 rounded-lg cursor-pointer shadow-soft-md bg-x-25 bg-150 leading-pro text-xs ease-soft-in tracking-tight-soft bg-color  hover:scale-102 hover:shadow-soft-xs active:opacity-85">Sign
+                                        in</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div
+                            class="p-6 px-1 pt-0 text-center bg-transparent border-t-0 border-t-solid rounded-b-2xl lg:px-2">
+                            <p class="mx-auto mb-6 leading-normal text-sm">
+                                Don't have an account?
+                                <a href="/register"
+                                    class="relative z-10 font-semibold text-orange-500 bg-clip-text">Sign
+                                    up</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full hidden lg:block max-w-full px-3 lg:flex-0 shrink-0 md:w-6/12">
+                    <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 <!-- plugin for scrollbar  -->
 <script src="../assets/js/plugins/perfect-scrollbar.min.js" async></script>
