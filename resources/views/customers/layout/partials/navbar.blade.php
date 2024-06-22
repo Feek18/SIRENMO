@@ -6,7 +6,7 @@
                 <p>Silahkan pilih sesuai kebutuhan anda</p>
             </div>
             <div class="flex items-center space-x-2 px-6">
-                <i class="fa-solid fa-user mr-2"></i> Hello, Fikri
+                <i class="fa-solid fa-user mr-2"></i> Hello, {{ ucwords(Auth::user()->username) }}
                 <button class="lg:hidden block btntoggle">
                     <img class="h-6" src="img/hamburger-menu.png" alt="">
                 </button>

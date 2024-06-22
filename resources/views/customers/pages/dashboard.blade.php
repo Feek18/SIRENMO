@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="pesananSaya" data-pesanan="{{ session('pesanan') }}"></div>
-    <section class="container mx-auto mt-4">
+    <section class="mt-4 px-6">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8 overflow-hidden">
             <div class="bg-white shadow-md hover:scale-105 transform duration-300 w-full max-w-sm mx-auto lg:mx-0">
                 <a href="">

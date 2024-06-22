@@ -29,7 +29,7 @@ class LoginController extends Controller
 
         $validatedData['password'] = Hash::make($validatedData['password']);
         User::create($validatedData);
-        return redirect('/login')->with('success', 'Registration successfull! Please login');
+        return redirect('/login')->with('toast_success', 'Registration successfull! Please login');
     }
 
     public function authenticate(Request $request)
@@ -41,6 +41,10 @@ class LoginController extends Controller
 
         if (Auth::attempt($validate)) {
             $request->session()->regenerate();
+
+            // Flash message for successful login
+            session()->flash('toast_success', 'Login successful!');
+
             if (Auth::user()->role == 'admin') {
                 return redirect()->intended('data-feedback');
             }
@@ -59,6 +63,7 @@ class LoginController extends Controller
     }
 
 
+
     public function logout()
     {
         Auth::logout();
@@ -66,6 +71,6 @@ class LoginController extends Controller
         request()->session()->invalidate();
         request()->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/login')->with('toast_success', 'Logout Successfully!!');
     }
 }
