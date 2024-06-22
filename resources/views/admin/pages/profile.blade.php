@@ -18,7 +18,7 @@
           <div class="flex items-center justify-end">
             <a href="/logout" class="block px-4 py-2 font-semibold text-white transition-all ease-soft-in-out text-sm">
                 <i class="fa fa-user sm:mr-1" aria-hidden="true"></i>
-                <span class="hidden sm:inline">Logout</span>
+                <span class="hidden sm:inline">Keluar</span>
             </a>
         </div>
         
