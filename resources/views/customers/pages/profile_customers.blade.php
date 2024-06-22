@@ -14,7 +14,7 @@
                 </li>
                 <li class="text-sm pl-2 capitalize leading-normal before:float-left before:pr-2 before:content-['/']" aria-current="page">Profile</li>
             </ol>
-            <h6 class="mb-2 ml-2 font-bold text-white capitalize">Profil</h6>
+            <h6 class="mb-2 ml-2 font-bold text-white capitalize">Profile</h6>
             </nav>
             {{-- <div class="flex items-center justify-end">
             <a href="/logout" class="block px-4 py-2 font-semibold text-white transition-all ease-soft-in-out text-sm">
