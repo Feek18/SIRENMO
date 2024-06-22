@@ -52,17 +52,19 @@ class KendaraanController extends Controller
             'harga_paket' => 'required',
             'deskripsi' => 'required',
             'transmisi' => 'required',
-            'foto_kendaraan' => 'image|file',
+            'foto_kendaraan' => 'nullable|image|file|mimes:jpeg,jpg,png|max:2000',
             'kategori_id' => 'required'
         ]);
 
-        if ($request->file('foto_kendaraan')) {
-            # code...
-            $validatedData['foto_kendaraan'] = $request->file('foto_kendaraan')->store('foto-sistem');
-        }
+        // dd($request);
+        echo $request->file('foto_kendaraan');
+        // if ($request->file('foto_kendaraan')) {
+        //     # code...
+        //     $validatedData['foto_kendaraan'] = $request->file('foto_kendaraan')->store('foto-sistem');
+        // }
 
-        Kendaraan::create($validatedData);
-        return redirect('/data-kendaraan')->with('flash', 'Ditambahkan!');
+        // Kendaraan::create($validatedData);
+        // return redirect('/data-kendaraan')->with('flash', 'Ditambahkan!');
     }
 
     /**

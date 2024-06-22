@@ -133,7 +133,7 @@
             <div class="col">
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
-                    <input type="text" class="form-control rounded border-slate-200 rounded border-slate-200" id="nama" name="nama" required>
+                    <input type="text" class="form-control rounded border-slate-200" id="nama" name="nama" required>
                 </div>
               </div>
               <div class="col">

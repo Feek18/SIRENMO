@@ -202,7 +202,7 @@
               <div class="col">
                 <div class="mb-3">
                     <label for="kode" class="form-label">Kode</label>
-                    <input type="text" class="form-control rounded border-slate-200 rounded border-slate-200" id="kode-pesanan-ubah" name="kode" required>
+                    <input type="text" class="form-control rounded border-slate-200" id="kode-pesanan-ubah" name="kode" required>
                 </div>
               </div>
               <div class="col">

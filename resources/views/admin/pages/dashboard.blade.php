@@ -45,7 +45,7 @@
                 </div>
                 <div class="px-3 text-right basis-1/3">
                   <div class="inline-block w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500">
-                    <i class="ni leading-none ni-world text-lg relative top-3.5 text-white"></i>
+                    <i class="fa-solid fa-car text-lg relative top-3.5 text-white"></i>
                   </div>
                 </div>
               </div>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="px-3 text-right basis-1/3">
                   <div class="inline-block w-12 h-12 text-center rounded-lg bg-gradient-to-tl from-purple-700 to-pink-500">
-                    <i class="ni leading-none ni-paper-diploma text-lg relative top-3.5 text-white"></i>
+                    <i class="fa-solid fa-users text-lg relative top-3.5 text-white"></i>
                   </div>
                 </div>
               </div>
@@ -125,7 +125,7 @@
                                   class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                   Ulasan</th>
                                 <th
-                                  class="px-6 py-2 text-center font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                  class="px-16 py-2 text-center font-bold uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
                                   Penilaian</th>
                                   <th
                                   class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
@@ -156,10 +156,10 @@
                                       @endfor
                                     </div>
                                 </td>
-                                <td class="px-6 py-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                  <button type="button" class="text-xs font-semibold ms-4 leading-tight text-slate-400 viewFB" value="{{ $p->id }}"> Lihat </button>
-                                </td>
-                                <td class="px-6 py-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                <td></td>
+                                <td class="px-6 flex gap-5 py-3 justify-end items-center bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                  <button type="button" class="text-xs font-semibold leading-tight text-slate-400 viewFB" value="{{ $p->id }}"> Lihat </button>
+                                
                                   <form action="/data-feedback/" method="post" class="hapusFeedback">
                                     @csrf
                                     @method('delete')
@@ -185,7 +185,7 @@
 
       <!-- cards row 4 -->
 
-      @include('../admin/layout/partials/footer')
+      {{-- @include('../admin/layout/partials/footer') --}}
     </div>
     <!-- end cards -->
 

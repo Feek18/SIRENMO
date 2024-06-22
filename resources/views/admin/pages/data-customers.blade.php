@@ -199,19 +199,19 @@
             <div class="col">
               <div class="mb-3">
                   <label for="nik" class="form-label">NIK</label>
-                  <input type="text" class="form-control rounded border-slate-200 rounded border-slate-200" id="nik-ubah" name="nik" required>
+                  <input type="text" class="form-control rounded border-slate-200" id="nik-ubah" name="nik" required>
               </div>
             </div>
             <div class="col">
               <div class="mb-3">
                   <label for="nama" class="form-label">Nama</label>
-                  <input type="text" class="form-control rounded border-slate-200 rounded border-slate-200" id="nama-ubah" name="nama" required>
+                  <input type="text" class="form-control rounded border-slate-200" id="nama-ubah" name="nama" required>
               </div>
             </div>
             <div class="col">
               <div class="mb-3">
                   <label for="telepon" class="form-label">Telepon</label>
-                  <input type="number" class="form-control rounded border-slate-200 rounded border-slate-200" id="telepon-ubah" name="telepon" required>
+                  <input type="number" class="form-control rounded border-slate-200" id="telepon-ubah" name="telepon" required>
               </div>
             </div>
           </div>
