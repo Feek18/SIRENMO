@@ -57,12 +57,12 @@ class DriversController extends Controller
         //
         $validatedData = $request->validate([
             'nik' => 'required',
-            'nama' => 'required',
+            'nama' => 'required|string|max:100',
             'telepon' => 'required',
-            'alamat' => 'required',
+            'alamat' => 'required|string|max:255',
             'tgl_lahir' => 'required',
             'user_id' => 'required',
-            'foto_sim' => 'image|file'
+            'foto_sim' => 'nullable|file|image|mimes:jpeg,png,jpg|max:2000'
         ]);
 
         if ($request->file('foto_sim')) {
@@ -120,12 +120,12 @@ class DriversController extends Controller
         //
         $validatedData = $request->validate([
             'nik' => 'required',
-            'nama' => 'required',
+            'nama' => 'required|string|max:100',
             'telepon' => 'required',
-            'alamat' => 'required',
+            'alamat' => 'required|string|max:255',
             'tgl_lahir' => 'required',
             'user_id' => 'required',
-            'foto_sim' => 'image|file'
+            'foto_sim' => 'nullable|file|image|mimes:jpeg,png,jpg|max:2000'
         ]);
 
         if ($request->file('foto_sim')) {

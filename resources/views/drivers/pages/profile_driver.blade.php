@@ -1,12 +1,3 @@
-{{-- <!DOCTYPE html>
-<html lang="en"> --}}
-    {{-- <head>
-        @include('../drivers/layout/partials/header')
-    </head>
-
-    <body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-50 text-slate-500">
-        @include('../drivers/layout/partials/sidebar')
-        @include('../drivers/layout/partials/script') --}}
 @extends('drivers.main')
 
 @section('content')
@@ -96,9 +87,7 @@
                                         class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-soft-in-out h-9 w-9 rounded-xl"
                                         alt="user1" />
                                       @else
-                                        <img src="../assets/img/logohonda.png"
-                                        class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-soft-in-out h-9 w-9 rounded-xl"
-                                        alt="user1" />
+                                        <p class="text-xs leading-tight text-slate-400">belum ada foto</p>
                                       @endif
                                     </div>
                                   </div>
@@ -126,58 +115,67 @@
                             </tbody>
                           </table>
                           @else
-                          <div class="col-lg-12">
-                            <h1 class="font-bold text-black capitalize fs-5 mb-3">Isi Data Diri</h1>
-                            <form action="/data-drivers" method="post" enctype="multipart/form-data">
-                              @csrf
-                              <input type="hidden" name="driver_tambah" value="1">                           
-                              <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">                           
-                              <div class="row">
-                                <div class="col"> 
-                                  <div class="mb-3">
-                                      <label for="nik" class="form-label">Nik Anda</label>
-                                      <input type="text" class="form-control form-control-sm" id="nik" name="nik">                                     
+                            <div class="w-full">
+                              <h1 class="font-bold text-black capitalize text-lg mb-3">Isi Data Diri</h1>
+                              <form action="/data-drivers" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" name="driver_tambah" value="1">
+                                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                
+                                <div class="flex flex-wrap -mx-3">
+                                  <div class="w-full md:w-1/2 px-3 mb-3">
+                                    <label for="nik" class="block text-gray-700 text-sm font-bold mb-2">Nik Anda</label>
+                                    <input type="number" class="form-control form-control-sm @error('nik') is-invalid @enderror block w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" id="nik" name="nik" value="{{ old('nik') }}">
+                                    @error('nik')
+                                      <div class="text-red-700 mt-2">{{ $message }}</div>
+                                    @enderror
+                                  </div>
+                                  <div class="w-full md:w-1/2 px-3 mb-3">
+                                    <label for="nama" class="block text-gray-700 text-sm font-bold mb-2">Nama Anda</label>
+                                    <input type="text" class="form-control form-control-sm @error('nama') is-invalid @enderror block w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" id="nama" name="nama" value="{{ old('nama') }}">
+                                    @error('nama')
+                                      <div class="text-red-700 mt-2">{{ $message }}</div>
+                                    @enderror
                                   </div>
                                 </div>
-                                <div class="col">
-                                  <div class="mb-3">
-                                    <label for="nama" class="form-label">Nama Anda</label>
-                                    <input type="text" class="form-control form-control-sm" id="nama" name="nama">                            
+                        
+                                <div class="flex flex-wrap -mx-3">
+                                  <div class="w-full md:w-1/2 px-3 mb-3">
+                                    <label for="telepon" class="block text-gray-700 text-sm font-bold mb-2">No Telp Anda</label>
+                                    <input type="text" class="form-control form-control-sm @error('telepon') is-invalid @enderror block w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" id="telepon" name="telepon" value="{{ old('telepon') }}">
+                                    @error('telepon')
+                                      <div class="text-red-700 mt-2">{{ $message }}</div>
+                                    @enderror
+                                  </div>
+                                  <div class="w-full md:w-1/2 px-3 mb-3">
+                                    <label for="alamat" class="block text-gray-700 text-sm font-bold mb-2">Alamat Anda</label>
+                                    <input type="text" class="form-control form-control-sm @error('alamat') is-invalid @enderror block w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" id="alamat" name="alamat" value="{{ old('alamat') }}">
+                                    @error('alamat')
+                                      <div class="text-red-700 mt-2">{{ $message }}</div>
+                                    @enderror
                                   </div>
                                 </div>
-                              </div>
-                              
-                              <div class="row">
-                                <div class="col">
-                                  <div class="mb-3">
-                                  <label for="telepon" class="form-label">No Telp Anda</label>
-                                    <input type="text" class="form-control form-control-sm" id="telepon" name="telepon">                                  
+                        
+                                <div class="flex flex-wrap -mx-3">
+                                  <div class="w-full md:w-1/2 px-3 mb-3">
+                                    <label for="tgl_lahir" class="block text-gray-700 text-sm font-bold mb-2">Tgl Lahir Anda</label>
+                                    <input type="date" class="form-control form-control-sm @error('tgl_lahir') is-invalid @enderror block w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" id="tgl_lahir" name="tgl_lahir" value="{{ old('tgl_lahir') }}">
+                                    @error('tgl_lahir')
+                                      <div class="text-red-700 mt-2">{{ $message }}</div>
+                                    @enderror
+                                  </div>
+                                  <div class="w-full md:w-1/2 px-3 mb-3">
+                                    <label for="foto_sim" class="block text-gray-700 text-sm font-bold mb-2">Foto SIM Anda</label>
+                                    <input type="file" class="form-control form-control-sm @error('foto_sim') is-invalid @enderror block w-full py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" id="foto_sim" name="foto_sim" value="{{ old('foto_sim') }}">
+                                    @error('foto_sim')
+                                      <div class="text-red-700 mt-2">{{ $message }}</div>
+                                    @enderror
                                   </div>
                                 </div>
-                                <div class="col">
-                                  <div class="mb-3">
-                                    <label for="alamat" class="form-label">Alamat Anda</label>
-                                    <input type="text" class="form-control form-control-sm" id="alamat" name="alamat">                                   
-                                  </div>
-                                </div>
-                              </div>                              
-                              <div class="row">
-                                <div class="col">
-                                  <div class="mb-3">
-                                    <label for="tgl_lahir" class="form-label">Tgl Lahir Anda</label>
-                                    <input type="date" class="form-control form-control-sm" id="tgl_lahir" name="tgl_lahir">                    
-                                  </div>
-                                </div>
-                                <div class="col">
-                                  <div class="mb-3">
-                                    <label for="foto_sim" class="form-label">Foto SIM Anda</label>
-                                    <input type="file" class="form-control form-control-sm" id="foto_sim" name="foto_sim">                                   
-                                  </div>
-                                </div>
-                              </div>
-                              <button type="submit" class="btn btn-primary mt-3 mb-5">Simpan</button>
-                            </form>
-                          </div>                         
+                        
+                                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3 mb-5">Simpan</button>
+                              </form>
+                            </div>                   
                           @endif
                         </div>
                       </div>
@@ -243,7 +241,10 @@
                   <div class="row"><hr>
                     <div class="col-lg-10 mt-4">
                       <label class="form-label" for="foto_sim">Foto SIM</label>
-                      <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="foto_sim" type="file" name="foto_sim" onchange="priviewSIMDriver()">
+                      <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 @error('foto_sim') is-invalid @enderror" aria-describedby="user_avatar_help" id="foto_sim" type="file" name="foto_sim" onchange="priviewSIMDriver()">
+                      @error('foto_sim')
+                        <div class="text-red-700 mt-2">{{ $message }}</div>
+                      @enderror
                     </div>
                     <div class="col-lg-2 mt-4">
                       <img id="foto_sim-ubah" src="" alt="" class="priview-sim-driver img-fluid col-sm-10">
