@@ -20,9 +20,10 @@
           href="/data-feedback" style="text-decoration: none">
           <div
             class="{{ Request::is('data-feedback') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
-            <svg class="w-6 h-6 text-gray-800 dark:text-white {{ Request::is('data-feedback') ? 'fill-white' : ''}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
               <path d="M15.133 10.632v-1.8a5.407 5.407 0 0 0-4.154-5.262.955.955 0 0 0 .021-.106V1.1a1 1 0 0 0-2 0v2.364a.944.944 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C4.867 13.018 3 13.614 3 14.807 3 15.4 3 16 3.538 16h12.924C17 16 17 15.4 17 14.807c0-1.193-1.867-1.789-1.867-4.175Zm-13.267-.8a1 1 0 0 1-1-1 9.424 9.424 0 0 1 2.517-6.39A1.001 1.001 0 1 1 4.854 3.8a7.431 7.431 0 0 0-1.988 5.037 1 1 0 0 1-1 .995Zm16.268 0a1 1 0 0 1-1-1A7.431 7.431 0 0 0 15.146 3.8a1 1 0 0 1 1.471-1.354 9.425 9.425 0 0 1 2.517 6.391 1 1 0 0 1-1 .995ZM6.823 17a3.453 3.453 0 0 0 6.354 0H6.823Z"/>
-          </svg>            
+          </svg> 
+          <i class="fa-solid fa-hashtag {{ Request::is('data-feedback') ? 'text-white' : ''}}"></i>           
           </div>
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Dashboard</span>
         </a>
@@ -33,9 +34,7 @@
           href="/data-pengguna" style="text-decoration: none">
           <div
           class="{{ Request::is('data-pengguna') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
-          <svg class="h-8 w-8 {{ Request::is('data-pengguna') ? 'fill-white' : ''}}"  viewBox="0 0 24 24"  fill="none" @if (!Request::is('data-pengguna'))
-          stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-          @endif >  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />  <circle cx="9" cy="7" r="4" />  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />  <path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+          <i class="fa-solid fa-user-plus {{ Request::is('data-pengguna') ? 'text-white' : ''}}"></i>
           </svg>                    
           </div>
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Data Pengguna</span>
@@ -47,10 +46,7 @@
           href="/data-customers" style="text-decoration: none">
           <div
           class="{{ Request::is('data-customers') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
-          <svg class="h-8 w-8 {{ Request::is('data-customers') ? 'fill-white' : ''}}"  viewBox="0 0 24 24"  fill="none" @if (!Request::is('data-customers'))
-          stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-          @endif >  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />  <circle cx="9" cy="7" r="4" />  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />  <path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
-          </svg>                    
+          <i class="fa-solid fa-user-tag {{ Request::is('data-customers') ? 'text-white' : ''}}"></i>                   
           </div>
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Data Pelanggan</span>
         </a>
@@ -61,9 +57,7 @@
           href="/data-drivers" style="text-decoration: none">
           <div
           class="{{ Request::is('data-drivers') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
-          <svg class="w-6 h-6 text-gray-800 dark:text-white {{ Request::is('data-drivers') ? 'fill-white' : ''}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 14" >
-            <path d="M16 2H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 0 1 0 2Z"/>
-          </svg>          
+          <i class="fa-solid fa-user-nurse {{ Request::is('data-drivers') ? 'text-white' : ''}}"></i>         
           </div>
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Data Drivers</span>
         </a>
@@ -74,9 +68,7 @@
           href="/data-kategori" style="text-decoration: none">
           <div
           class="{{ Request::is('data-kategori') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
-          <svg class="w-6 h-6 text-gray-800 dark:text-white {{ Request::is('data-kategori') ? 'fill-white' : ''}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 14" >
-            <path d="M16 2H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 0 1 0 2Z"/>
-          </svg>          
+          <i class="fa-solid fa-list {{ Request::is('data-kategori') ? 'text-white' : ''}}"></i>         
           </div>
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Data Kategori</span>
         </a>
@@ -87,9 +79,7 @@
           href="/data-kendaraan" style="text-decoration: none">
           <div
           class="{{ Request::is('data-kendaraan') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
-          <svg class="w-6 h-6 text-gray-800 dark:text-white {{ Request::is('data-kendaraan') ? 'fill-white' : ''}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 14" >
-            <path d="M16 2H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 0 1 0 2Z"/>
-          </svg>          
+          <i class="fa-solid fa-car {{ Request::is('data-kendaraan') ? 'text-white' : ''}}"></i>          
           </div>
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Data Kendaraan</span>
         </a>
@@ -100,9 +90,7 @@
           href="/data-pesanan" style="text-decoration: none">
           <div
           class="{{ Request::is('data-pesanan') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
-          <svg class="w-6 h-6 text-gray-800 dark:text-white {{ Request::is('data-pesanan') ? 'fill-white' : ''}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 14" >
-            <path d="M16 2H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 0 1 0 2Z"/>
-          </svg>          
+          <i class="fa-solid fa-cart-shopping {{ Request::is('data-pesanan') ? 'text-white' : ''}}"></i>       
           </div>
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Data Pesanan</span>
         </a>
@@ -113,9 +101,10 @@
           href="/data-transaksi" style="text-decoration: none">
           <div
           class="{{ Request::is('data-transaksi') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
-          <svg class="w-6 h-6 text-gray-800 dark:text-white {{ Request::is('data-transaksi') ? 'fill-white' : ''}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 14" >
+          {{-- <svg class="w-6 h-6 text-gray-800 dark:text-white {{ Request::is('data-transaksi') ? 'fill-white' : ''}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 14" >
             <path d="M16 2H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 1 1 0 2Zm0 6H1a1 1 0 0 1 0-2h15a1 1 0 0 1 0 2Z"/>
-          </svg>          
+          </svg> --}}
+          <i class="fa-regular fa-credit-card {{ Request::is('data-transaksi') ? 'text-white' : ''}}"></i>       
           </div>
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Data Transaksi</span>
         </a>
