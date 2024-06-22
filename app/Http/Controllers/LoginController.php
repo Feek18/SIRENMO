@@ -24,11 +24,10 @@ class LoginController extends Controller
         $validatedData = $request->validate([
             'username' => ['required', 'min:3', 'max:255', 'unique:users'],
             'password' => 'required|min:5|max:255',
-            'role' => 'required'
+            'role' => 'required|in:customers,drivers'
         ]);
 
         $validatedData['password'] = Hash::make($validatedData['password']);
-
         User::create($validatedData);
         return redirect('/login')->with('success', 'Registration successfull! Please login');
     }

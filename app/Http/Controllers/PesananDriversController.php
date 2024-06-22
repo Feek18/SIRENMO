@@ -19,9 +19,10 @@ class PesananDriversController extends Controller
      */
     public function index()
     {
+        $driverid = Drivers::where('user_id', Auth::user()->id)->first();
         return view('drivers.pages.pesanancust', [
-            'userId' => Drivers::where('user_id', Auth::user()->id)->first(),
-            'pesanans' => Pesanan::where('driver_id', Auth::user()->id)->orderBy('id', 'desc')->get(),
+            'userId' => $driverid,
+            'pesanans' => Pesanan::where('driver_id', $driverid->id)->get(),
             'customers' => Customers::all(),
             'kendaraan' => Kendaraan::all(),
             'drivers' => Drivers::where('user_id', Auth::user()->id)->get(),

@@ -58,13 +58,13 @@ class KendaraanController extends Controller
 
         // dd($request);
         echo $request->file('foto_kendaraan');
-        // if ($request->file('foto_kendaraan')) {
-        //     # code...
-        //     $validatedData['foto_kendaraan'] = $request->file('foto_kendaraan')->store('foto-sistem');
-        // }
+        if ($request->file('foto_kendaraan')) {
+            # code...
+            $validatedData['foto_kendaraan'] = $request->file('foto_kendaraan')->move('storage/foto-sistem');
+        }
 
-        // Kendaraan::create($validatedData);
-        // return redirect('/data-kendaraan')->with('flash', 'Ditambahkan!');
+        Kendaraan::create($validatedData);
+        return redirect('/data-kendaraan')->with('flash', 'Ditambahkan!');
     }
 
     /**
