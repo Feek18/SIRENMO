@@ -26,16 +26,19 @@
                 <li>
                     <a class="hover:text-color duration-500 font-medium" href="#">Contact</a>
                 </li>
+                @guest
                 <div class="lg:flex hidden">
                     <button class="bg-color text-white text-[16px] lg:text-[17px] px-7 py-2 font-bold rounded">
                         <a href="{{ route('login') }}">Login</a>
                     </button>
                 </div>
+                @endguest
+                @auth
                 <div class="relative inline-block dropdown">
                     <button
                         class="flex items-center justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
                         id="menu-button" aria-expanded="true" aria-haspopup="true">
-                        <i class="fa-solid fa-user mr-2"></i> Hello, Fikri
+                        <i class="fa-solid fa-user mr-2"></i> Hello, {{ ucwords(Auth::user()->username) }}
                         <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                             fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd"
@@ -53,6 +56,7 @@
                         </div>
                     </div>
                 </div>
+                @endauth
             </ul>
             <button class="lg:hidden block btntoggle">
                 <img class="h-6" src="img/hamburger-menu.png" alt="">
