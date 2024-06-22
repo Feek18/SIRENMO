@@ -22,10 +22,9 @@ class PesananController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->role == 'admin')
-        {
+        if (Auth::user()->role == 'admin') {
             return view('admin.pages.data-pesanan', [
-                'pesanans' => Pesanan::where('status', 'menunggu_admin')->get(),
+                'pesanans' => Transaksi::where('status', 'menunggu_admin')->get(),
                 'customers' => Customers::all(),
                 'drivers' => Drivers::all(),
                 'kendaraan' => Kendaraan::all()
@@ -38,7 +37,6 @@ class PesananController extends Controller
                 'kendaraan' => Kendaraan::all()
             ]);
         }
-        
     }
 
     /**
