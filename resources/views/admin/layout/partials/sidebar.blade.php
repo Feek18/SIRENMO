@@ -17,7 +17,7 @@
     <ul class="flex flex-col pl-0 mb-0">
       <li class="mt-0.5 w-full">
         <a class="{{ Request::is('data-feedback') ? 'py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors' : 'py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors' }}"
-          href="/data-feedback">
+          href="/data-feedback" style="text-decoration: none">
           <div
             class="{{ Request::is('data-feedback') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
             <svg class="w-6 h-6 text-gray-800 dark:text-white {{ Request::is('data-feedback') ? 'fill-white' : ''}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -30,7 +30,7 @@
 
       <li class="mt-0.5 w-full">
         <a class="{{ Request::is('data-pengguna') ? 'py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors' : 'py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors' }}"
-          href="/data-pengguna">
+          href="/data-pengguna" style="text-decoration: none">
           <div
           class="{{ Request::is('data-pengguna') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
           <svg class="h-8 w-8 {{ Request::is('data-pengguna') ? 'fill-white' : ''}}"  viewBox="0 0 24 24"  fill="none" @if (!Request::is('data-pengguna'))
@@ -44,7 +44,7 @@
 
       <li class="mt-0.5 w-full">
         <a class="{{ Request::is('data-customers') ? 'py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors' : 'py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors' }}"
-          href="/data-customers">
+          href="/data-customers" style="text-decoration: none">
           <div
           class="{{ Request::is('data-customers') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
           <svg class="h-8 w-8 {{ Request::is('data-customers') ? 'fill-white' : ''}}"  viewBox="0 0 24 24"  fill="none" @if (!Request::is('data-customers'))
@@ -58,7 +58,7 @@
 
       <li class="mt-0.5 w-full">
         <a class="{{ Request::is('data-drivers') ? 'py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors' : 'py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors' }}"
-          href="/data-drivers">
+          href="/data-drivers" style="text-decoration: none">
           <div
           class="{{ Request::is('data-drivers') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
           <svg class="w-6 h-6 text-gray-800 dark:text-white {{ Request::is('data-drivers') ? 'fill-white' : ''}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 14" >
@@ -71,7 +71,7 @@
 
       <li class="mt-0.5 w-full">
         <a class="{{ Request::is('data-kategori') ? 'py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors' : 'py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors' }}"
-          href="/data-kategori">
+          href="/data-kategori" style="text-decoration: none">
           <div
           class="{{ Request::is('data-kategori') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
           <svg class="w-6 h-6 text-gray-800 dark:text-white {{ Request::is('data-kategori') ? 'fill-white' : ''}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 14" >
@@ -84,7 +84,7 @@
       
       <li class="mt-0.5 w-full">
         <a class="{{ Request::is('data-kendaraan') ? 'py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors' : 'py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors' }}"
-          href="/data-kendaraan">
+          href="/data-kendaraan" style="text-decoration: none">
           <div
           class="{{ Request::is('data-kendaraan') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
           <svg class="w-6 h-6 text-gray-800 dark:text-white {{ Request::is('data-kendaraan') ? 'fill-white' : ''}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 14" >
@@ -97,7 +97,7 @@
 
       <li class="mt-0.5 w-full">
         <a class="{{ Request::is('data-pesanan') ? 'py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors' : 'py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors' }}"
-          href="/data-pesanan">
+          href="/data-pesanan" style="text-decoration: none">
           <div
           class="{{ Request::is('data-pesanan') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
           <svg class="w-6 h-6 text-gray-800 dark:text-white {{ Request::is('data-pesanan') ? 'fill-white' : ''}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 14" >
@@ -110,7 +110,7 @@
 
       <li class="mt-0.5 w-full">
         <a class="{{ Request::is('data-transaksi') ? 'py-2.7 shadow-soft-xl text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap rounded-lg bg-white px-4 font-semibold text-slate-700 transition-colors' : 'py-2.7 text-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors' }}"
-          href="/data-transaksi">
+          href="/data-transaksi" style="text-decoration: none">
           <div
           class="{{ Request::is('data-transaksi') ? 'bg-gradient-to-tl from-purple-700 to-pink-500 shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' : 'shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center stroke-0 text-center xl:p-2.5' }}">
           <svg class="w-6 h-6 text-gray-800 dark:text-white {{ Request::is('data-transaksi') ? 'fill-white' : ''}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 14" >
