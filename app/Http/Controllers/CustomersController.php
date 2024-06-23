@@ -58,9 +58,10 @@ class CustomersController extends Controller
     public function lihatPesanan()
     {
         //
+        $customers = Customers::where('user_id', Auth::user()->id)->first();
         return view('customers.pages.pesanan_saya', [
             'userId' => Auth::user()->id,
-            'pesanans' => Pesanan::where('customer_id', Auth::user()->id)->get(),
+            'pesanans' => Pesanan::where('customer_id', $customers->id)->get(),
             'drivers' => Drivers::all(),
             'customers' => Customers::all(),
             'kendaraan' => Kendaraan::all()

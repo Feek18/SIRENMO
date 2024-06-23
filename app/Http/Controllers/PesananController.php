@@ -74,6 +74,7 @@ class PesananController extends Controller
     public function store(StorePesananRequest $request)
     {
         //
+        $customers_id = Customers::where('user_id', $request->customer_id)->first();
         $validatedData = $request->validate([
             'kode' => 'required',
             'tgl_ambil' => 'required',
@@ -82,7 +83,7 @@ class PesananController extends Controller
             'driver_id' => 'required',
             'kendaraan_id' => 'required'
         ]);
-
+        $validatedData['customer_id'] = $customers_id->id;
         if ($validatedData['driver_id'] == '0') {
             $validatedData['status'] = 'terkonfirmasi';
         } else {
