@@ -24,15 +24,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    @vite('resources/css/app.css')
     <link rel="stylesheet" href="../css/app.css">
 </head>
 
 <body class="m-0 font-sans text-base antialiased font-normal leading-default bg-gray-100 text-slate-500">
-    @include('../customers/layout/partials/sidebar')
+    @if (!Request::is('form-pesanan/*'))
+        @include('../customers/layout/partials/sidebar')
+    @endif
+
 
     <main class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
-        @include('../customers/layout/partials/navbar')
+        @if (!Request::is('form-pesanan/*'))
+            @include('../customers/layout/partials/navbar')
+        @endif
 
         @yield('content')
     </main>
